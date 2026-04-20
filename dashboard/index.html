@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM Sales Hub — Bradley Milks</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+    h1 { color: #006699; }
+    .card { background: white; border-radius: 8px; padding: 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .stat { font-size: 2em; font-weight: bold; color: #006699; }
+    .label { color: #666; font-size: 0.9em; margin-top: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .product { background: #006699; color: white; border-radius: 6px; padding: 10px 14px; font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <h1>IBM Sales Hub</h1>
+  <p style="color:#666">Bradley Milks &mdash; Account Executive, Data Trust &amp; Planning | Florida</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="stat" id="sent-today">—</div>
+      <div class="label">Sent Today</div>
+    </div>
+    <div class="card">
+      <div class="stat" id="remaining">—</div>
+      <div class="label">Remaining (cap 200)</div>
+    </div>
+    <div class="card">
+      <div class="stat" id="prospects">—</div>
+      <div class="label">Total Prospects</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Products</h3>
+    <div class="grid">
+      <div class="product">Planning Analytics</div>
+      <div class="product">watsonx.data</div>
+      <div class="product">watsonx.data Integration</div>
+      <div class="product">Guardium</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Quick Commands</h3>
+    <code>python3 scripts/daily_cap_check.py --verbose</code><br><br>
+    <code>python3 scripts/daily_orchestrator.py</code><br><br>
+    <code>python3 scripts/_filter_tier2.py</code>
+  </div>
+</body>
+</html>
