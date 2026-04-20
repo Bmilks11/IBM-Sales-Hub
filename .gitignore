@@ -1,0 +1,7 @@
+data/send_log.json
+data/today_queue.json
+data/tier2_batch_*.json
+.env
+__pycache__/
+*.pyc
+.DS_Store
