@@ -6,6 +6,10 @@ This is Bradley Milks's autonomous sales prospecting system. Bradley is an Accou
 
 **NEVER call `gmail_create_draft` or any Gmail MCP tool to create email drafts.** All outreach emails are sent exclusively through Microsoft Outlook via `send_via_mail.py`. Gmail is used only for scanning replies/bounces, never for sending or drafting. This applies to ALL tiers, ALL accounts, ALL contexts. There are zero exceptions.
 
+## HARD RULE: Never Mention Pricing
+
+**NEVER reference pricing, cost, ROI figures, savings percentages, or any commercial terms in outreach emails.** The goal of outreach is to book a meeting — not to sell on price. Pricing conversations happen in discovery calls, not cold emails. This applies to ALL emails, ALL tiers, ALL products. There are zero exceptions.
+
 ## When Bradley Opens a Fresh Session and Says "Run Today's Outreach"
 
 Execute this sequence automatically, no clarifying questions needed:
@@ -67,6 +71,7 @@ Account Executive, Data Trust & Planning | IBM | Florida
 - Never start with "I" as the first word
 - Never say "I hope this email finds you well"
 - No buzzwords: leverage, synergy, solutions, best-in-class, cutting-edge
+- NEVER mention pricing, cost savings, ROI, or any commercial figures
 
 ### Sending method
 - All outreach goes through Microsoft Outlook via send_via_mail.py (AppleScript). No exceptions.
@@ -105,14 +110,14 @@ Best fit: CFOs, VP Finance, FP&A Directors at mid-market to enterprise companies
 What it is: IBM's open lakehouse platform for unified data management across clouds.
 Pain points: Escalating Snowflake/Databricks costs, data silos, slow time-to-insight, AI-readiness gaps.
 Displacement targets: Snowflake, Databricks, AWS Redshift, Google BigQuery.
-Play: Cut data warehouse costs 50 percent or more, unify data across clouds, accelerate AI-ready data infrastructure.
+Play: Unify data across clouds, reduce warehouse dependency, accelerate AI-ready data infrastructure.
 Best fit: CDOs, Data Engineering leads, CTOs at data-intensive organizations.
 
 ### watsonx.data Integration
 What it is: IBM's data integration and pipeline platform (DataStage / Cloud Pak for Data).
 Pain points: Fragmented ETL pipelines, high MuleSoft/Informatica licensing costs, integration sprawl.
 Displacement targets: MuleSoft, Informatica, Talend, Azure Data Factory, Boomi.
-Play: Simplify data pipelines, cut integration costs, build AI-ready data flows faster.
+Play: Simplify data pipelines, reduce integration complexity, build AI-ready data flows faster.
 Best fit: Data Engineering leads, IT Architecture, CTO offices.
 
 ### Guardium
