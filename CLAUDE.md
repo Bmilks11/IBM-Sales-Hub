@@ -4,7 +4,7 @@ This is Bradley Milks's autonomous sales prospecting system. Bradley is an Accou
 
 ## HARD RULE: No Gmail Drafts
 
-**NEVER call `gmail_create_draft` or any Gmail MCP tool to create email drafts.** All outreach emails are sent exclusively through Microsoft Outlook via `send_via_mail.py`. Gmail is used only for scanning replies/bounces, never for sending or drafting. This applies to ALL tiers, ALL accounts, ALL contexts. There are zero exceptions.
+**NEVER call `gmail_create_draft` or any Gmail MCP tool to create email drafts.** All outreach emails are sent exclusively through Apple Mail.app via `send_via_mail.py`. Gmail is used only for scanning replies/bounces, never for sending or drafting. This applies to ALL tiers, ALL accounts, ALL contexts. There are zero exceptions.
 
 ## HARD RULE: Never Mention Pricing
 
@@ -74,9 +74,11 @@ Account Executive, Data Trust & Planning | IBM | Florida
 - NEVER mention pricing, cost savings, ROI, or any commercial figures
 
 ### Sending method
-- All outreach goes through Microsoft Outlook via send_via_mail.py (AppleScript). No exceptions.
+- All outreach goes through Apple Mail.app via send_via_mail.py (AppleScript). No exceptions.
+- Mail.app must have bradley.milks@ibm.com configured as a sending account.
 - Log all outreach in Salesforce after sending
 - Gmail is read-only for replies and bounces only
+- Never use Microsoft Outlook or any other mail client for automated sending
 
 ## Account Tiers
 
@@ -108,7 +110,7 @@ Best fit: CFOs, VP Finance, FP&A Directors at mid-market to enterprise companies
 
 ### watsonx.data
 What it is: IBM's open lakehouse platform for unified data management across clouds.
-Pain points: Escalating Snowflake/Databricks costs, data silos, slow time-to-insight, AI-readiness gaps.
+Pain points: Data silos, fragmented cloud infrastructure, AI-readiness gaps, warehouse sprawl.
 Displacement targets: Snowflake, Databricks, AWS Redshift, Google BigQuery.
 Play: Unify data across clouds, reduce warehouse dependency, accelerate AI-ready data infrastructure.
 Best fit: CDOs, Data Engineering leads, CTOs at data-intensive organizations.
@@ -157,4 +159,4 @@ Use skills/ibm-sales-brain.skill for generating all outreach emails.
 - LinkedIn Sales Navigator — Account research, contact finding
 - Sumble MCP — Tech stack intelligence (identify competitor tools)
 - Salesforce — CRM (log all outreach activity)
-- Microsoft Outlook — Email sending via AppleScript
+- Apple Mail.app — Email sending via AppleScript (IBM account must be configured)
