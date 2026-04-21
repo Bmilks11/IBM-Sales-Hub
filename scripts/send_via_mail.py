@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Send emails via Microsoft Outlook on Mac using AppleScript.
-Hard cap of 200 sends/day is enforced before and during sending.
+Send emails via Apple Mail.app using AppleScript.
+Requires IBM email account configured in Mail.app.
+Hard cap of 200 sends/day enforced before and during sending.
 """
 
 import json
@@ -13,6 +14,7 @@ from pathlib import Path
 
 CAP = 200
 LOG_FILE = Path(__file__).parent.parent / "data" / "send_log.json"
+FROM_EMAIL = "bradley.milks@ibm.com"
 
 def load_log():
     if LOG_FILE.exists():
@@ -26,16 +28,18 @@ def save_log(log):
 def today_str():
     return datetime.utcnow().strftime("%Y-%m-%d")
 
-def send_via_outlook(to_email, subject, body):
+def send_via_mail(to_email, subject, body):
+    """Send email via Apple Mail.app using AppleScript."""
     body_esc = body.replace("\\", "\\\\").replace('"', '\\"')
     subject_esc = subject.replace('"', '\\"')
     script = f'''
-    tell application "Microsoft Outlook"
-        set msg to make new outgoing message with properties {{subject:"{subject_esc}", plain text content:"{body_esc}"}}
-        tell msg
-            make new recipient with properties {{email address:{{address:"{to_email}"}}}}
+    tell application "Mail"
+        set newMsg to make new outgoing message with properties {{subject:"{subject_esc}", content:"{body_esc}", visible:false}}
+        tell newMsg
+            set sender to "{FROM_EMAIL}"
+            make new to recipient with properties {{address:"{to_email}"}}
         end tell
-        send msg
+        send newMsg
     end tell
     '''
     result = subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
@@ -85,7 +89,7 @@ def main():
             continue
 
         try:
-            send_via_outlook(to, subject, body)
+            send_via_mail(to, subject, body)
             log["count"] += 1
             log["sent"].append({
                 "to": to,
