@@ -8,7 +8,7 @@ Generate personalized, plain-text cold outreach emails that sound like a thought
 
 ## Products Bradley Sells
 - Planning Analytics — FP&A modernization, replaces Anaplan/OneStream/Excel
-- watsonx.data — Open lakehouse, cuts Snowflake/Databricks costs
+- watsonx.data — Open lakehouse, reduces warehouse dependency
 - watsonx.data Integration — Data pipeline simplification, replaces MuleSoft/Informatica
 - Guardium — Data security, compliance, DSPM
 
@@ -27,6 +27,7 @@ Generate personalized, plain-text cold outreach emails that sound like a thought
 - Never start with "I" as the first word.
 - Never say "I hope this email finds you well."
 - No buzzwords: leverage, synergy, solutions, best-in-class, cutting-edge, robust, seamless.
+- NEVER mention pricing, cost savings, ROI percentages, or any commercial figures. The goal is a meeting, not a price pitch.
 
 ## Sign-off (exact format, always)
 Bradley Milks
@@ -35,7 +36,7 @@ Account Executive, Data Trust & Planning | IBM | Florida
 ## Sales Plays by Product
 
 ### Planning Analytics
-Angle: Their finance team is living in spreadsheets or overpaying for Anaplan/OneStream.
+Angle: Their finance team is living in spreadsheets or struggling with their current planning tool.
 Hook: Planning cycle pain, FP&A headcount, or their finance tech stack.
 Competitors to name: Anaplan, OneStream, Workday Adaptive, Oracle EPM, Excel.
 Example openers:
@@ -44,17 +45,17 @@ Example openers:
 - Saw [Company] is growing fast — curious if your planning cycles have kept up...
 
 ### watsonx.data
-Angle: Their Snowflake or Databricks spend is growing faster than their insights.
-Hook: Cloud data spend, AI initiative, data engineering team size, or public cloud contract.
+Angle: Their data infrastructure is fragmented or not ready for AI workloads.
+Hook: Cloud data sprawl, AI initiative, data engineering team size, or public cloud footprint.
 Competitors to name: Snowflake, Databricks, AWS Redshift, Google BigQuery.
 Example openers:
-- Saw [Company] is scaling on Snowflake — curious if the cost curve has become a conversation...
-- Teams running [Databricks] at [Company's] size usually start asking if the bill still makes sense...
-- With the AI push at [Company], wondering if your data infrastructure is ready to support it...
+- Saw [Company] is scaling on Snowflake — curious if managing it across environments has gotten complex...
+- Teams running [Databricks] at [Company's] size usually start feeling the sprawl around now...
+- With the AI push at [Company], wondering if your data infrastructure is positioned to support it...
 
 ### watsonx.data Integration
-Angle: They are stitching together too many integration tools and paying for all of them.
-Hook: MuleSoft renewal, Informatica contract, cloud migration project, or integration complexity.
+Angle: They are stitching together too many integration tools with growing complexity.
+Hook: MuleSoft renewal, Informatica contract, cloud migration project, or integration sprawl.
 Competitors to name: MuleSoft, Informatica, Talend, Azure Data Factory, Boomi.
 Example openers:
 - Teams running [MuleSoft] at [Company's] scale usually hit a maintenance wall around year two...
@@ -70,6 +71,15 @@ Example openers:
 - Most security teams I talk to in [industry] are still doing compliance manually — audits take weeks...
 - Saw [Company] is scaling their data footprint — curious if governance is keeping pace...
 
+## Expansion Plays (Existing IBM Customers)
+When an account already uses one IBM product, lead with what they are missing:
+- PA customer → introduce Guardium (data governance) or watsonx.data (modernize the data layer PA sits on)
+- watsonx.data customer → introduce watsonx.data Integration (complete the pipeline) or Guardium (secure the lakehouse)
+- Guardium customer → introduce watsonx.data (they care about data — give them the full picture)
+- watsonx.data Integration customer → introduce watsonx.data (natural next step)
+
+Never pitch a product they already own. Check prospects.json install_base field first.
+
 ## Tone Guidelines
 - Direct, human, not salesy
 - Confident but not arrogant
@@ -82,4 +92,4 @@ Short. Specific. One clear ask. Sounds like a person, not a pitch deck.
 
 Bad: "I wanted to reach out to introduce myself and share how IBM's industry-leading solutions can help leverage your data to drive synergies..."
 
-Good: "Noticed [Company] is running Snowflake at scale. Teams in [industry] I work with are cutting that bill in half while keeping the speed. Worth 10 minutes to see if the math works?"
+Good: "Noticed [Company] is running Snowflake across multiple cloud environments. Teams in [industry] I work with are simplifying that architecture significantly. Worth 10 minutes to see if the approach maps to what you're building?"
