@@ -3,51 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IBM Sales Hub — Bradley Milks</title>
+  <title>IBM Sales Hub — KPI Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
-    body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
-    h1 { color: #006699; }
-    .card { background: white; border-radius: 8px; padding: 20px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-    .stat { font-size: 2em; font-weight: bold; color: #006699; }
-    .label { color: #666; font-size: 0.9em; margin-top: 4px; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .product { background: #006699; color: white; border-radius: 6px; padding: 10px 14px; font-size: 0.85em; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#0530AD;--blue2:#4589FF;--dark:#161616;--gray:#393939;--light:#F4F4F4;--green:#24A148;--yellow:#F1C21B;--red:#DA1E28}
+    body{font-family:-apple-system,'IBM Plex Sans',sans-serif;background:#F4F4F4;color:#161616;min-height:100vh}
+    header{background:var(--blue);color:white;padding:16px 32px;display:flex;justify-content:space-between;align-items:center}
+    header h1{font-size:1.2rem;font-weight:600;letter-spacing:-0.2px}
+    .header-right{text-align:right;font-size:0.75rem;opacity:0.75}
+    main{max-width:1400px;margin:0 auto;padding:28px 32px}
+    .section-title{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6F6F6F;margin-bottom:14px}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:28px;background:#E0E0E0}
+    .kpi-card{background:white;padding:24px 20px;border-top:3px solid var(--blue)}
+    .kpi-card.green{border-top-color:var(--green)}
+    .kpi-card.yellow{border-top-color:var(--yellow)}
+    .kpi-card.blue2{border-top-color:var(--blue2)}
+    .kpi-label{font-size:0.7rem;color:#6F6F6F;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:10px}
+    .kpi-value{font-size:2.8rem;font-weight:300;color:#161616;line-height:1}
+    .kpi-sub{font-size:0.72rem;color:#6F6F6F;margin-top:8px}
+    .charts-grid{display:grid;grid-template-columns:2fr 1fr;gap:2px;margin-bottom:28px;background:#E0E0E0}
+    .chart-card{background:white;padding:24px}
+    .chart-title{font-size:0.8rem;font-weight:600;margin-bottom:16px;color:#393939}
+    .chart-container{position:relative;height:180px}
+    .funnel-step{margin-bottom:14px}
+    .funnel-label{display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:5px;color:#393939}
+    .funnel-bar{background:#F4F4F4;height:20px}
+    .funnel-fill{height:100%;transition:width 0.6s ease}
+    .pipeline-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px}
+    .filters{display:flex;gap:4px;flex-wrap:wrap}
+    .filter-btn{padding:5px 14px;border:1px solid #E0E0E0;background:white;cursor:pointer;font-size:0.78rem;color:#393939;transition:all 0.15s}
+    .filter-btn:hover{border-color:#0530AD;color:#0530AD}
+    .filter-btn.active{background:#0530AD;color:white;border-color:#0530AD}
+    .table-wrap{background:white;overflow-x:auto}
+    table{width:100%;border-collapse:collapse}
+    th{background:#F4F4F4;padding:10px 16px;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F6F6F;font-weight:700;border-bottom:1px solid #E0E0E0;white-space:nowrap}
+    td{padding:12px 16px;border-bottom:1px solid #F4F4F4;font-size:0.83rem;vertical-align:middle}
+    tr:hover td{background:#FAFAFA}
+    tr:last-child td{border-bottom:none}
+    .badge{display:inline-block;padding:3px 10px;font-size:0.7rem;font-weight:600;letter-spacing:0.3px}
+    .s-contacted{background:#D0E2FF;color:#0043CE}
+    .s-replied{background:#DEFBE6;color:#0E6027}
+    .s-meeting{background:#24A148;color:white}
+    .s-no-response{background:#F4F4F4;color:#6F6F6F}
+    .s-not-interested{background:#FFD6D9;color:#750E13}
+    .empty{text-align:center;padding:48px;color:#6F6F6F;font-size:0.875rem}
+    .tag{display:inline-block;background:#E8EDFF;color:#0530AD;padding:1px 8px;font-size:0.68rem;border-radius:2px}
+    @media(max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr)}.charts-grid{grid-template-columns:1fr}main{padding:16px}}
   </style>
 </head>
 <body>
-  <h1>IBM Sales Hub</h1>
-  <p style="color:#666">Bradley Milks &mdash; Account Executive, Data Trust &amp; Planning | Florida</p>
+<header>
+  <div>
+    <h1>IBM Sales Hub</h1>
+    <div style="font-size:0.78rem;opacity:0.75;margin-top:3px">Bradley Milks &mdash; Account Executive, Data Trust &amp; Planning | Florida</div>
+  </div>
+  <div class="header-right">
+    <div id="last-updated">Loading...</div>
+    <div style="margin-top:4px"><a href="#" onclick="loadDashboard();return false" style="color:rgba(255,255,255,0.7);font-size:0.72rem;text-decoration:none">Refresh</a></div>
+  </div>
+</header>
 
-  <div class="grid">
-    <div class="card">
-      <div class="stat" id="sent-today">—</div>
-      <div class="label">Sent Today</div>
+<main>
+  <div class="section-title">Performance Overview</div>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Sent Today</div>
+      <div class="kpi-value" id="sent-today">0</div>
+      <div class="kpi-sub" id="cap-remaining">200 remaining of 200</div>
     </div>
-    <div class="card">
-      <div class="stat" id="remaining">—</div>
-      <div class="label">Remaining (cap 200)</div>
+    <div class="kpi-card blue2">
+      <div class="kpi-label">Total Emails Sent</div>
+      <div class="kpi-value" id="total-sent">0</div>
+      <div class="kpi-sub" id="total-accounts">0 accounts contacted</div>
     </div>
-    <div class="card">
-      <div class="stat" id="prospects">—</div>
-      <div class="label">Total Prospects</div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Replies Received</div>
+      <div class="kpi-value" id="total-replies">0</div>
+      <div class="kpi-sub" id="reply-rate">0% reply rate</div>
+    </div>
+    <div class="kpi-card yellow">
+      <div class="kpi-label">Meetings Booked</div>
+      <div class="kpi-value" id="meetings-booked">0</div>
+      <div class="kpi-sub" id="meeting-rate">0% of replies</div>
     </div>
   </div>
 
-  <div class="card">
-    <h3>Products</h3>
-    <div class="grid">
-      <div class="product">Planning Analytics</div>
-      <div class="product">watsonx.data</div>
-      <div class="product">watsonx.data Integration</div>
-      <div class="product">Guardium</div>
+  <div class="section-title">Activity</div>
+  <div class="charts-grid">
+    <div class="chart-card">
+      <div class="chart-title">Weekly Send Volume</div>
+      <div class="chart-container"><canvas id="weeklyChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Pipeline Funnel</div>
+      <div id="funnel">
+        <div class="empty">No data yet</div>
+      </div>
     </div>
   </div>
 
-  <div class="card">
-    <h3>Quick Commands</h3>
-    <code>python3 scripts/daily_cap_check.py --verbose</code><br><br>
-    <code>python3 scripts/daily_orchestrator.py</code><br><br>
-    <code>python3 scripts/_filter_tier2.py</code>
+  <div class="pipeline-header">
+    <div class="section-title" style="margin-bottom:0">Pipeline</div>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterTable('all',this)">All</button>
+      <button class="filter-btn" onclick="filterTable('contacted',this)">Contacted</button>
+      <button class="filter-btn" onclick="filterTable('replied',this)">Replied</button>
+      <button class="filter-btn" onclick="filterTable('meeting',this)">Meeting Booked</button>
+      <button class="filter-btn" onclick="filterTable('no-response',this)">No Response</button>
+      <button class="filter-btn" onclick="filterTable('not-interested',this)">Not Interested</button>
+    </div>
   </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Status</th>
+          <th>Industry</th>
+          <th>City</th>
+          <th>Last Contacted</th>
+          <th>Product</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="pipeline-table">
+        <tr><td colspan="7" class="empty">Loading pipeline...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script>
+const OWNER='Bmilks11',REPO='IBM-Sales-Hub';
+const RAW=`https://raw.githubusercontent.com/${OWNER}/${REPO}/main`;
+let allPipeline=[],weeklyChart=null;
+
+async function fetchJSON(path){
+  try{const r=await fetch(`${RAW}/${path}?t=${Date.now()}`);return r.ok?r.json():null}
+  catch{return null}
+}
+
+function fmtDate(iso){
+  if(!iso)return'—';
+  return new Date(iso).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+}
+
+function badge(s){
+  const m={'contacted':['s-contacted','Contacted'],'replied':['s-replied','Replied'],'meeting':['s-meeting','Meeting Booked'],'no-response':['s-no-response','No Response'],'not-interested':['s-not-interested','Not Interested']};
+  const[cls,lbl]=m[s]||['s-no-response',s||'No Response'];
+  return`<span class="badge ${cls}">${lbl}</span>`;
+}
+
+function filterTable(status,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  const rows=status==='all'?allPipeline:allPipeline.filter(r=>r.status===status);
+  renderTable(rows);
+}
+
+function renderTable(rows){
+  const tb=document.getElementById('pipeline-table');
+  if(!rows||!rows.length){tb.innerHTML='<tr><td colspan="7" class="empty">No accounts found.</td></tr>';return}
+  tb.innerHTML=rows.slice(0,300).map(r=>`
+    <tr>
+      <td><strong>${r.company}</strong>${r.tier===1?'<span class="tag" style="margin-left:6px">Tier 1</span>':''}</td>
+      <td>${badge(r.status||'no-response')}</td>
+      <td>${r.industry||'—'}</td>
+      <td>${r.city||'—'}</td>
+      <td>${fmtDate(r.last_contacted)}</td>
+      <td>${r.product||'Planning Analytics'}</td>
+      <td style="color:#6F6F6F;font-size:0.78rem">${r.notes||'—'}</td>
+    </tr>`).join('');
+}
+
+function renderFunnel(kpi){
+  const t=kpi.totals||{};
+  const steps=[
+    {label:'Contacted',value:t.accounts_contacted||0,color:'#4589FF'},
+    {label:'Replied',value:t.replied||0,color:'#24A148'},
+    {label:'Meeting Booked',value:t.meetings_booked||0,color:'#0530AD'},
+  ];
+  const max=steps[0].value||1;
+  document.getElementById('funnel').innerHTML=steps.map(s=>`
+    <div class="funnel-step">
+      <div class="funnel-label"><span>${s.label}</span><strong>${s.value}</strong></div>
+      <div class="funnel-bar"><div class="funnel-fill" style="width:${Math.round(s.value/max*100)}%;background:${s.color}"></div></div>
+    </div>`).join('');
+}
+
+function renderWeeklyChart(kpi){
+  const w=kpi.weekly||{};
+  const keys=Object.keys(w).slice(-7);
+  const labels=keys.map(d=>new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric'}));
+  const data=keys.map(k=>w[k]);
+  const ctx=document.getElementById('weeklyChart').getContext('2d');
+  if(weeklyChart)weeklyChart.destroy();
+  weeklyChart=new Chart(ctx,{
+    type:'bar',
+    data:{labels,datasets:[{label:'Sent',data,backgroundColor:'#4589FF',borderRadius:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{y:{beginAtZero:true,grid:{color:'#F4F4F4'},ticks:{font:{size:10}}},
+              x:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+}
+
+async function loadDashboard(){
+  document.getElementById('last-updated').textContent='Refreshing...';
+  const[kpi,pipeline]=await Promise.all([fetchJSON('data/kpi_log.json'),fetchJSON('data/pipeline.json')]);
+
+  if(kpi){
+    const t=kpi.totals||{},today=kpi.today?.sent||0;
+    document.getElementById('sent-today').textContent=today;
+    document.getElementById('cap-remaining').textContent=`${200-today} remaining of 200`;
+    document.getElementById('total-sent').textContent=t.sent||0;
+    document.getElementById('total-accounts').textContent=`${t.accounts_contacted||0} accounts contacted`;
+    document.getElementById('total-replies').textContent=t.replied||0;
+    const rr=t.sent>0?((t.replied/t.sent)*100).toFixed(1):0;
+    document.getElementById('reply-rate').textContent=`${rr}% reply rate`;
+    document.getElementById('meetings-booked').textContent=t.meetings_booked||0;
+    const mr=t.replied>0?((t.meetings_booked/t.replied)*100).toFixed(1):0;
+    document.getElementById('meeting-rate').textContent=`${mr}% of replies`;
+    document.getElementById('last-updated').textContent=`Updated: ${new Date(kpi.last_updated||Date.now()).toLocaleString()}`;
+    renderWeeklyChart(kpi);
+    renderFunnel(kpi);
+  } else {
+    document.getElementById('last-updated').textContent='No data yet — run your first outreach batch';
+  }
+
+  if(pipeline&&pipeline.length){
+    allPipeline=pipeline;
+    renderTable(pipeline);
+  } else {
+    document.getElementById('pipeline-table').innerHTML='<tr><td colspan="7" class="empty">No pipeline data yet. Run outreach to populate.</td></tr>';
+  }
+}
+
+loadDashboard();
+setInterval(loadDashboard,300000);
+</script>
 </body>
 </html>
