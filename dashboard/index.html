@@ -112,23 +112,21 @@ tr:last-child td{border-bottom:none}
 .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#24A148;margin-right:5px;animation:pulse 2s infinite}
 footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.2)}
 
-/* STAGE BAR */
-.stage-bar{margin-bottom:16px}
-.stage-bar-label{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);margin-bottom:10px}
-.stage-steps{display:flex;align-items:center;gap:0}
-.stage-step{display:flex;flex-direction:column;align-items:center;flex:1;position:relative}
-.stage-step:not(:last-child)::after{content:"";position:absolute;top:14px;left:50%;width:100%;height:2px;background:rgba(255,255,255,0.1);z-index:0}
-.stage-step.done:not(:last-child)::after{background:rgba(36,161,72,0.5)}
-.stage-step.active:not(:last-child)::after{background:linear-gradient(90deg,rgba(69,137,255,0.6),rgba(255,255,255,0.1))}
-.stage-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;z-index:1;border:2px solid transparent;transition:all 0.3s;position:relative}
-.stage-step.done .stage-dot{background:rgba(36,161,72,0.3);border-color:#24A148;color:#6FDC8C}
-.stage-step.active .stage-dot{background:linear-gradient(135deg,#0530AD,#1192E8);border-color:#4589FF;color:white;box-shadow:0 0 12px rgba(69,137,255,0.6)}
-.stage-step.upcoming .stage-dot{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.3)}
-.stage-step-label{font-size:0.6rem;color:rgba(255,255,255,0.4);margin-top:5px;text-align:center;line-height:1.2}
-.stage-step.active .stage-step-label{color:#82CFFF;font-weight:600}
-.stage-step.done .stage-step-label{color:#6FDC8C}
-.stage-active-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(69,137,255,0.15);border:1px solid rgba(69,137,255,0.3);border-radius:20px;padding:3px 12px;font-size:0.68rem;color:#82CFFF;margin-bottom:12px}
-.stage-active-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:#4589FF;animation:pulse 2s infinite}
+/* CHEVRON PIPELINE */
+.campaign-card{cursor:default}
+.campaign-card-header{cursor:pointer;user-select:none}
+.campaign-card-header:hover .campaign-name{color:#82CFFF}
+.campaign-detail{display:none;margin-top:0}
+.campaign-detail.open{display:block}
+.chevron-pipeline{display:flex;width:100%;margin-bottom:20px;border-radius:0 0 8px 8px;overflow:hidden}
+.chevron-pill{flex:1;padding:11px 8px 11px 20px;text-align:center;font-size:0.72rem;font-weight:500;position:relative;transition:all 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%,14px 50%)}
+.chevron-pill:first-child{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);padding-left:14px}
+.chevron-pill:last-child{clip-path:polygon(0 0,100% 0,100% 100%,0 100%,14px 50%)}
+.chevron-pill.done{background:rgba(36,161,72,0.25);color:#6FDC8C}
+.chevron-pill.active{background:#0D2461;color:white;font-weight:700;box-shadow:inset 0 0 0 1px rgba(69,137,255,0.5)}
+.chevron-pill.upcoming{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.35)}
+.chevron-day{display:block;font-size:0.58rem;opacity:0.65;margin-top:1px}
+.campaign-detail-inner{padding:0 0 4px 0}
 
 </style>
 </head>
@@ -250,43 +248,37 @@ function toggleEmail(header){
 }
 
 function getStage(emails, startDate){
-  const start = new Date(startDate);
-  const today = new Date();
-  const daysSince = Math.floor((today - start) / (1000*60*60*24));
-  let currentStage = 0;
-  for(let i=0; i<emails.length; i++){
-    if(daysSince >= emails[i].day - 1) currentStage = i;
-  }
-  return currentStage;
+  const start=new Date(startDate);
+  const today=new Date();
+  const daysSince=Math.floor((today-start)/(1000*60*60*24));
+  let cur=0;
+  for(let i=0;i<emails.length;i++){if(daysSince>=emails[i].day-1)cur=i;}
+  return cur;
 }
 
-function renderStageBar(emails, startDate){
-  const current = getStage(emails, startDate);
-  const e = emails[current];
-  const stepsHtml = emails.map((em,i)=>{
-    const cls = i < current ? "done" : i === current ? "active" : "upcoming";
-    const icon = i < current ? "&#10003;" : i+1;
-    return `<div class="stage-step ${cls}">
-      <div class="stage-dot">${icon}</div>
-      <div class="stage-step-label">Day ${em.day}<br/>${em.angle}</div>
-    </div>`;
-  }).join("");
-  return `<div class="stage-bar">
-    <div class="stage-bar-label">&#128205; Current Stage</div>
-    <div class="stage-active-tag">Now sending: Email ${e.number} &mdash; ${e.angle}</div>
-    <div class="stage-steps">${stepsHtml}</div>
-  </div>`;
+function renderChevron(emails, startDate){
+  const cur=getStage(emails,startDate);
+  return`<div class="chevron-pipeline">${emails.map((e,i)=>{
+    const cls=i<cur?"done":i===cur?"active":"upcoming";
+    const icon=i<cur?"&#10003; ":"";
+    return`<div class="chevron-pill ${cls}">${icon}${e.angle}<span class="chevron-day">Email ${e.number} &middot; Day ${e.day}</span></div>`;
+  }).join("")}</div>`;
+}
+
+function toggleCampaign(id){
+  const det=document.getElementById("camp-detail-"+id);
+  if(det)det.classList.toggle("open");
 }
 
 function renderCampaigns(data){
   const grid=document.getElementById("campaigns-grid");
-  if(!data||!data.campaigns||!data.campaigns.length){grid.innerHTML="<div class='campaign-card'><div class='empty-state'>No campaigns.</div></div>";return;}
-  grid.innerHTML=data.campaigns.map(c=>{
+  if(!data||!data.campaigns||!data.campaigns.length){grid.innerHTML="<div class=\'campaign-card\'><div class=\'empty-state\'>No campaigns.</div></div>";return;}
+  grid.innerHTML=data.campaigns.map((c,ci)=>{
     const pct=c.targets>0?Math.min(Math.round((c.sent/c.targets)*100),100):0;
     const openRate=c.sent>0?Math.round((c.opened/c.sent)*100):0;
     const replyRate=c.sent>0?Math.round((c.replied/c.sent)*100):0;
     const statusEl=c.status==="active"?`<span class="campaign-status-active">Active</span>`:`<span class="campaign-status-paused">Paused</span>`;
-    const stageBarHtml=(c.emails&&c.emails.length&&c.start_date)?renderStageBar(c.emails,c.start_date):"";
+    const chevronHtml=(c.emails&&c.emails.length&&c.start_date)?renderChevron(c.emails,c.start_date):"";
     const emailsHtml=(c.emails||[]).map(e=>`<div class="email-step">
       <div class="email-step-header" onclick="toggleEmail(this)">
         <span class="email-num">Email ${e.number}</span>
@@ -297,21 +289,36 @@ function renderCampaigns(data){
       </div>
       <div class="email-body-wrap"><pre class="email-body">${e.body}</pre></div>
     </div>`).join("");
+    const cur=c.emails?getStage(c.emails,c.start_date):0;
+    const curEmail=c.emails?c.emails[cur]:null;
     return`<div class="campaign-card">
-      <div class="campaign-header"><div><div class="campaign-name">${c.name}</div><div class="campaign-product">&#128202; ${c.product} &middot; ${c.tier}</div></div>${statusEl}</div>
-      <div class="campaign-tagline">${c.tagline||""}</div>
-      ${stageBarHtml}
-      <div class="camp-metrics">
-        <div class="camp-metric"><div class="camp-metric-val">${c.sent.toLocaleString()}</div><div class="camp-metric-label">Sent</div></div>
-        <div class="camp-metric"><div class="camp-metric-val">${openRate}%</div><div class="camp-metric-label">Open Rate</div></div>
-        <div class="camp-metric"><div class="camp-metric-val">${replyRate}%</div><div class="camp-metric-label">Reply Rate</div></div>
-        <div class="camp-metric"><div class="camp-metric-val">${c.meetings}</div><div class="camp-metric-label">Meetings</div></div>
+      <div class="campaign-card-header" onclick="toggleCampaign(${ci})">
+        <div class="campaign-header">
+          <div>
+            <div class="campaign-name">${c.name} <span style="font-size:0.7rem;color:rgba(255,255,255,0.35);font-weight:400">&#9660; click to expand</span></div>
+            <div class="campaign-product">&#128202; ${c.product} &middot; ${c.tier}</div>
+          </div>
+          ${statusEl}
+        </div>
+        ${curEmail?`<div style="font-size:0.72rem;color:#82CFFF;margin:6px 0 0 0">&#9654; Now on: Email ${curEmail.number} &mdash; ${curEmail.angle}</div>`:""}
       </div>
-      <div class="progress-wrap">
-        <div class="progress-label"><span>Accounts Reached</span><span>${c.sent.toLocaleString()} / ${c.targets.toLocaleString()}</span></div>
-        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <div class="campaign-detail" id="camp-detail-${ci}">
+        <div class="campaign-detail-inner">
+          ${chevronHtml}
+          <div class="campaign-tagline">${c.tagline||""}</div>
+          <div class="camp-metrics">
+            <div class="camp-metric"><div class="camp-metric-val">${c.sent.toLocaleString()}</div><div class="camp-metric-label">Sent</div></div>
+            <div class="camp-metric"><div class="camp-metric-val">${openRate}%</div><div class="camp-metric-label">Open Rate</div></div>
+            <div class="camp-metric"><div class="camp-metric-val">${replyRate}%</div><div class="camp-metric-label">Reply Rate</div></div>
+            <div class="camp-metric"><div class="camp-metric-val">${c.meetings}</div><div class="camp-metric-label">Meetings</div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Accounts Reached</span><span>${c.sent.toLocaleString()} / ${c.targets.toLocaleString()}</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+          </div>
+          <div class="email-sequence"><div class="email-seq-title">&#9993; Email Sequence &mdash; ${(c.emails||[]).length} emails &mdash; click to read</div>${emailsHtml}</div>
+        </div>
       </div>
-      <div class="email-sequence"><div class="email-seq-title">&#9993; Email Sequence &mdash; ${(c.emails||[]).length} emails &mdash; click to expand</div>${emailsHtml}</div>
     </div>`;
   }).join("");
 }
