@@ -81,5 +81,89 @@
         }
       ]
     }
+  ],
+  "persona_emails": [
+    {
+      "persona": "CFO / VP Finance / FP&A",
+      "titles": [
+        "CFO",
+        "VP of Finance",
+        "Director of Finance",
+        "FP&A"
+      ],
+      "pain_point": "Disconnected planning, lack of agility",
+      "subject": "Finance planning \u2014 quick question",
+      "body": "Hi [First Name],\n\nMost CFOs I speak with are dealing with the same challenge \u2014 disconnected planning and forecast cycles that can't keep up with how fast conditions change.\n\nIBM Planning Analytics unifies financial planning on one real-time platform, integrating Oracle, SAP, and spreadsheets so your FP&A team moves faster with full confidence in the numbers.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+    },
+    {
+      "persona": "Controller",
+      "titles": [
+        "Controller",
+        "VP Controller",
+        "Corporate Controller"
+      ],
+      "pain_point": "Lack of confidence in data, error-prone processes",
+      "subject": "Consolidation confidence \u2014 quick note",
+      "body": "Hi [First Name],\n\nControllers I speak with often cite the same issue: error-prone consolidation and a lack of confidence in the numbers at close.\n\nIBM Planning Analytics automates monthly, quarterly, and annual consolidation with granular data controls \u2014 reducing manual errors and giving your team a single source of truth.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+    },
+    {
+      "persona": "COO / VP Operations / Supply Chain VP",
+      "titles": [
+        "COO",
+        "VP of Operations",
+        "Supply Chain VP",
+        "VP Supply Chain"
+      ],
+      "pain_point": "Data discrepancies across departments",
+      "subject": "Ops planning data \u2014 quick thought",
+      "body": "Hi [First Name],\n\nOperations leaders I speak with consistently flag the same challenge: data discrepancies across departments making supply chain and capacity planning unreliable.\n\nIBM Planning Analytics integrates every data source into one real-time model \u2014 supply chain, inventory, capacity, and asset planning all in sync.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+    },
+    {
+      "persona": "VP / Director of Human Resources",
+      "titles": [
+        "VP of Human Resources",
+        "Director of Human Resources",
+        "CHRO",
+        "VP HR"
+      ],
+      "pain_point": "Lack of agility in workforce planning",
+      "subject": "Workforce planning \u2014 quick question",
+      "body": "Hi [First Name],\n\nHR leaders I speak with struggle with the same thing: headcount and compensation planning that can't keep pace with how fast the business moves.\n\nIBM Planning Analytics brings real agility to workforce planning \u2014 real-time scenario modeling for headcount, salary, and staffing decisions at scale.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+    },
+    {
+      "persona": "VP of Sales",
+      "titles": [
+        "VP of Sales",
+        "Chief Revenue Officer",
+        "CRO",
+        "SVP Sales"
+      ],
+      "pain_point": "Intuition drives 2/3 of planning decisions",
+      "subject": "Sales planning on intuition?",
+      "body": "Hi [First Name],\n\nSales leaders I speak with tell me the same thing \u2014 intuition still drives 2 out of 3 planning decisions around territory, quota, and capacity.\n\nIBM Planning Analytics replaces gut feel with real-time data modeling, so your team forecasts, plans territories, and sets quotas with confidence.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+    },
+    {
+      "persona": "VP of Marketing",
+      "titles": [
+        "VP of Marketing",
+        "CMO",
+        "Director of Marketing"
+      ],
+      "pain_point": "Disconnected planning, analytical siloes",
+      "subject": "Marketing planning in siloes?",
+      "body": "Hi [First Name],\n\nMarketing leaders I speak with are dealing with disconnected planning \u2014 campaign and promotion data living in tools that don't talk to each other or the rest of the business.\n\nIBM Planning Analytics breaks down analytical siloes, connecting marketing planning to finance, sales, and ops in real time.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+    },
+    {
+      "persona": "CIO",
+      "titles": [
+        "CIO",
+        "Chief Information Officer",
+        "VP of IT",
+        "VP of Technology"
+      ],
+      "pain_point": "Disconnected IT portfolio and budget planning",
+      "subject": "IT planning siloes \u2014 quick thought",
+      "body": "Hi [First Name],\n\nCIOs I speak with flag the same challenge: IT portfolio and budget planning stuck in disconnected systems with no unified view.\n\nIBM Planning Analytics unifies IT project planning, budgeting, and infrastructure planning on one platform \u2014 with the enterprise-grade security and scalability your team requires.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+    }
   ]
 }
