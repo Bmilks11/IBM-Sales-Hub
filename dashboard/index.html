@@ -108,6 +108,20 @@ tr:last-child td{border-bottom:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
 .ldot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#24A148;margin-right:5px;animation:pulse 2s infinite}
 footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.2)}
+
+/* PERSONA EMAILS */
+.persona-section{margin-top:18px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px}
+.persona-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.persona-step{border:1px solid rgba(255,255,255,0.1);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.persona-step-h{padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.persona-step-h:hover{background:rgba(255,255,255,0.04)}
+.persona-tag{background:linear-gradient(90deg,#6929C4,#8A3FFC);color:white;border-radius:20px;padding:2px 10px;font-size:0.65rem;font-weight:700;flex-shrink:0}
+.persona-pain{font-size:0.68rem;color:rgba(255,255,255,0.35);flex-shrink:0;font-style:italic}
+.persona-subj{font-size:0.82rem;color:white;font-weight:500;flex:1}
+.persona-arrow{color:rgba(255,255,255,0.3);font-size:0.75rem;flex-shrink:0;transition:transform 0.2s}
+.persona-body-wrap{display:none;border-top:1px solid rgba(255,255,255,0.08);padding:16px 14px;background:rgba(0,0,0,0.25)}
+.persona-body{font-size:0.8rem;color:rgba(255,255,255,0.8);line-height:1.75;white-space:pre-wrap;word-break:break-word;font-family:inherit}
+
 </style>
 </head>
 <body>
@@ -237,6 +251,7 @@ function renderCamps(data){
       return`<div class="cpill" style="${st}">${j<cur?"&#10003; ":""}${e.angle}<span class="cpill-day">Email ${e.number} &middot; Day ${e.day}</span></div>`;
     }).join("")}</div>`:"";
 
+    const personaHtml=window._personaEmails?renderPersonaEmails(window._personaEmails):'';
     const emails=(c.emails||[]).map(e=>`<div class="estep">
       <div class="estep-h" onclick="toggleEmail(this)">
         <span class="enum">Email ${e.number}</span>
@@ -270,7 +285,7 @@ function renderCamps(data){
           <div class="cprog-l"><span>Accounts Reached</span><span>${c.sent.toLocaleString()} / ${c.targets.toLocaleString()}</span></div>
           <div class="cprog-b"><div class="cprog-f" style="width:${pct}%"></div></div>
         </div>
-        <div class="eseq"><div class="eseq-t">&#9993; Email Sequence &mdash; ${(c.emails||[]).length} emails &mdash; click to read</div>${emails}</div>
+        ${personaHtml}<div class="eseq"><div class="eseq-t">&#9993; Email Sequence &mdash; ${(c.emails||[]).length} emails &mdash; click to read</div>${emails}</div>
       </div>
     </div>`;
   }).join("");
@@ -312,9 +327,35 @@ async function load(){
     document.getElementById("ts").textContent="Updated: "+(kpi.last_updated||new Date().toLocaleString());
     renderFunnel(sent,opens,rep,meet);
     if(kpi.weekly)renderWeekly(kpi.weekly);
-    renderPipe(pipe);renderCamps(camps);renderConns(conns);renderConvs(convs);
+    renderPipe(pipe);window._personaEmails=camps.persona_emails||[];renderCamps(camps);renderConns(conns);renderConvs(convs);
   }catch(e){document.getElementById("ts").textContent="Error: "+e.message;console.error(e);}
 }
+
+function togglePersona(h){
+  const w=h.nextElementSibling;
+  const a=h.querySelector(".persona-arrow");
+  const o=w.style.display==="none";
+  w.style.display=o?"block":"none";
+  if(a)a.style.transform=o?"rotate(180deg)":"rotate(0)";
+}
+
+function renderPersonaEmails(personas){
+  if(!personas||!personas.length) return "";
+  const steps=personas.map(p=>`<div class="persona-step">
+    <div class="persona-step-h" onclick="togglePersona(this)">
+      <span class="persona-tag">&#128100; ${p.persona}</span>
+      <span class="persona-subj">${p.subject}</span>
+      <span class="persona-pain">${p.pain_point}</span>
+      <span class="persona-arrow">&#9660;</span>
+    </div>
+    <div class="persona-body-wrap"><div class="persona-body">${p.body}</div></div>
+  </div>`).join("");
+  return`<div class="persona-section">
+    <div class="persona-title">&#128100; Persona-Specific Emails — Email #1 by Buyer</div>
+    ${steps}
+  </div>`;
+}
+
 load();setInterval(load,300000);
 </script>
 </body>
