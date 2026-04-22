@@ -6,24 +6,19 @@
 <title>IBM Sales Hub — KPI Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap");
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--ibm-blue:#0530AD;--ibm-blue2:#4589FF;--ibm-cyan:#1192E8;--ibm-teal:#009D9A;--ibm-green:#24A148;--ibm-purple:#8A3FFC;--ibm-magenta:#EE5396;--ibm-orange:#FF832B;--ibm-yellow:#F1C21B;--ibm-red:#DA1E28;--dark:#161616;--gray:#393939;--light:#F4F4F4}
-body{font-family:'IBM Plex Sans',-apple-system,sans-serif;background:linear-gradient(135deg,#0A0F2C 0%,#0D1B4B 50%,#061233 100%);min-height:100vh;color:#fff}
-header{background:linear-gradient(90deg,#0530AD,#1192E8,#8A3FFC);padding:20px 36px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 24px rgba(5,48,173,0.5);position:relative;overflow:hidden}
-header::before{content:'';position:absolute;top:-50%;left:-10%;width:120%;height:200%;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,0.08) 0%,transparent 60%);pointer-events:none}
-header h1{font-size:1.3rem;font-weight:700;letter-spacing:0.5px}
-.header-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:4px 14px;font-size:0.72rem;font-weight:600;letter-spacing:0.5px;backdrop-filter:blur(8px)}
-.header-right{text-align:right;font-size:0.75rem;opacity:0.8}
+body{font-family:"IBM Plex Sans",-apple-system,sans-serif;background:linear-gradient(135deg,#0A0F2C 0%,#0D1B4B 50%,#061233 100%);min-height:100vh;color:#fff}
+header{background:linear-gradient(90deg,#0530AD,#1192E8,#8A3FFC);padding:20px 36px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 24px rgba(5,48,173,0.5)}
+header h1{font-size:1.3rem;font-weight:700}
+.header-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:4px 14px;font-size:0.72rem;font-weight:600}
 main{max-width:1400px;margin:0 auto;padding:32px 36px}
 .section-title{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.5);margin-bottom:16px;margin-top:32px}
 .section-title:first-child{margin-top:0}
-
-/* KPI CARDS */
+/* KPI */
 .kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:28px}
-.kpi-card{border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;cursor:default}
-.kpi-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.4)}
-.kpi-card::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;opacity:0.15}
+.kpi-card{border-radius:16px;padding:22px 20px;transition:transform 0.2s}
+.kpi-card:hover{transform:translateY(-3px)}
 .kpi-card.sent-today{background:linear-gradient(135deg,#0530AD,#1192E8);box-shadow:0 4px 20px rgba(5,48,173,0.4)}
 .kpi-card.total-sent{background:linear-gradient(135deg,#00539A,#009D9A);box-shadow:0 4px 20px rgba(0,157,154,0.4)}
 .kpi-card.opens{background:linear-gradient(135deg,#6929C4,#8A3FFC);box-shadow:0 4px 20px rgba(138,63,252,0.4)}
@@ -34,25 +29,22 @@ main{max-width:1400px;margin:0 auto;padding:32px 36px}
 .kpi-value{font-size:2.6rem;font-weight:300;line-height:1}
 .kpi-sub{font-size:0.7rem;opacity:0.65;margin-top:8px}
 .kpi-cap{display:inline-block;background:rgba(255,255,255,0.2);border-radius:10px;padding:2px 10px;font-size:0.65rem;font-weight:600;margin-top:8px}
-
 /* CHARTS */
 .charts-grid{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:4px}
-.chart-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;backdrop-filter:blur(10px)}
+.chart-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px}
 .chart-title{font-size:0.82rem;font-weight:600;margin-bottom:18px;color:rgba(255,255,255,0.85)}
 .chart-container{position:relative;height:190px}
 .funnel-step{margin-bottom:16px}
 .funnel-label{display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:6px;color:rgba(255,255,255,0.75)}
-.funnel-label span:last-child{font-weight:700;color:white}
+.funnel-label span:last-child{font-weight:700}
 .funnel-bar{background:rgba(255,255,255,0.08);height:22px;border-radius:11px;overflow:hidden}
-.funnel-fill{height:100%;border-radius:11px;transition:width 0.8s cubic-bezier(0.4,0,0.2,1)}
-
-/* SHARED TABLE/CARD STYLES */
-.panel-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;backdrop-filter:blur(10px)}
+.funnel-fill{height:100%;border-radius:11px;transition:width 0.8s ease}
+/* PANEL */
+.panel-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px}
 .pipeline-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:12px}
 .filters{display:flex;gap:6px;flex-wrap:wrap}
 .filter-btn{padding:6px 16px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);cursor:pointer;font-size:0.75rem;color:rgba(255,255,255,0.7);border-radius:20px;transition:all 0.2s;font-family:inherit}
-.filter-btn:hover{border-color:rgba(255,255,255,0.5);color:white;background:rgba(255,255,255,0.1)}
-.filter-btn.active{background:linear-gradient(90deg,#0530AD,#1192E8);color:white;border-color:transparent;box-shadow:0 2px 12px rgba(5,48,173,0.5)}
+.filter-btn.active{background:linear-gradient(90deg,#0530AD,#1192E8);color:white;border-color:transparent}
 .table-wrap{overflow-x:auto;border-radius:10px;overflow:hidden}
 table{width:100%;border-collapse:collapse}
 th{background:rgba(255,255,255,0.08);padding:11px 16px;text-align:left;font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);font-weight:700;white-space:nowrap}
@@ -60,7 +52,7 @@ td{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.
 tr:hover td{background:rgba(255,255,255,0.04)}
 tr:last-child td{border-bottom:none}
 .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:600}
-.badge::before{content:'';width:6px;height:6px;border-radius:50%;display:inline-block}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;display:inline-block}
 .badge-contacted{background:rgba(69,137,255,0.2);color:#82CFFF;border:1px solid rgba(69,137,255,0.3)}.badge-contacted::before{background:#4589FF}
 .badge-opened{background:rgba(138,63,252,0.2);color:#BE95FF;border:1px solid rgba(138,63,252,0.3)}.badge-opened::before{background:#8A3FFC}
 .badge-replied{background:rgba(255,131,43,0.2);color:#FFB784;border:1px solid rgba(255,131,43,0.3)}.badge-replied::before{background:#FF832B}
@@ -71,155 +63,97 @@ tr:last-child td{border-bottom:none}
 .badge-active{background:rgba(36,161,72,0.2);color:#6FDC8C;border:1px solid rgba(36,161,72,0.3)}.badge-active::before{background:#24A148}
 .badge-warm{background:rgba(255,131,43,0.2);color:#FFB784;border:1px solid rgba(255,131,43,0.3)}.badge-warm::before{background:#FF832B}
 .empty-state{text-align:center;padding:40px;color:rgba(255,255,255,0.3);font-size:0.82rem}
-
-/* CAMPAIGN MODULE */
-.campaigns-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px;margin-bottom:4px}
-.campaign-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:22px;backdrop-filter:blur(10px);transition:transform 0.2s}
-.campaign-card:hover{transform:translateY(-2px)}
-.campaign-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
-.campaign-name{font-size:0.95rem;font-weight:600;color:white}
-.campaign-product{font-size:0.7rem;color:#82CFFF;margin-top:3px}
+/* CAMPAIGNS */
+.campaigns-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:20px}
+.campaign-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:24px}
+.campaign-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.campaign-name{font-size:1rem;font-weight:600}
+.campaign-product{font-size:0.72rem;color:#82CFFF;margin-top:3px}
+.campaign-tagline{font-size:0.75rem;color:rgba(255,255,255,0.4);font-style:italic;margin-bottom:16px}
 .campaign-status-active{display:inline-flex;align-items:center;gap:5px;background:rgba(36,161,72,0.2);color:#6FDC8C;border:1px solid rgba(36,161,72,0.3);border-radius:20px;padding:3px 12px;font-size:0.7rem;font-weight:600}
-.campaign-status-active::before{content:'';width:6px;height:6px;border-radius:50%;background:#24A148;animation:pulse 2s infinite}
+.campaign-status-active::before{content:"";width:6px;height:6px;border-radius:50%;background:#24A148;animation:pulse 2s infinite}
 .campaign-status-paused{display:inline-flex;align-items:center;gap:5px;background:rgba(255,131,43,0.15);color:#FFB784;border:1px solid rgba(255,131,43,0.3);border-radius:20px;padding:3px 12px;font-size:0.7rem;font-weight:600}
-.campaign-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.camp-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
 .camp-metric{text-align:center;background:rgba(255,255,255,0.05);border-radius:10px;padding:10px 6px}
-.camp-metric-val{font-size:1.4rem;font-weight:300;color:white}
+.camp-metric-val{font-size:1.4rem;font-weight:300}
 .camp-metric-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:rgba(255,255,255,0.4);margin-top:3px}
-.campaign-progress{margin-top:4px}
+.progress-wrap{margin-bottom:16px}
 .progress-label{display:flex;justify-content:space-between;font-size:0.7rem;color:rgba(255,255,255,0.5);margin-bottom:5px}
 .progress-bar{background:rgba(255,255,255,0.08);height:6px;border-radius:3px}
 .progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#0530AD,#1192E8);transition:width 0.6s ease}
-.campaign-sequence{margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px}
-.campaign-seq-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.35);margin-bottom:8px}
-.seq-step{font-size:0.73rem;color:rgba(255,255,255,0.5);padding:3px 0;display:flex;align-items:center;gap:7px}
-.seq-step::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.25);flex-shrink:0}
-
-/* LINKEDIN MODULE */
-.linkedin-section{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;backdrop-filter:blur(10px)}
-.li-tabs{display:flex;gap:4px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:16px;margin-bottom:4px}
-.li-tab{padding:8px 20px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);cursor:pointer;font-size:0.8rem;color:rgba(255,255,255,0.65);border-radius:10px;transition:all 0.2s;font-family:inherit;font-weight:500}
-.li-tab:hover{color:white;border-color:rgba(255,255,255,0.35)}
-.li-tab.active{background:linear-gradient(90deg,#0077B5,#0A66C2);color:white;border-color:transparent;box-shadow:0 2px 12px rgba(0,119,181,0.4)}
-.li-panel{display:none}
-.li-panel.active{display:block}
-.conv-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:18px;transition:border-color 0.2s}
-.conv-card:hover{border-color:rgba(0,119,181,0.5)}
-.conv-name{font-size:0.9rem;font-weight:600;color:white;margin-bottom:2px}
-.conv-meta{font-size:0.72rem;color:rgba(255,255,255,0.45);margin-bottom:12px}
-.conv-preview{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.5;border-left:2px solid rgba(0,119,181,0.4);padding-left:10px;margin-bottom:12px;font-style:italic}
+/* EMAIL SEQUENCE */
+.email-sequence{border-top:1px solid rgba(255,255,255,0.08);padding-top:14px}
+.email-seq-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.email-step{border:1px solid rgba(255,255,255,0.1);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.email-step-header{padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none}
+.email-step-header:hover{background:rgba(255,255,255,0.04)}
+.email-num{background:linear-gradient(90deg,#0530AD,#1192E8);color:white;border-radius:20px;padding:2px 10px;font-size:0.65rem;font-weight:700;white-space:nowrap;flex-shrink:0}
+.email-day{font-size:0.68rem;color:rgba(255,255,255,0.35);flex-shrink:0}
+.email-angle{font-size:0.7rem;color:#82CFFF;font-weight:600;flex-shrink:0}
+.email-subject{font-size:0.82rem;color:white;font-weight:500;flex:1}
+.email-arrow{color:rgba(255,255,255,0.3);font-size:0.75rem;flex-shrink:0;transition:transform 0.2s}
+.email-body-wrap{display:none;border-top:1px solid rgba(255,255,255,0.08);padding:16px 14px;background:rgba(0,0,0,0.25)}
+.email-body{font-family:"IBM Plex Sans",monospace;font-size:0.8rem;color:rgba(255,255,255,0.8);line-height:1.75;white-space:pre-wrap;word-break:break-word}
+/* LINKEDIN */
+.linkedin-section{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px}
+.li-tabs{display:flex;gap:6px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:14px;margin-bottom:16px}
+.li-tab{padding:7px 18px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);cursor:pointer;font-size:0.78rem;color:rgba(255,255,255,0.6);border-radius:10px;font-family:inherit}
+.li-tab.active{background:linear-gradient(90deg,#0077B5,#0A66C2);color:white;border-color:transparent}
+.li-panel{display:none}.li-panel.active{display:block}
+.conv-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:18px;margin-bottom:10px}
+.conv-name{font-size:0.9rem;font-weight:600;margin-bottom:2px}
+.conv-meta{font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.conv-preview{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.5;border-left:2px solid rgba(0,119,181,0.5);padding-left:10px;margin-bottom:10px;font-style:italic}
 .conv-footer{display:flex;justify-content:space-between;align-items:center}
 .conv-date{font-size:0.68rem;color:rgba(255,255,255,0.3)}
-
-/* ANIMATIONS */
+/* MISC */
 .pulse{animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
-.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#24A148;margin-right:6px;animation:pulse 2s infinite}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#24A148;margin-right:5px;animation:pulse 2s infinite}
 footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.2)}
-
-/* EMAIL SEQUENCE */
-.email-sequence{margin-top:16px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px}
-.email-seq-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);margin-bottom:10px}
-.email-step{border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:8px;overflow:hidden;transition:border-color 0.2s}
-.email-step:hover{border-color:rgba(255,255,255,0.2)}
-.email-step-header{padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:space-between}
-.email-step-meta{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.email-num{background:linear-gradient(90deg,#0530AD,#1192E8);color:white;border-radius:20px;padding:2px 10px;font-size:0.65rem;font-weight:700}
-.email-day{font-size:0.68rem;color:rgba(255,255,255,0.4)}
-.email-angle{font-size:0.7rem;color:#82CFFF;font-weight:600}
-.email-subject{font-size:0.8rem;color:white;font-weight:500;flex:1;text-align:left}
-.email-toggle{color:rgba(255,255,255,0.4);font-size:0.7rem;transition:transform 0.2s;flex-shrink:0}
-.email-body-wrap{border-top:1px solid rgba(255,255,255,0.06);padding:16px 14px;background:rgba(0,0,0,0.2)}
-.email-body{font-family:'IBM Plex Sans',monospace;font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.7;white-space:pre-wrap;word-break:break-word}
 </style>
 </head>
 <body>
 <header>
   <div>
-    <h1>&#128202; IBM Sales Hub — KPI Dashboard</h1>
-    <div style="font-size:0.72rem;opacity:0.7;margin-top:4px">Bradley Milks · Account Executive, Data Trust & Planning · Florida</div>
+    <h1>&#128202; IBM Sales Hub &mdash; KPI Dashboard</h1>
+    <div style="font-size:0.72rem;opacity:0.7;margin-top:4px">Bradley Milks &middot; Account Executive, Data Trust &amp; Planning &middot; Florida</div>
   </div>
   <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
     <div class="header-badge"><span class="live-dot"></span>LIVE</div>
-    <div class="header-right" id="last-updated" style="font-size:0.7rem;opacity:0.65">Loading...</div>
+    <div style="font-size:0.7rem;opacity:0.6" id="last-updated">Loading...</div>
   </div>
 </header>
-
 <main>
-  <!-- KPI CARDS -->
   <div class="section-title" style="margin-top:0">&#9889; Performance Overview</div>
   <div class="kpi-grid">
-    <div class="kpi-card sent-today">
-      <span class="kpi-icon">&#128231;</span>
-      <div class="kpi-label">Sent Today</div>
-      <div class="kpi-value" id="kpi-sent-today">0</div>
-      <div class="kpi-cap" id="kpi-cap-pct">0 / 200</div>
-    </div>
-    <div class="kpi-card total-sent">
-      <span class="kpi-icon">&#128640;</span>
-      <div class="kpi-label">Total Sent</div>
-      <div class="kpi-value" id="kpi-total-sent">0</div>
-      <div class="kpi-sub">All time</div>
-    </div>
-    <div class="kpi-card opens">
-      <span class="kpi-icon">&#128065;</span>
-      <div class="kpi-label">Email Opens</div>
-      <div class="kpi-value" id="kpi-opens">0</div>
-      <div class="kpi-sub" id="kpi-open-rate">0% open rate</div>
-    </div>
-    <div class="kpi-card replies">
-      <span class="kpi-icon">&#128172;</span>
-      <div class="kpi-label">Replies</div>
-      <div class="kpi-value" id="kpi-replies">0</div>
-      <div class="kpi-sub" id="kpi-reply-rate">0% reply rate</div>
-    </div>
-    <div class="kpi-card meetings">
-      <span class="kpi-icon">&#128197;</span>
-      <div class="kpi-label">Meetings Booked</div>
-      <div class="kpi-value" id="kpi-meetings">0</div>
-      <div class="kpi-sub" id="kpi-meeting-rate">0% conversion</div>
-    </div>
+    <div class="kpi-card sent-today"><span class="kpi-icon">&#128231;</span><div class="kpi-label">Sent Today</div><div class="kpi-value" id="kpi-sent-today">0</div><div class="kpi-cap" id="kpi-cap">0 / 200</div></div>
+    <div class="kpi-card total-sent"><span class="kpi-icon">&#128640;</span><div class="kpi-label">Total Sent</div><div class="kpi-value" id="kpi-total-sent">0</div><div class="kpi-sub">All time</div></div>
+    <div class="kpi-card opens"><span class="kpi-icon">&#128065;</span><div class="kpi-label">Email Opens</div><div class="kpi-value" id="kpi-opens">0</div><div class="kpi-sub" id="kpi-open-rate">0% open rate</div></div>
+    <div class="kpi-card replies"><span class="kpi-icon">&#128172;</span><div class="kpi-label">Replies</div><div class="kpi-value" id="kpi-replies">0</div><div class="kpi-sub" id="kpi-reply-rate">0% reply rate</div></div>
+    <div class="kpi-card meetings"><span class="kpi-icon">&#128197;</span><div class="kpi-label">Meetings Booked</div><div class="kpi-value" id="kpi-meetings">0</div><div class="kpi-sub" id="kpi-meeting-rate">0% conversion</div></div>
   </div>
 
-  <!-- CHARTS -->
-  <div class="section-title">&#128200; Trends & Funnel</div>
+  <div class="section-title">&#128200; Trends &amp; Funnel</div>
   <div class="charts-grid">
-    <div class="chart-card">
-      <div class="chart-title">Weekly Email Volume</div>
-      <div class="chart-container"><canvas id="weeklyChart"></canvas></div>
-    </div>
+    <div class="chart-card"><div class="chart-title">Weekly Email Volume</div><div class="chart-container"><canvas id="weeklyChart"></canvas></div></div>
     <div class="chart-card">
       <div class="chart-title">Engagement Funnel</div>
-      <div id="funnel-steps">
-        <div class="funnel-step">
-          <div class="funnel-label"><span>&#128231; Sent</span><span id="f-sent">0</span></div>
-          <div class="funnel-bar"><div class="funnel-fill" id="ff-sent" style="width:100%;background:linear-gradient(90deg,#0530AD,#1192E8)"></div></div>
-        </div>
-        <div class="funnel-step">
-          <div class="funnel-label"><span>&#128065; Opened</span><span id="f-opened">0</span></div>
-          <div class="funnel-bar"><div class="funnel-fill" id="ff-opened" style="width:0%;background:linear-gradient(90deg,#6929C4,#8A3FFC)"></div></div>
-        </div>
-        <div class="funnel-step">
-          <div class="funnel-label"><span>&#128172; Replied</span><span id="f-replied">0</span></div>
-          <div class="funnel-bar"><div class="funnel-fill" id="ff-replied" style="width:0%;background:linear-gradient(90deg,#C45300,#FF832B)"></div></div>
-        </div>
-        <div class="funnel-step">
-          <div class="funnel-label"><span>&#128197; Meeting</span><span id="f-meeting">0</span></div>
-          <div class="funnel-bar"><div class="funnel-fill" id="ff-meeting" style="width:0%;background:linear-gradient(90deg,#0E6027,#24A148)"></div></div>
-        </div>
-      </div>
+      <div class="funnel-step"><div class="funnel-label"><span>&#128231; Sent</span><span id="f-sent">0</span></div><div class="funnel-bar"><div class="funnel-fill" id="ff-sent" style="width:100%;background:linear-gradient(90deg,#0530AD,#1192E8)"></div></div></div>
+      <div class="funnel-step"><div class="funnel-label"><span>&#128065; Opened</span><span id="f-opened">0</span></div><div class="funnel-bar"><div class="funnel-fill" id="ff-opened" style="width:0%;background:linear-gradient(90deg,#6929C4,#8A3FFC)"></div></div></div>
+      <div class="funnel-step"><div class="funnel-label"><span>&#128172; Replied</span><span id="f-replied">0</span></div><div class="funnel-bar"><div class="funnel-fill" id="ff-replied" style="width:0%;background:linear-gradient(90deg,#C45300,#FF832B)"></div></div></div>
+      <div class="funnel-step"><div class="funnel-label"><span>&#128197; Meeting</span><span id="f-meeting">0</span></div><div class="funnel-bar"><div class="funnel-fill" id="ff-meeting" style="width:0%;background:linear-gradient(90deg,#0E6027,#24A148)"></div></div></div>
     </div>
   </div>
 
-  <!-- PIPELINE TABLE -->
   <div class="section-title">&#127919; Pipeline Tracker</div>
   <div class="panel-box">
     <div class="pipeline-header">
-      <div style="font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.85)">Account Pipeline</div>
+      <div style="font-size:0.85rem;font-weight:600">Account Pipeline</div>
       <div class="filters">
         <button class="filter-btn active" onclick="filterTable('all',this)">All</button>
         <button class="filter-btn" onclick="filterTable('contacted',this)">Contacted</button>
-        <button class="filter-btn" onclick="filterTable('opened',this)">Opened &#128065;</button>
+        <button class="filter-btn" onclick="filterTable('opened',this)">Opened</button>
         <button class="filter-btn" onclick="filterTable('replied',this)">Replied</button>
         <button class="filter-btn" onclick="filterTable('meeting_booked',this)">Meeting Booked</button>
         <button class="filter-btn" onclick="filterTable('no_response',this)">No Response</button>
@@ -227,265 +161,156 @@ footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.
       </div>
     </div>
     <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Company</th><th>Industry</th><th>City</th><th>Product</th>
-            <th>Status</th><th>Email Opened</th><th>Last Contacted</th><th>Notes</th>
-          </tr>
-        </thead>
-        <tbody id="pipeline-body">
-          <tr><td colspan="8" class="empty-state">Loading pipeline data...</td></tr>
-        </tbody>
-      </table>
+      <table><thead><tr><th>Company</th><th>Industry</th><th>City</th><th>Product</th><th>Status</th><th>Opened</th><th>Last Contacted</th><th>Notes</th></tr></thead>
+      <tbody id="pipeline-body"><tr><td colspan="8" class="empty-state">Loading...</td></tr></tbody></table>
     </div>
   </div>
 
-  <!-- CAMPAIGN MODULE -->
   <div class="section-title">&#127981; Campaign Performance</div>
-  <div class="campaigns-section" id="campaigns-grid">
-    <div class="campaign-card">
-      <div class="empty-state" style="padding:20px">Loading campaigns...</div>
-    </div>
-  </div>
+  <div class="campaigns-section" id="campaigns-grid"><div class="campaign-card"><div class="empty-state">Loading campaigns...</div></div></div>
 
-  <!-- LINKEDIN MODULE -->
   <div class="section-title">&#128100; LinkedIn Activity</div>
   <div class="linkedin-section">
     <div class="li-tabs">
-      <button class="li-tab active" onclick="switchLiTab('connections',this)">&#10003;&nbsp; Connected (<span id="conn-count">0</span>)</button>
-      <button class="li-tab" onclick="switchLiTab('conversations',this)">&#128172;&nbsp; Conversations (<span id="conv-count">0</span>)</button>
+      <button class="li-tab active" onclick="switchTab('connections',this)">&#10003; Connected (<span id="conn-count">0</span>)</button>
+      <button class="li-tab" onclick="switchTab('conversations',this)">&#128172; Conversations (<span id="conv-count">0</span>)</button>
     </div>
-
     <div id="li-connections" class="li-panel active">
-      <div class="table-wrap" style="margin-top:16px">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th><th>Title</th><th>Company</th>
-              <th>Connected Date</th><th>Status</th><th>Notes</th>
-            </tr>
-          </thead>
-          <tbody id="li-conn-body">
-            <tr><td colspan="6" class="empty-state">No connections logged yet — run the LinkedIn agent to populate.</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Title</th><th>Company</th><th>Connected</th><th>Status</th><th>Notes</th></tr></thead>
+      <tbody id="li-conn-body"><tr><td colspan="6" class="empty-state">No connections yet.</td></tr></tbody></table></div>
     </div>
-
     <div id="li-conversations" class="li-panel">
-      <div id="li-conv-cards" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px">
-        <div class="empty-state" style="grid-column:1/-1">No conversations yet — connections you message will appear here.</div>
-      </div>
+      <div id="li-conv-cards"><div class="empty-state">No conversations yet.</div></div>
     </div>
   </div>
 </main>
-<footer>IBM Sales Hub &middot; Auto-refreshes every 5 minutes &middot; Bradley Milks, IBM Florida</footer>
-
+<footer>IBM Sales Hub &middot; Auto-refreshes every 5 min &middot; Bradley Milks, IBM Florida</footer>
 <script>
-const BASE = 'https://raw.githubusercontent.com/Bmilks11/IBM-Sales-Hub/main/data/';
-let weeklyChart, currentFilter='all';
+const BASE="https://raw.githubusercontent.com/Bmilks11/IBM-Sales-Hub/main/data/";
+let weeklyChart,currentFilter="all";
 
-function statusBadge(s){
-  const m={contacted:['contacted','Contacted'],opened:['opened','Opened'],replied:['replied','Replied'],meeting_booked:['meeting','Meeting Booked'],no_response:['no-response','No Response'],not_interested:['not-interested','Not Interested']};
-  const[cls,lbl]=m[s]||['no-response',s||'Unknown'];
-  return `<span class="badge badge-${cls}">${lbl}</span>`;
-}
-function openedIcon(r){
-  const o=r.opened===true||['opened','replied','meeting_booked'].includes(r.status);
-  return o?'<span style="color:#BE95FF;font-size:0.8rem">&#10003; Opened</span>':'<span style="color:rgba(255,255,255,0.2);font-size:0.78rem">—</span>';
-}
-function liStatusBadge(s){
-  const m={connected:['connected','Connected'],active:['active','Active'],warm:['warm','Warm'],meeting_set:['meeting','Meeting Set'],no_response:['no-response','No Response']};
-  const[cls,lbl]=m[s]||['no-response',s||'Connected'];
-  return `<span class="badge badge-${cls}">${lbl}</span>`;
-}
+function statusBadge(s){const m={contacted:["contacted","Contacted"],opened:["opened","Opened"],replied:["replied","Replied"],meeting_booked:["meeting","Meeting Booked"],no_response:["no-response","No Response"],not_interested:["not-interested","Not Interested"]};const[cls,lbl]=m[s]||["no-response",s||"Unknown"];return`<span class="badge badge-${cls}">${lbl}</span>`;}
+function liStatusBadge(s){const m={connected:["connected","Connected"],active:["active","Active"],warm:["warm","Warm"],meeting_set:["meeting","Meeting Set"]};const[cls,lbl]=m[s]||["connected","Connected"];return`<span class="badge badge-${cls}">${lbl}</span>`;}
+function openedIcon(r){const o=r.opened===true||["opened","replied","meeting_booked"].includes(r.status);return o?"<span style='color:#BE95FF'>&#10003; Opened</span>":"<span style='color:rgba(255,255,255,0.2)'>&#8212;</span>";}
 
 function renderPipeline(data){
-  const tbody=document.getElementById('pipeline-body');
-  const filtered=currentFilter==='all'?data:data.filter(r=>r.status===currentFilter);
-  if(!filtered.length){tbody.innerHTML='<tr><td colspan="8" class="empty-state">No accounts in this category.</td></tr>';return;}
-  tbody.innerHTML=filtered.map(r=>`<tr>
-    <td style="font-weight:600">${r.company||'—'}</td>
-    <td>${r.industry||'—'}</td>
-    <td>${r.city||'—'}</td>
-    <td style="color:#82CFFF">${r.product||'Planning Analytics'}</td>
-    <td>${statusBadge(r.status)}</td>
-    <td>${openedIcon(r)}</td>
-    <td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.last_contacted||'—'}</td>
-    <td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.notes||''}</td>
-  </tr>`).join('');
+  const tbody=document.getElementById("pipeline-body");
+  const filtered=currentFilter==="all"?data:data.filter(r=>r.status===currentFilter);
+  if(!filtered.length){tbody.innerHTML="<tr><td colspan='8' class='empty-state'>No accounts in this category.</td></tr>";return;}
+  tbody.innerHTML=filtered.map(r=>`<tr><td style="font-weight:600">${r.company||"—"}</td><td>${r.industry||"—"}</td><td>${r.city||"—"}</td><td style="color:#82CFFF">${r.product||"Planning Analytics"}</td><td>${statusBadge(r.status)}</td><td>${openedIcon(r)}</td><td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.last_contacted||"—"}</td><td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.notes||""}</td></tr>`).join("");
 }
 
-function filterTable(f,btn){
-  currentFilter=f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  if(window._pipelineData) renderPipeline(window._pipelineData);
-}
+function filterTable(f,btn){currentFilter=f;document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");if(window._pipelineData)renderPipeline(window._pipelineData);}
 
 function renderFunnel(total,opens,replies,meetings){
-  document.getElementById('f-sent').textContent=total;
-  document.getElementById('f-opened').textContent=opens;
-  document.getElementById('f-replied').textContent=replies;
-  document.getElementById('f-meeting').textContent=meetings;
+  document.getElementById("f-sent").textContent=total;
+  document.getElementById("f-opened").textContent=opens;
+  document.getElementById("f-replied").textContent=replies;
+  document.getElementById("f-meeting").textContent=meetings;
   const s=n=>total>0?Math.round((n/total)*100):0;
-  document.getElementById('ff-opened').style.width=s(opens)+'%';
-  document.getElementById('ff-replied').style.width=s(replies)+'%';
-  document.getElementById('ff-meeting').style.width=s(meetings)+'%';
+  document.getElementById("ff-opened").style.width=s(opens)+"%";
+  document.getElementById("ff-replied").style.width=s(replies)+"%";
+  document.getElementById("ff-meeting").style.width=s(meetings)+"%";
 }
 
 function renderWeekly(weekly){
   const labels=Object.keys(weekly).sort().slice(-8);
   const values=labels.map(k=>weekly[k]);
-  const colors=['rgba(5,48,173,0.8)','rgba(17,146,232,0.8)','rgba(138,63,252,0.8)','rgba(0,157,154,0.8)','rgba(255,131,43,0.8)','rgba(36,161,72,0.8)','rgba(238,83,150,0.8)','rgba(69,137,255,0.8)'];
-  const borders=['#0530AD','#1192E8','#8A3FFC','#009D9A','#FF832B','#24A148','#EE5396','#4589FF'];
-  const ctx=document.getElementById('weeklyChart').getContext('2d');
+  const colors=["rgba(5,48,173,0.8)","rgba(17,146,232,0.8)","rgba(138,63,252,0.8)","rgba(0,157,154,0.8)","rgba(255,131,43,0.8)","rgba(36,161,72,0.8)","rgba(238,83,150,0.8)","rgba(69,137,255,0.8)"];
+  const ctx=document.getElementById("weeklyChart").getContext("2d");
   if(weeklyChart)weeklyChart.destroy();
-  weeklyChart=new Chart(ctx,{type:'bar',data:{labels:labels.map(d=>{const[,m,day]=d.split('-');return`${m}/${day}`;}),datasets:[{label:'Emails Sent',data:values,backgroundColor:labels.map((_,i)=>colors[i%colors.length]),borderColor:labels.map((_,i)=>borders[i%borders.length]),borderWidth:2,borderRadius:6,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,0.06)'},ticks:{color:'rgba(255,255,255,0.45)',font:{size:11}}},x:{grid:{display:false},ticks:{color:'rgba(255,255,255,0.45)',font:{size:11}}}}}});
-}
-
-function renderCampaigns(data){
-  const grid=document.getElementById('campaigns-grid');
-  if(!data||!data.campaigns||!data.campaigns.length){grid.innerHTML='<div class="campaign-card"><div class="empty-state">No campaigns yet.</div></div>';return;}
-  grid.innerHTML=data.campaigns.map(c=>{
-    const pct=c.targets>0?Math.round((c.sent/c.targets)*100):0;
-    const openRate=c.sent>0?Math.round((c.opened/c.sent)*100):0;
-    const replyRate=c.sent>0?Math.round((c.replied/c.sent)*100):0;
-    const statusEl=c.status==='active'?`<span class="campaign-status-active">Active</span>`:`<span class="campaign-status-paused">Paused</span>`;
-    const emailsHtml=(c.emails||[]).map(e=>`
-      <div class="email-step">
-        <div class="email-step-header" onclick="toggleEmail(this)">
-          <div class="email-step-meta">
-            <span class="email-num">Email ${e.number}</span>
-            <span class="email-day">Day ${e.day}</span>
-            <span class="email-angle">${e.angle}</span>
-          </div>
-          <div class="email-subject">${e.subject}</div>
-          <span class="email-toggle">&#9660;</span>
-        </div>
-        <div class="email-body-wrap" style="display:none">
-          <pre class="email-body">${e.body}</pre>
-        </div>
-      </div>`).join('');
-    return`<div class="campaign-card">
-      <div class="campaign-header">
-        <div><div class="campaign-name">${c.name}</div><div class="campaign-product">&#128202; ${c.product} &middot; ${c.tier}</div></div>
-        ${statusEl}
-      </div>
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-bottom:14px;font-style:italic">${c.tagline||''}</div>
-      <div class="campaign-metrics">
-        <div class="camp-metric"><div class="camp-metric-val">${c.sent}</div><div class="camp-metric-label">Sent</div></div>
-        <div class="camp-metric"><div class="camp-metric-val">${openRate}%</div><div class="camp-metric-label">Open Rate</div></div>
-        <div class="camp-metric"><div class="camp-metric-val">${replyRate}%</div><div class="camp-metric-label">Reply Rate</div></div>
-        <div class="camp-metric"><div class="camp-metric-val">${c.meetings}</div><div class="camp-metric-label">Meetings</div></div>
-      </div>
-      <div class="campaign-progress">
-        <div class="progress-label"><span>Accounts Reached</span><span>${c.sent.toLocaleString()} / ${c.targets.toLocaleString()}</span></div>
-        <div class="progress-bar"><div class="progress-fill" style="width:${Math.min(pct,100)}%"></div></div>
-      </div>
-      <div class="email-sequence">
-        <div class="email-seq-title">&#9993; Email Sequence &mdash; ${(c.emails||[]).length} emails</div>
-        ${emailsHtml}
-      </div>
-    </div>`;
-  }).join('');
+  weeklyChart=new Chart(ctx,{type:"bar",data:{labels:labels.map(d=>{const[,m,day]=d.split("-");return`${m}/${day}`;}),datasets:[{data:values,backgroundColor:labels.map((_,i)=>colors[i%colors.length]),borderRadius:6,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:"rgba(255,255,255,0.06)"},ticks:{color:"rgba(255,255,255,0.45)",font:{size:11}}},x:{grid:{display:false},ticks:{color:"rgba(255,255,255,0.45)",font:{size:11}}}}}});
 }
 
 function toggleEmail(header){
   const wrap=header.nextElementSibling;
-  const arrow=header.querySelector('.email-toggle');
-  const open=wrap.style.display==='none';
-  wrap.style.display=open?'block':'none';
-  arrow.style.transform=open?'rotate(180deg)':'rotate(0deg)';
+  const arrow=header.querySelector(".email-arrow");
+  const open=wrap.style.display==="none";
+  wrap.style.display=open?"block":"none";
+  if(arrow)arrow.style.transform=open?"rotate(180deg)":"rotate(0)";
 }
 
-
+function renderCampaigns(data){
+  const grid=document.getElementById("campaigns-grid");
+  if(!data||!data.campaigns||!data.campaigns.length){grid.innerHTML="<div class='campaign-card'><div class='empty-state'>No campaigns.</div></div>";return;}
+  grid.innerHTML=data.campaigns.map(c=>{
+    const pct=c.targets>0?Math.min(Math.round((c.sent/c.targets)*100),100):0;
+    const openRate=c.sent>0?Math.round((c.opened/c.sent)*100):0;
+    const replyRate=c.sent>0?Math.round((c.replied/c.sent)*100):0;
+    const statusEl=c.status==="active"?`<span class="campaign-status-active">Active</span>`:`<span class="campaign-status-paused">Paused</span>`;
+    const emailsHtml=(c.emails||[]).map(e=>`<div class="email-step">
+      <div class="email-step-header" onclick="toggleEmail(this)">
+        <span class="email-num">Email ${e.number}</span>
+        <span class="email-day">Day ${e.day}</span>
+        <span class="email-angle">${e.angle}</span>
+        <span class="email-subject">${e.subject}</span>
+        <span class="email-arrow">&#9660;</span>
+      </div>
+      <div class="email-body-wrap"><pre class="email-body">${e.body}</pre></div>
+    </div>`).join("");
+    return`<div class="campaign-card">
+      <div class="campaign-header"><div><div class="campaign-name">${c.name}</div><div class="campaign-product">&#128202; ${c.product} &middot; ${c.tier}</div></div>${statusEl}</div>
+      <div class="campaign-tagline">${c.tagline||""}</div>
+      <div class="camp-metrics">
+        <div class="camp-metric"><div class="camp-metric-val">${c.sent.toLocaleString()}</div><div class="camp-metric-label">Sent</div></div>
+        <div class="camp-metric"><div class="camp-metric-val">${openRate}%</div><div class="camp-metric-label">Open Rate</div></div>
+        <div class="camp-metric"><div class="camp-metric-val">${replyRate}%</div><div class="camp-metric-label">Reply Rate</div></div>
+        <div class="camp-metric"><div class="camp-metric-val">${c.meetings}</div><div class="camp-metric-label">Meetings</div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Accounts Reached</span><span>${c.sent.toLocaleString()} / ${c.targets.toLocaleString()}</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+      </div>
+      <div class="email-sequence"><div class="email-seq-title">&#9993; Email Sequence &mdash; ${(c.emails||[]).length} emails &mdash; click to expand</div>${emailsHtml}</div>
+    </div>`;
+  }).join("");
+}
 
 function renderConnections(data){
-  const tbody=document.getElementById('li-conn-body');
-  document.getElementById('conn-count').textContent=data.length;
-  if(!data.length){tbody.innerHTML='<tr><td colspan="6" class="empty-state">No connections yet.</td></tr>';return;}
-  tbody.innerHTML=data.map(r=>`<tr>
-    <td style="font-weight:600">${r.name||'—'}</td>
-    <td style="color:rgba(255,255,255,0.6)">${r.title||'—'}</td>
-    <td style="color:#82CFFF">${r.company||'—'}</td>
-    <td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.connected_date||'—'}</td>
-    <td>${liStatusBadge(r.status||'connected')}</td>
-    <td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.notes||''}</td>
-  </tr>`).join('');
+  document.getElementById("conn-count").textContent=data.length;
+  const tbody=document.getElementById("li-conn-body");
+  if(!data.length){tbody.innerHTML="<tr><td colspan='6' class='empty-state'>No connections yet.</td></tr>";return;}
+  tbody.innerHTML=data.map(r=>`<tr><td style="font-weight:600">${r.name||"—"}</td><td>${r.title||"—"}</td><td style="color:#82CFFF">${r.company||"—"}</td><td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.connected_date||"—"}</td><td>${liStatusBadge(r.status||"connected")}</td><td style="color:rgba(255,255,255,0.5);font-size:0.75rem">${r.notes||""}</td></tr>`).join("");
 }
 
 function renderConversations(data){
-  const container=document.getElementById('li-conv-cards');
-  document.getElementById('conv-count').textContent=data.length;
-  if(!data.length){container.innerHTML='<div class="empty-state" style="grid-column:1/-1">No conversations yet.</div>';return;}
-  container.innerHTML=data.map(c=>`
-    <div class="conv-card">
-      <div class="conv-name">${c.name||'Unknown'}</div>
-      <div class="conv-meta">${c.title||''} ${c.company?'· '+c.company:''}</div>
-      ${c.last_message_preview?`<div class="conv-preview">${c.last_message_preview}</div>`:''}
-      <div class="conv-footer">
-        ${liStatusBadge(c.status||'active')}
-        <span class="conv-date">${c.last_message_date||''}</span>
-      </div>
-    </div>`).join('');
+  document.getElementById("conv-count").textContent=data.length;
+  const c=document.getElementById("li-conv-cards");
+  if(!data.length){c.innerHTML="<div class='empty-state'>No conversations yet.</div>";return;}
+  c.innerHTML=data.map(r=>`<div class="conv-card"><div class="conv-name">${r.name||"Unknown"}</div><div class="conv-meta">${r.title||""} ${r.company?"&middot; "+r.company:""}</div>${r.last_message_preview?`<div class="conv-preview">${r.last_message_preview}</div>`:""}<div class="conv-footer">${liStatusBadge(r.status||"active")}<span class="conv-date">${r.last_message_date||""}</span></div></div>`).join("");
 }
 
-function switchLiTab(tab, btn){
-  document.querySelectorAll('.li-tab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.li-panel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('li-'+tab).classList.add('active');
-}
+function switchTab(tab,btn){document.querySelectorAll(".li-tab").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".li-panel").forEach(p=>p.classList.remove("active"));btn.classList.add("active");document.getElementById("li-"+tab).classList.add("active");}
 
 async function loadData(){
   try{
     const[kpiRes,pipeRes,campRes,connRes,convRes]=await Promise.all([
-      fetch(BASE+'kpi_log.json?t='+Date.now()),
-      fetch(BASE+'pipeline.json?t='+Date.now()),
-      fetch(BASE+'campaigns.json?t='+Date.now()),
-      fetch(BASE+'linkedin_connections.json?t='+Date.now()),
-      fetch(BASE+'linkedin_conversations.json?t='+Date.now())
+      fetch(BASE+"kpi_log.json?t="+Date.now()),fetch(BASE+"pipeline.json?t="+Date.now()),
+      fetch(BASE+"campaigns.json?t="+Date.now()),fetch(BASE+"linkedin_connections.json?t="+Date.now()),
+      fetch(BASE+"linkedin_conversations.json?t="+Date.now())
     ]);
-    const kpi=await kpiRes.json();
-    const pipeline=await pipeRes.json();
-    const campaigns=await campRes.json();
-    const connections=await connRes.json();
-    const conversations=await convRes.json();
+    const kpi=await kpiRes.json(),pipeline=await pipeRes.json(),campaigns=await campRes.json(),connections=await connRes.json(),conversations=await convRes.json();
     window._pipelineData=pipeline;
-
-    const sent=kpi.totals?.sent||0;
-    const replies=kpi.totals?.replied||0;
-    const meetings=kpi.totals?.meetings_booked||0;
-    const opens=kpi.totals?.opened||pipeline.filter(r=>r.opened||['opened','replied','meeting_booked'].includes(r.status)).length;
-    const sentToday=kpi.today?.sent||0;
-
-    document.getElementById('kpi-sent-today').textContent=sentToday;
-    document.getElementById('kpi-cap-pct').textContent=sentToday+' / 200';
-    document.getElementById('kpi-total-sent').textContent=sent;
-    document.getElementById('kpi-opens').textContent=opens;
-    document.getElementById('kpi-open-rate').textContent=sent>0?Math.round((opens/sent)*100)+'% open rate':'0% open rate';
-    document.getElementById('kpi-replies').textContent=replies;
-    document.getElementById('kpi-reply-rate').textContent=sent>0?Math.round((replies/sent)*100)+'% reply rate':'0% reply rate';
-    document.getElementById('kpi-meetings').textContent=meetings;
-    document.getElementById('kpi-meeting-rate').textContent=replies>0?Math.round((meetings/replies)*100)+'% of replies':'0% conversion';
-    document.getElementById('last-updated').textContent='Updated: '+(kpi.last_updated||new Date().toLocaleString());
-
+    const sent=kpi.totals?.sent||0,replies=kpi.totals?.replied||0,meetings=kpi.totals?.meetings_booked||0,opens=kpi.totals?.opened||pipeline.filter(r=>r.opened||["opened","replied","meeting_booked"].includes(r.status)).length,sentToday=kpi.today?.sent||0;
+    document.getElementById("kpi-sent-today").textContent=sentToday;
+    document.getElementById("kpi-cap").textContent=sentToday+" / 200";
+    document.getElementById("kpi-total-sent").textContent=sent;
+    document.getElementById("kpi-opens").textContent=opens;
+    document.getElementById("kpi-open-rate").textContent=sent>0?Math.round((opens/sent)*100)+"% open rate":"0% open rate";
+    document.getElementById("kpi-replies").textContent=replies;
+    document.getElementById("kpi-reply-rate").textContent=sent>0?Math.round((replies/sent)*100)+"% reply rate":"0% reply rate";
+    document.getElementById("kpi-meetings").textContent=meetings;
+    document.getElementById("kpi-meeting-rate").textContent=replies>0?Math.round((meetings/replies)*100)+"% of replies":"0% conversion";
+    document.getElementById("last-updated").textContent="Updated: "+(kpi.last_updated||new Date().toLocaleString());
     renderFunnel(sent,opens,replies,meetings);
     if(kpi.weekly)renderWeekly(kpi.weekly);
     renderPipeline(pipeline);
     renderCampaigns(campaigns);
     renderConnections(connections);
     renderConversations(conversations);
-  }catch(e){
-    document.getElementById('last-updated').textContent='Error loading data';
-    console.error(e);
-  }
+  }catch(e){document.getElementById("last-updated").textContent="Error loading data";console.error(e);}
 }
-
-loadData();
-setInterval(loadData,300000);
+loadData();setInterval(loadData,300000);
 </script>
 </body>
 </html>
