@@ -2,8 +2,8 @@
   "campaigns": [
     {
       "id": "pa_tier2_q2_2026",
-      "name": "Planning Analytics — New Whitespace Florida",
-      "product": "Planning Analytics",
+      "name": "Planning Analytics \u2014 New Whitespace Florida",
+      "product": "IBM Planning Analytics with AI",
       "tier": "Tier 2",
       "status": "active",
       "start_date": "2026-04-21",
@@ -12,17 +12,25 @@
       "opened": 0,
       "replied": 0,
       "meetings": 0,
+      "tagline": "Move from reactive planning to proactive, insight-driven decision-making.",
+      "value_props": [
+        "Run unlimited what-if scenarios in real time",
+        "Empower business users to forecast without data science expertise",
+        "Interact with planning data using natural language",
+        "AI agents monitor, analyze, and recommend actions continuously",
+        "Reduce manual effort through AI-driven automation"
+      ],
       "sequence": [
-        "Day 1: AI Forecasting — reduce forecast cycle time",
-        "Day 5: Generative AI Planning — natural language modeling",
-        "Day 10: Agentic AI — autonomous planning workflows",
-        "Day 15: Final touch — PA ROI proof point"
+        "Day 1 \u2014 AI Forecasting: Highly accurate forecasts using advanced ML. Instantly update financial models as conditions change.",
+        "Day 5 \u2014 Generative AI Planning: Ask questions, get instant insights. Auto-generate reports and planning inputs in plain language.",
+        "Day 10 \u2014 Agentic AI: Move beyond insights. AI agents automate workflows, trigger alerts, enable closed-loop planning.",
+        "Day 15 \u2014 Close: Improve forecast accuracy, increase planning participation, make faster data-driven decisions."
       ]
     },
     {
       "id": "pa_tier3_q2_2026",
-      "name": "Planning Analytics — Expansion (Existing IBM)",
-      "product": "Planning Analytics",
+      "name": "Planning Analytics \u2014 Expansion (Existing IBM)",
+      "product": "IBM Planning Analytics with AI",
       "tier": "Tier 3",
       "status": "active",
       "start_date": "2026-04-21",
@@ -31,10 +39,18 @@
       "opened": 0,
       "replied": 0,
       "meetings": 0,
+      "tagline": "Your team is already on Planning Analytics \u2014 here's what AI unlocks next.",
+      "value_props": [
+        "Adaptive learning continuously improves forecast accuracy",
+        "Incorporate internal and external drivers automatically",
+        "Broader planning participation across finance, ops, and business teams",
+        "Conversational AI simplifies complex analysis for all users",
+        "Closed-loop planning with ongoing AI optimization"
+      ],
       "sequence": [
-        "Day 1: Expand PA footprint — new AI capabilities",
-        "Day 5: Generative AI Planning upgrade pitch",
-        "Day 10: Agentic AI — what is your team missing?"
+        "Day 1 \u2014 Upgrade angle: New AI capabilities your team isn't using yet. What-if scenarios + adaptive learning in real time.",
+        "Day 5 \u2014 Gen AI Planning: Natural language planning \u2014 ask questions, auto-generate narratives. Broader team participation.",
+        "Day 10 \u2014 Agentic AI: AI agents that monitor and act. Automate repetitive workflows, proactive alerts, closed-loop optimization."
       ]
     }
   ]
