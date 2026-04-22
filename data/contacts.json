@@ -1,0 +1,452 @@
+[
+  {
+    "company": "AUTONATION INC",
+    "title": "CFO",
+    "first": "Megan",
+    "last": "Bruckner",
+    "email": "megan.bruckner@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/megan-bruckner",
+    "cadence_step": 0
+  },
+  {
+    "company": "AUTONATION INC",
+    "title": "CRO",
+    "first": "Christoph",
+    "last": "Esposito",
+    "email": "christoph.esposito@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/christoph-esposito-9b8b8b1b",
+    "cadence_step": 0
+  },
+  {
+    "company": "AUTONATION INC",
+    "title": "Director of Finance",
+    "first": "Christoph",
+    "last": "Espenlaub",
+    "email": "christoph.espenlaub@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/christoph-espenlaub/",
+    "cadence_step": 0
+  },
+  {
+    "company": "AUTONATION INC",
+    "title": "Director of Marketing",
+    "first": "Dominique",
+    "last": "Thornton",
+    "email": "dominique.thornton@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/dominiquethornton/",
+    "cadence_step": 0
+  },
+  {
+    "company": "AUTONATION INC",
+    "title": "CHRO",
+    "first": "Christy",
+    "last": "Simons",
+    "email": "christy.simons@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/christy-simons-autonation/",
+    "cadence_step": 0
+  },
+  {
+    "company": "AUTONATION INC",
+    "title": "Chief People Officer",
+    "first": "Cheryl",
+    "last": "Miller",
+    "email": "cheryl.miller@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/cherylmiller",
+    "cadence_step": 0
+  },
+  {
+    "company": "AUTONATION INC",
+    "title": "VP of HR",
+    "first": "Christy",
+    "last": "Simlick",
+    "email": "christy.simlick@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/christy-simlick",
+    "cadence_step": 0
+  },
+  {
+    "company": "AUTONATION INC",
+    "title": "VP Human Resources",
+    "first": "Guillermo",
+    "last": "Celada",
+    "email": "guillermo.celada@autonation.com",
+    "linkedin": "https://www.linkedin.com/in/guillermocelada",
+    "cadence_step": 0
+  },
+  {
+    "company": "KFORCE INC.",
+    "title": "CFO",
+    "first": "David",
+    "last": "Dunkel",
+    "email": "david.dunkel@kforce.com",
+    "linkedin": "https://www.linkedin.com/in/daviddunkel/",
+    "cadence_step": 0
+  },
+  {
+    "company": "KFORCE INC.",
+    "title": "CRO",
+    "first": "Eric",
+    "last": "Chappell",
+    "email": "eric.chappell@kforce.com",
+    "linkedin": "https://www.linkedin.com/in/erichappell",
+    "cadence_step": 0
+  },
+  {
+    "company": "KFORCE INC.",
+    "title": "Director of Finance",
+    "first": "David",
+    "last": "Sandberg",
+    "email": "david.sandberg@kforce.com",
+    "linkedin": "https://www.linkedin.com/in/davidsandberg",
+    "cadence_step": 0
+  },
+  {
+    "company": "CROSS COUNTRY HEALTHCARE INC",
+    "title": "CFO",
+    "first": "William",
+    "last": "Burns",
+    "email": "william.burns@crosscountryhealthcare.com",
+    "linkedin": "https://www.linkedin.com/in/william-burns-cfo/",
+    "cadence_step": 0
+  },
+  {
+    "company": "TECO-ENERGY INC",
+    "title": "CFO",
+    "first": "Amos",
+    "last": "Ricks",
+    "email": "aricks@tecoenergy.com",
+    "linkedin": "",
+    "cadence_step": 0
+  },
+  {
+    "company": "SUPERIOR GROUP OF COMPANIES, INC.",
+    "title": "CFO",
+    "first": "Jay",
+    "last": "Stitelman",
+    "email": "jay.stitelman@superiorgroup.com",
+    "linkedin": "https://www.linkedin.com/in/jay-stitelman/",
+    "cadence_step": 0
+  },
+  {
+    "company": "SPIRIT AIRLINES INC",
+    "title": "CFO",
+    "first": "Scott",
+    "last": "Eagerton",
+    "email": "scott.eagerton@spirit.com",
+    "linkedin": "",
+    "cadence_step": 0
+  },
+  {
+    "company": "NEOGENOMICS INC",
+    "title": "CFO",
+    "first": "George",
+    "last": "Migliaccio",
+    "email": "george.migliaccio@neogenomics.com",
+    "linkedin": "https://www.linkedin.com/in/george-migliaccio",
+    "cadence_step": 0
+  },
+  {
+    "company": "NEOGENOMICS INC",
+    "title": "CHRO",
+    "first": "Heather",
+    "last": "Kwan",
+    "email": "heather.kwan@neogenomics.com",
+    "linkedin": "https://www.linkedin.com/in/heatherkwan",
+    "cadence_step": 0
+  },
+  {
+    "company": "HOLTEC INTERNATIONAL",
+    "title": "CFO",
+    "first": "Aris",
+    "last": "Candris",
+    "email": "aris.candris@holtecinternational.com",
+    "linkedin": "https://www.linkedin.com/in/aris-candris",
+    "cadence_step": 0
+  },
+  {
+    "company": "LANDSTAR RANGER INC",
+    "title": "CFO",
+    "first": "James",
+    "last": "Gvermain",
+    "email": "james.germain@landstar.com",
+    "linkedin": "",
+    "cadence_step": 0
+  },
+  {
+    "company": "SEAWORLD PARKS & ENTERTAINMENT INC",
+    "title": "CFO",
+    "first": "Marc",
+    "last": "Swanson",
+    "email": "marc.swanson@seaworld.com",
+    "linkedin": "https://www.linkedin.com/in/marc-swanson",
+    "cadence_step": 0
+  },
+  {
+    "company": "SEAWORLD PARKS & ENTERTAINMENT INC",
+    "title": "Chief People Officer",
+    "first": "Suzanne",
+    "last": "Stanislaw",
+    "email": "suzanne.stanislaw@seaworldparks.com",
+    "linkedin": "https://www.linkedin.com/in/suzanne-stanislaw",
+    "cadence_step": 0
+  },
+  {
+    "company": "THE TALBOTS INC",
+    "title": "CFO",
+    "first": "Alyssa",
+    "last": "Steele",
+    "email": "alyssa.steele@talbots.com",
+    "linkedin": "https://www.linkedin.com/in/alyssa-steele-9b0b0b0/",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX CORPORATION",
+    "title": "CFO",
+    "first": "Marshall",
+    "last": "Warkentin",
+    "email": "marshall.warkentin@tdsynnex.com",
+    "linkedin": "https://www.linkedin.com/in/marshall-warkentin/",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX CORPORATION",
+    "title": "Director of Finance",
+    "first": "Marshall",
+    "last": "Mohr",
+    "email": "marshall.mohr@tdsynnex.com",
+    "linkedin": "https://www.linkedin.com/in/marshall-mohr",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX CORPORATION",
+    "title": "CHRO",
+    "first": "Jacqueline",
+    "last": "Kelley",
+    "email": "jacqueline.kelley@tdsynnex.com",
+    "linkedin": "https://www.linkedin.com/in/jacqueline-kelley",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX CORPORATION",
+    "title": "Chief People Officer",
+    "first": "Wendy",
+    "last": "Pfeiffer",
+    "email": "wendy.pfeiffer@tdsynnex.com",
+    "linkedin": "https://www.linkedin.com/in/wendypfeiffer",
+    "cadence_step": 0
+  },
+  {
+    "company": "NATIONAL BEVERAGE CO",
+    "title": "CFO",
+    "first": "Robert",
+    "last": "Britton",
+    "email": "robert.britton@nationalbeverage.com",
+    "linkedin": "https://www.linkedin.com/in/robert-britton-cfo",
+    "cadence_step": 0
+  },
+  {
+    "company": "NATIONAL BEVERAGE CO",
+    "title": "CRO",
+    "first": "Eric",
+    "last": "Ebacher",
+    "email": "eric.ebacher@nationalbeverage.com",
+    "linkedin": "https://www.linkedin.com/in/ericebacher",
+    "cadence_step": 0
+  },
+  {
+    "company": "Brambles",
+    "title": "CFO",
+    "first": "Michael",
+    "last": "Casamento",
+    "email": "michael.casamento@chep.com",
+    "linkedin": "https://www.linkedin.com/in/michael-casamento/",
+    "cadence_step": 0
+  },
+  {
+    "company": "Fanatics",
+    "title": "CFO",
+    "first": "Ryan",
+    "last": "Spoon",
+    "email": "ryan.spoon@fanaticsinc.com",
+    "linkedin": "https://www.linkedin.com/in/ryanspoon/",
+    "cadence_step": 0
+  },
+  {
+    "company": "Henkel",
+    "title": "CFO",
+    "first": "Carsten",
+    "last": "Knobel",
+    "email": "carsten.knobel@henkel.com",
+    "linkedin": "https://www.linkedin.com/in/carsten-knobel-5b8a8b1b/",
+    "cadence_step": 0
+  },
+  {
+    "company": "Milliman",
+    "title": "CFO",
+    "first": "Jeff",
+    "last": "Teig",
+    "email": "jeff.teig@milliman.com",
+    "linkedin": "https://www.linkedin.com/in/jeff-teig",
+    "cadence_step": 0
+  },
+  {
+    "company": "Opella",
+    "title": "CFO",
+    "first": "J\u00e9r\u00f4me",
+    "last": "Contamine",
+    "email": "jerome.contamine@opella.com",
+    "linkedin": "https://www.linkedin.com/in/jerome-contamine/",
+    "cadence_step": 0
+  },
+  {
+    "company": "Tata Consultancy Services",
+    "title": "CFO",
+    "first": "Ramakrishnan",
+    "last": "Iyer",
+    "email": "ramakrishnan.iyer@tcs.com",
+    "linkedin": "https://www.linkedin.com/in/ramakrishnan-iyer-50b8a7a/",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX",
+    "title": "CFO",
+    "first": "Marshall",
+    "last": "Witt",
+    "email": "marshall.witt@synnex.com",
+    "linkedin": "https://www.linkedin.com/in/marshall-witt-b8b5b2a",
+    "cadence_step": 0
+  },
+  {
+    "company": "Teradata",
+    "title": "CFO",
+    "first": "Mark",
+    "last": "Culhane",
+    "email": "mark.culhane@teradata.com",
+    "linkedin": "https://www.linkedin.com/in/mark-culhane-5b8b5b1b/",
+    "cadence_step": 0
+  },
+  {
+    "company": "The Adecco Group",
+    "title": "CFO",
+    "first": "Jakub",
+    "last": "Korselt",
+    "email": "jakub.korselt@adeccogroup.com",
+    "linkedin": "https://www.linkedin.com/in/jakub-korselt/",
+    "cadence_step": 0
+  },
+  {
+    "company": "Henkel",
+    "title": "CRO",
+    "first": "Sylvie",
+    "last": "Nicol",
+    "email": "sylvie.nicol@henkel.com",
+    "linkedin": "https://www.linkedin.com/in/sylvie-nicol-58a9b614",
+    "cadence_step": 0
+  },
+  {
+    "company": "Tata Consultancy Services",
+    "title": "CRO",
+    "first": "Rajesh",
+    "last": "Gopinathan",
+    "email": "rajesh.gopinathan@tcs.com",
+    "linkedin": "https://www.linkedin.com/in/rajesh-gopinathan-0b89b91/",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX",
+    "title": "CRO",
+    "first": "Christopher",
+    "last": "Wolfe",
+    "email": "christopher.wolfe@synnex.com",
+    "linkedin": "https://www.linkedin.com/in/christopher-wolfe-5b8b8b1a",
+    "cadence_step": 0
+  },
+  {
+    "company": "Teradata",
+    "title": "CRO",
+    "first": "Stephen",
+    "last": "McBride",
+    "email": "stephen.mcbride@teradata.com",
+    "linkedin": "https://www.linkedin.com/in/stephenmcbride",
+    "cadence_step": 0
+  },
+  {
+    "company": "The Adecco Group",
+    "title": "CRO",
+    "first": "Silke",
+    "last": "Br\u00f6dner",
+    "email": "silke.brodner@adeccogroup.com",
+    "linkedin": "https://www.linkedin.com/in/silke-brodner/",
+    "cadence_step": 0
+  },
+  {
+    "company": "Tata Consultancy Services",
+    "title": "Director of Finance",
+    "first": "Ramakrishnan",
+    "last": "Krishnamachari",
+    "email": "ramakrishnan.krishnamachari@tcs.com",
+    "linkedin": "https://www.linkedin.com/in/ramakrishnan-krishnamachari",
+    "cadence_step": 0
+  },
+  {
+    "company": "The Adecco Group",
+    "title": "Director of Finance",
+    "first": "Kris",
+    "last": "Meyers",
+    "email": "kris.meyers@adeccogroup.com",
+    "linkedin": "https://www.linkedin.com/in/krismeyers",
+    "cadence_step": 0
+  },
+  {
+    "company": "Henkel",
+    "title": "CHRO",
+    "first": "Kathrin",
+    "last": "Menges",
+    "email": "kathrin.menges@henkel.com",
+    "linkedin": "https://www.linkedin.com/in/kathrin-menges",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX",
+    "title": "CHRO",
+    "first": "Wendy",
+    "last": "Pfeiffer",
+    "email": "wendy.pfeiffer@tdsynnex.com",
+    "linkedin": "https://www.linkedin.com/in/wendypfeiffer",
+    "cadence_step": 0
+  },
+  {
+    "company": "TD SYNNEX",
+    "title": "Chief People Officer",
+    "first": "Ren\u00e9e",
+    "last": "Weibel",
+    "email": "renee.weibel@tdsynnex.com",
+    "linkedin": "https://www.linkedin.com/in/reneeweibel",
+    "cadence_step": 0
+  },
+  {
+    "company": "The Adecco Group",
+    "title": "CHRO",
+    "first": "Evert",
+    "last": "Henkes",
+    "email": "evert.henkes@adecco.com",
+    "linkedin": "https://www.linkedin.com/in/evert-henkes/",
+    "cadence_step": 0
+  },
+  {
+    "company": "The Adecco Group",
+    "title": "Chief People Officer",
+    "first": "Jacquemin",
+    "last": "Montredon",
+    "email": "jacquemin.montredon@adeccogroup.com",
+    "linkedin": "https://www.linkedin.com/in/jacquemin-montredon/",
+    "cadence_step": 0
+  },
+  {
+    "company": "Tata Consultancy Services",
+    "title": "VP of HR",
+    "first": "Milind",
+    "last": "Lakkad",
+    "email": "milind.lakkad@tcs.com",
+    "linkedin": "",
+    "cadence_step": 0
+  }
+]
