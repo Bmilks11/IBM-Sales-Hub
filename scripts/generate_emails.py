@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Generate personalized IBM outreach emails using the IBM Sales Brain.
-Reads today_queue.json, writes batch JSON for send_via_mail.py.
+Generate personalized IBM Planning Analytics outreach emails.
+Planning Analytics is the primary product for all Tier 2 outreach.
+Other products only used if account.recommended_product explicitly set.
 """
 
 import json
@@ -13,45 +14,81 @@ BASE = Path(__file__).parent.parent
 
 SIGN_OFF = "Bradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
 
+# Planning Analytics is PRIMARY — all other products are secondary
+PRIMARY_PRODUCT = "Planning Analytics"
+
 PRODUCT_PLAYS = {
     "Planning Analytics": {
-        "competitors": ["Anaplan", "OneStream", "Workday Adaptive", "Oracle EPM"],
-        "pain": "manual planning cycles and spreadsheet sprawl",
-        "play": "faster FP&A cycles and real-time scenario modeling"
+        "competitors": ["Anaplan", "OneStream", "Workday Adaptive", "Oracle EPM", "Excel", "Vena"],
+        "angles": [
+            "manual planning cycles and spreadsheet-driven forecasting",
+            "slow scenario modeling and close cycles",
+            "finance teams spending more time building models than making decisions",
+            "planning cycles that can't keep pace with business change"
+        ],
+        "play": "AI-powered planning — real-time scenarios, automated forecasting, generative AI for FP&A",
+        "titles": ["CFO", "VP Finance", "FP&A Director", "Head of Planning", "Controller", "VP Strategy"]
     },
     "watsonx.data": {
         "competitors": ["Snowflake", "Databricks", "AWS Redshift"],
-        "pain": "rising data warehouse costs and siloed data",
-        "play": "cutting cloud data costs while unifying data across environments"
+        "angles": ["fragmented data infrastructure and warehouse sprawl"],
+        "play": "unified open lakehouse — reduce warehouse dependency, accelerate AI-ready data",
+        "titles": ["CDO", "CTO", "VP Engineering", "Head of Data"]
     },
     "watsonx.data Integration": {
         "competitors": ["MuleSoft", "Informatica", "Talend", "Azure Data Factory"],
-        "pain": "fragmented pipelines and high integration licensing costs",
-        "play": "simplifying data pipelines and reducing integration spend"
+        "angles": ["fragmented pipelines and high integration complexity"],
+        "play": "simplified data pipelines — reduce integration sprawl, build AI-ready data flows",
+        "titles": ["CTO", "VP Engineering", "Head of Data Engineering"]
     },
     "Guardium": {
         "competitors": ["Varonis", "Imperva", "Microsoft Purview"],
-        "pain": "compliance gaps and uncontrolled data access",
-        "play": "achieving audit readiness and governing data access at scale"
+        "angles": ["compliance gaps and uncontrolled data access"],
+        "play": "data security and audit readiness — govern access, automate compliance reporting",
+        "titles": ["CISO", "VP IT", "Compliance Officer", "Data Governance Lead"]
     }
 }
 
-def generate_email(prospect):
+OPENERS = [
+    "Noticed {company} is running {competitor} for {angle}.",
+    "Most {title}s I talk to in {industry} hit the same wall around {angle}.",
+    "Saw {company} is growing the finance team — curious if {angle} has kept pace.",
+    "Teams running {competitor} at {company}'s scale usually start asking about {angle}.",
+    "Curious how {company} is handling {angle} as the business scales."
+]
+
+def generate_email(prospect, index=0):
     company = prospect.get("company", "")
     contact = prospect.get("contact_first_name", "")
     to_email = prospect.get("email", "")
     tech = prospect.get("tech", "")
     industry = prospect.get("industry", "your industry")
-    product = prospect.get("recommended_product", "Planning Analytics")
-    play = PRODUCT_PLAYS.get(product, PRODUCT_PLAYS["Planning Analytics"])
+
+    # Planning Analytics is default unless explicitly overridden
+    product = prospect.get("recommended_product", PRIMARY_PRODUCT)
+    if product not in PRODUCT_PLAYS:
+        product = PRIMARY_PRODUCT
+
+    play = PRODUCT_PLAYS[product]
     competitor = tech if tech in play["competitors"] else play["competitors"][0]
+    angle = play["angles"][index % len(play["angles"])]
+    title = play["titles"][0]
+
+    opener_template = OPENERS[index % len(OPENERS)]
+    opener = opener_template.format(
+        company=company,
+        competitor=competitor,
+        angle=angle,
+        industry=industry,
+        title=title
+    )
 
     subject = f"Quick thought on {company}"[:39]
 
     body = (
-        f"Noticed {company} is running {competitor} for {play['pain'].split(' and ')[0]}.\n\n"
-        f"Teams I work with in {industry} are moving toward {play['play']} — "
-        f"usually cuts time and cost faster than most expect.\n\n"
+        f"{opener}\n\n"
+        f"Finance teams in {industry} I work with are moving toward {play['play']} — "
+        f"usually changes how quickly they can respond to what the business is asking for.\n\n"
         f"Worth 10 minutes to see if it maps to what you're working through?\n\n"
         f"{SIGN_OFF}"
     )
@@ -77,11 +114,11 @@ def main():
         return
 
     queue = json.loads(queue_file.read_text())
-    batch = [generate_email(p) for p in queue if p.get("email")]
+    batch = [generate_email(p, i) for i, p in enumerate(queue) if p.get("email")]
 
     out = BASE / args.output
     out.write_text(json.dumps(batch, indent=2))
-    print(f"Generated {len(batch)} emails -> {args.output}")
+    print(f"Generated {len(batch)} Planning Analytics emails -> {args.output}")
 
 if __name__ == "__main__":
     main()
