@@ -19,28 +19,28 @@
           "day": 1,
           "angle": "AI Forecasting",
           "subject": "Your forecast cycle \u2014 quick question",
-          "body": "Hi [First Name],\n\nMost finance teams I speak with are still manually rebuilding forecasts every time conditions shift.\n\nIBM Planning Analytics runs unlimited what-if scenarios in real time and updates financial models automatically as inputs change \u2014 no data science team required.\n\nWorth 20 minutes to see how it applies to [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "body": "Hi [First Name],\n\nMost finance teams I speak with are still manually rebuilding forecasts every time conditions shift.\n\nIBM Planning Analytics runs on an in-memory database \u2014 real-time what-if scenarios and instant model updates as inputs change. No waiting, no data science team required.\n\nWorth 20 minutes to see how it applies to [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
         },
         {
           "number": 2,
           "day": 5,
           "angle": "Generative AI Planning",
-          "subject": "Ask your plan a question",
-          "body": "Hi [First Name],\n\nFollowing up from last week.\n\nPlanning Analytics now lets your team interact with planning data in plain language \u2014 ask a question, get instant insights, auto-generate reports and narratives.\n\nFinance, ops, and business teams all working from one model. No analyst bottleneck.\n\nOpen to a quick look?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "One model. Every source. Plain language.",
+          "body": "Hi [First Name],\n\nFollowing up from last week.\n\nPlanning Analytics integrates data from spreadsheets, Oracle, SAP, and other EPM systems into one model \u2014 then lets your team ask questions in plain language and get instant answers, reports, and narratives.\n\nNo analyst bottleneck. Finance, ops, and business teams all working from the same data.\n\nOpen to a quick look?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
         },
         {
           "number": 3,
           "day": 10,
           "angle": "Agentic AI",
-          "subject": "Planning that runs itself",
-          "body": "Hi [First Name],\n\nOne more thought on Planning Analytics.\n\nThe newest capability: AI agents that continuously monitor your plan, flag variances, and trigger alerts \u2014 without anyone pulling a report.\n\nClosed-loop planning. Your team focuses on decisions, not data prep.\n\n15 minutes to see it?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "AI that plans \u2014 without losing control",
+          "body": "Hi [First Name],\n\nOne more thought on Planning Analytics.\n\nAI agents now monitor your plan continuously and automate repetitive workflows \u2014 while granular security controls ensure only the right people see the right data.\n\nMove faster without sacrificing governance. Closed-loop planning built for enterprise environments.\n\n15 minutes to see it?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
         },
         {
           "number": 4,
           "day": 15,
           "angle": "Final Close",
           "subject": "Last note \u2014 IBM Planning Analytics",
-          "body": "Hi [First Name],\n\nDidn't want to keep reaching out without checking in one last time.\n\nThree things Planning Analytics delivers: better forecast accuracy, broader team participation, and less manual work.\n\nIf any of that is on your radar for [Company] this year, I'd love to connect.\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "body": "Hi [First Name],\n\nLast touch on Planning Analytics.\n\nBuilt for large, complex enterprises: real-time in-memory speed, integrates Oracle, SAP, and spreadsheets, AI-augmented automation, and granular data security \u2014 all in one platform.\n\nIf modernizing your planning environment is on [Company]'s radar this year, I'd love to connect.\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
         }
       ]
     },
@@ -63,21 +63,21 @@
           "day": 1,
           "angle": "AI Upgrade",
           "subject": "What's new in Planning Analytics",
-          "body": "Hi [First Name],\n\nSince [Company] is already on Planning Analytics, wanted to flag what's new.\n\nThe AI layer now runs real-time what-if scenarios and incorporates external drivers automatically \u2014 adaptive learning that continuously improves forecast accuracy.\n\nMost teams using these features have cut their forecast cycle significantly.\n\nWorth a quick sync to walk through what's available to you?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "body": "Hi [First Name],\n\nSince [Company] is already on Planning Analytics, wanted to flag what's new.\n\nThe AI layer now handles forecasting, narrative generation, and workflow automation \u2014 all running on the same in-memory engine and within the governance and security controls your team already has in place.\n\nWorth a quick sync to walk through what's available?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
         },
         {
           "number": 2,
           "day": 5,
           "angle": "Generative AI Planning",
           "subject": "Natural language planning \u2014 PA update",
-          "body": "Hi [First Name],\n\nFollowing up on Planning Analytics.\n\nNew generative AI capability: your team can ask questions of your planning model in plain language and get instant answers, reports, and narratives.\n\nBroader participation across finance, ops, and business \u2014 without adding headcount.\n\nOpen to 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "body": "Hi [First Name],\n\nFollowing up on Planning Analytics.\n\nNew generative AI capability lets your team query planning data in plain language \u2014 across all integrated sources including spreadsheets, Oracle, and SAP. Instant answers and auto-generated reports without adding headcount.\n\nBroader participation across finance, ops, and business teams.\n\nOpen to 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
         },
         {
           "number": 3,
           "day": 10,
           "angle": "Agentic AI",
-          "subject": "Autonomous planning \u2014 quick look?",
-          "body": "Hi [First Name],\n\nLast note on Planning Analytics upgrades.\n\nAgentic AI: AI agents now monitor your plan continuously, automate repetitive workflows, and recommend actions \u2014 all without manual intervention.\n\nClosed-loop planning built into what [Company] already has.\n\n15 minutes to explore?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "Autonomous planning \u2014 built into what you have",
+          "body": "Hi [First Name],\n\nLast note on Planning Analytics upgrades.\n\nAI agents now monitor your plan continuously, automate repetitive workflows, and recommend actions \u2014 with granular security ensuring the right people see the right data.\n\nClosed-loop, AI-augmented planning built into what [Company] already runs.\n\n15 minutes to explore?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
         }
       ]
     }
