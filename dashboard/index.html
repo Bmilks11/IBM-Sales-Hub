@@ -258,10 +258,13 @@ function getStage(emails, startDate){
 
 function renderChevron(emails, startDate){
   const cur=getStage(emails,startDate);
+  const activeStyle='background:linear-gradient(90deg,#AAFF00,#39FF14);color:#0A1A00;font-weight:800;filter:drop-shadow(0 0 6px #39FF14) drop-shadow(0 0 14px #7FFF00);';
+  const doneStyle='background:rgba(36,161,72,0.3);color:#6FDC8C;font-weight:600;';
+  const upcomingStyle='background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.35);';
   return`<div class="chevron-pipeline">${emails.map((e,i)=>{
-    const cls=i<cur?"done":i===cur?"active":"upcoming";
+    const st=i<cur?doneStyle:i===cur?activeStyle:upcomingStyle;
     const icon=i<cur?"&#10003; ":"";
-    return`<div class="chevron-pill ${cls}">${icon}${e.angle}<span class="chevron-day">Email ${e.number} &middot; Day ${e.day}</span></div>`;
+    return`<div class="chevron-pill" style="${st}">${icon}${e.angle}<span class="chevron-day">Email ${e.number} &middot; Day ${e.day}</span></div>`;
   }).join("")}</div>`;
 }
 
