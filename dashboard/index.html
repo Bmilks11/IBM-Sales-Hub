@@ -116,6 +116,21 @@ tr:last-child td{border-bottom:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
 .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#24A148;margin-right:6px;animation:pulse 2s infinite}
 footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.2)}
+
+/* EMAIL SEQUENCE */
+.email-sequence{margin-top:16px;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px}
+.email-seq-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.email-step{border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:8px;overflow:hidden;transition:border-color 0.2s}
+.email-step:hover{border-color:rgba(255,255,255,0.2)}
+.email-step-header{padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:space-between}
+.email-step-meta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.email-num{background:linear-gradient(90deg,#0530AD,#1192E8);color:white;border-radius:20px;padding:2px 10px;font-size:0.65rem;font-weight:700}
+.email-day{font-size:0.68rem;color:rgba(255,255,255,0.4)}
+.email-angle{font-size:0.7rem;color:#82CFFF;font-weight:600}
+.email-subject{font-size:0.8rem;color:white;font-weight:500;flex:1;text-align:left}
+.email-toggle{color:rgba(255,255,255,0.4);font-size:0.7rem;transition:transform 0.2s;flex-shrink:0}
+.email-body-wrap{border-top:1px solid rgba(255,255,255,0.06);padding:16px 14px;background:rgba(0,0,0,0.2)}
+.email-body{font-family:'IBM Plex Sans',monospace;font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.7;white-space:pre-wrap;word-break:break-word}
 </style>
 </head>
 <body>
@@ -338,12 +353,27 @@ function renderCampaigns(data){
     const openRate=c.sent>0?Math.round((c.opened/c.sent)*100):0;
     const replyRate=c.sent>0?Math.round((c.replied/c.sent)*100):0;
     const statusEl=c.status==='active'?`<span class="campaign-status-active">Active</span>`:`<span class="campaign-status-paused">Paused</span>`;
-    const seqHtml=(c.sequence||[]).map(s=>`<div class="seq-step">${s}</div>`).join('');
+    const emailsHtml=(c.emails||[]).map(e=>`
+      <div class="email-step">
+        <div class="email-step-header" onclick="toggleEmail(this)">
+          <div class="email-step-meta">
+            <span class="email-num">Email ${e.number}</span>
+            <span class="email-day">Day ${e.day}</span>
+            <span class="email-angle">${e.angle}</span>
+          </div>
+          <div class="email-subject">${e.subject}</div>
+          <span class="email-toggle">&#9660;</span>
+        </div>
+        <div class="email-body-wrap" style="display:none">
+          <pre class="email-body">${e.body}</pre>
+        </div>
+      </div>`).join('');
     return`<div class="campaign-card">
       <div class="campaign-header">
-        <div><div class="campaign-name">${c.name}</div><div class="campaign-product">&#128202; ${c.product}</div></div>
+        <div><div class="campaign-name">${c.name}</div><div class="campaign-product">&#128202; ${c.product} &middot; ${c.tier}</div></div>
         ${statusEl}
       </div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-bottom:14px;font-style:italic">${c.tagline||''}</div>
       <div class="campaign-metrics">
         <div class="camp-metric"><div class="camp-metric-val">${c.sent}</div><div class="camp-metric-label">Sent</div></div>
         <div class="camp-metric"><div class="camp-metric-val">${openRate}%</div><div class="camp-metric-label">Open Rate</div></div>
@@ -351,13 +381,26 @@ function renderCampaigns(data){
         <div class="camp-metric"><div class="camp-metric-val">${c.meetings}</div><div class="camp-metric-label">Meetings</div></div>
       </div>
       <div class="campaign-progress">
-        <div class="progress-label"><span>Accounts Reached</span><span>${c.sent} / ${c.targets.toLocaleString()}</span></div>
+        <div class="progress-label"><span>Accounts Reached</span><span>${c.sent.toLocaleString()} / ${c.targets.toLocaleString()}</span></div>
         <div class="progress-bar"><div class="progress-fill" style="width:${Math.min(pct,100)}%"></div></div>
       </div>
-      ${seqHtml?`<div class="campaign-sequence"><div class="campaign-seq-title">Email Sequence</div>${seqHtml}</div>`:''}
+      <div class="email-sequence">
+        <div class="email-seq-title">&#9993; Email Sequence &mdash; ${(c.emails||[]).length} emails</div>
+        ${emailsHtml}
+      </div>
     </div>`;
   }).join('');
 }
+
+function toggleEmail(header){
+  const wrap=header.nextElementSibling;
+  const arrow=header.querySelector('.email-toggle');
+  const open=wrap.style.display==='none';
+  wrap.style.display=open?'block':'none';
+  arrow.style.transform=open?'rotate(180deg)':'rotate(0deg)';
+}
+
+
 
 function renderConnections(data){
   const tbody=document.getElementById('li-conn-body');
