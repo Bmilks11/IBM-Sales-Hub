@@ -136,6 +136,14 @@ function filterContacts(f, btn){
   renderGrid();
 }
 
+function copyAndFind(email, btn){
+  navigator.clipboard.writeText(email).then(()=>{
+    const orig = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    setTimeout(()=>{ btn.textContent = orig; }, 1500);
+  });
+  window.open('https://outlook.office365.com/mail/', '_blank');
+}
 function renderGrid(){
   const q = document.getElementById('search').value.toLowerCase();
   const grid = document.getElementById('contacts-grid');
@@ -180,6 +188,7 @@ function renderGrid(){
       </div>
       <div class="contact-actions">
         ${c.email ? `<a href="${emailHref}" class="act-btn primary" target="_blank" rel="noopener">📧 Email</a>` : ''}
+${c.email ? `<button class="act-btn secondary" onclick="copyAndFind('${c.email}',this)" title="Copy email & open Outlook to find thread">🔍 Find Thread</button>` : ''}
         ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedIn</a>` : ''}
         <button class="act-btn" onclick="advanceStep(${realIdx})">▶ Next Step</button>
       </div>
