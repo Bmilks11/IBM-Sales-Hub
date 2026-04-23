@@ -135,7 +135,7 @@ let allContacts = [];
 let activeFilter = 'all';
 
 function contactKey(c){ return `cadence_${c.company}_${c.first}_${c.last}`.replace(/\s+/g,'_'); }
-function getStep(c){ return parseInt(localStorage.getItem(contactKey(c)) || '0'); }
+function getStep(c){ const ls = localStorage.getItem(contactKey(c)); return ls !== null ? parseInt(ls) : (c.cadence_step || 0); }
 function setStep(c, step){ localStorage.setItem(contactKey(c), step); }
 
 function getFilterStatus(c){
