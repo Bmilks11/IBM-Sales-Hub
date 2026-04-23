@@ -24,7 +24,16 @@ main{max-width:1400px;margin:0 auto;padding:32px 36px}
 .search-box:focus{outline:none;border-color:#1192E8}
 
 /* GRID */
-.contacts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.contacts-grid{display:block;gap:20px}
+.company-group{margin-bottom:14px}
+.company-header{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:14px 22px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:background 0.2s;user-select:none}
+.company-header:hover{background:rgba(255,255,255,0.13)}
+.company-header-name{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#fff}
+.company-header-count{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-left:auto}
+.group-arrow{font-size:0.7rem;color:rgba(255,255,255,0.4);transition:transform 0.2s}
+.company-group.collapsed .group-arrow{transform:rotate(-90deg)}
+.group-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:16px 4px 4px}
+.company-group.collapsed .group-cards{display:none}
 
 /* CONTACT CARD */
 .contact-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:24px 20px;transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden}
@@ -148,52 +157,57 @@ function copyAndFind(email, name, btn){
 function renderGrid(){
   const q = document.getElementById('search').value.toLowerCase();
   const grid = document.getElementById('contacts-grid');
-  const filtered = allContacts.slice().sort((a,b)=>a.company.localeCompare(b.company)||(a.last||'').localeCompare(b.last||'')).filter((c,i)=>{
+  const sorted = allContacts.slice().sort((a,b)=>a.company.localeCompare(b.company)||(a.last||'').localeCompare(b.last||''));
+  const filtered = sorted.filter(c=>{
     const matchQ = !q || (c.first+' '+c.last+' '+c.company+' '+c.title).toLowerCase().includes(q);
     const matchF = activeFilter==='all' || getFilterStatus(c)===activeFilter;
     return matchQ && matchF;
   });
   document.getElementById('count-badge').textContent = filtered.length + ' contacts';
-
-  grid.innerHTML = filtered.map((c,fi)=>{
-    const realIdx = allContacts.indexOf(c);
-    const step = getStep(c);
-    const stepsHtml = CADENCE_STEPS.map((s,si)=>{
-      const isDone = si < step;
-      const isCur = si === step;
-      const cls = isDone?'done':(isCur?'current':'');
-      const lineHtml = si < CADENCE_STEPS.length-1 ? `<div class="cline${isDone?' done':''}"></div>` : '';
-      return `<div class="cstep ${cls}" onclick="setStepTo(${realIdx},${si})" title="Click to set step">
-        <div class="cstep-dot">${s.icon}</div>
-        <div class="cstep-lbl">${s.label}</div>
-      </div>${lineHtml}`;
+  const groups = {};
+  filtered.forEach(c=>{ if(!groups[c.company]) groups[c.company]=[]; groups[c.company].push(c); });
+  grid.innerHTML = Object.entries(groups).map(([company,contacts])=>{
+    const cardsHtml = contacts.map(c=>{
+      const realIdx = allContacts.indexOf(c);
+      const step = getStep(c);
+      const stepsHtml = CADENCE_STEPS.map((s,si)=>{
+        const isDone = si < step;
+        const isCur = si === step;
+        const cls = isDone?'done':(isCur?'current':'');
+        const lineHtml = si < CADENCE_STEPS.length-1 ? `<div class="cline${isDone?' done':''}"></div>` : '';
+        return `<div class="cstep ${cls}" onclick="setStepTo(${realIdx},${si})" title="Click to set step">
+<div class="cstep-dot">${s.icon}</div>
+<div class="cstep-lbl">${s.label}</div>
+</div>${lineHtml}`;
+      }).join('');
+      const statusText = step >= CADENCE_STEPS.length
+        ? '<strong>Cadence Complete \u2705</strong>'
+        : `Step <strong>${step+1}/${CADENCE_STEPS.length}</strong>: ${CADENCE_STEPS[step].icon} ${CADENCE_STEPS[step].label}`;
+      const emailHref = c.email ? `https://outlook.office365.com/mail/search?q=${encodeURIComponent(c.email)}` : '#';
+      const liHref = c.linkedin || '#';
+      return `<div class="contact-card">
+<div class="contact-name-wrap">
+<div class="contact-name" onclick="advanceStep(${realIdx})" title="Click to advance cadence">${c.first} ${c.last}</div>
+</div>
+<div class="contact-title">${c.title||''}</div>
+<div class="cadence-track">${stepsHtml}</div>
+<div class="cadence-status">${statusText}</div>
+<div class="act-btns">
+${c.email ? `<a href="${emailHref}" class="act-btn primary" target="_blank" rel="noopener">\ud83d\udce7 Email</a>` : ''}
+${c.email ? `<button class="act-btn" style="background:linear-gradient(90deg,#1a4a1a,#2d7a2d);border-color:transparent;color:#fff" onclick="copyAndFind('${c.email}','${c.first} ${c.last}',this)">\ud83d\udd0d Find Thread</button>` : ''}
+${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">\ud83d\udcbc LinkedIn</a>` : ''}
+<button class="act-btn" onclick="advanceStep(${realIdx})">\u25b6 Next Step</button>
+</div>
+</div>`;
     }).join('');
-
-    const statusText = step >= CADENCE_STEPS.length
-      ? '<strong>Cadence Complete ✅</strong>'
-      : `Step <strong>${step+1}/${CADENCE_STEPS.length}</strong>: ${CADENCE_STEPS[step].icon} ${CADENCE_STEPS[step].label}`;
-
-    const emailHref = c.email ? `https://outlook.office365.com/mail/search?q=${encodeURIComponent(c.email)}` : '#';
-    const liHref = c.linkedin || '#';
-
-    return `<div class="contact-card">
-      <div class="company-name">${c.company}</div>
-      <div class="contact-name-wrap">
-        <div class="contact-name" onclick="advanceStep(${realIdx})" title="Click to advance cadence">${c.first} ${c.last}</div>
-      </div>
-      <div class="contact-title">${c.title}</div>
-      <div class="cadence-wrap">
-        <div class="cadence-label">Outreach Cadence</div>
-        <div class="cadence-steps">${stepsHtml}</div>
-        <div class="step-status">${statusText}</div>
-      </div>
-      <div class="contact-actions">
-        ${c.email ? `<a href="${emailHref}" class="act-btn primary" target="_blank" rel="noopener">📧 Email</a>` : ''}
-        ${c.email ? `<button class="act-btn" style="background:linear-gradient(90deg,#1a4a1a,#2d7a2d);border-color:transparent;color:#fff" onclick="copyAndFind('${c.email}',this)" title="Find thread in Outlook">🔍 Find Thread</button>` : ''}
-        ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedIn</a>` : ''}
-        <button class="act-btn" onclick="advanceStep(${realIdx})">▶ Next Step</button>
-      </div>
-    </div>`;
+    return `<div class="company-group">
+<div class="company-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<span class="company-header-name">${company}</span>
+<span class="company-header-count">${contacts.length} contact${contacts.length>1?'s':''}</span>
+<span class="group-arrow">\u25bc</span>
+</div>
+<div class="group-cards">${cardsHtml}</div>
+</div>`;
   }).join('');
 }
 
