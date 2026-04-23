@@ -252,7 +252,7 @@ function renderCamps(data){
       return`<div class="cpill" style="${st}">${j<cur?"&#10003; ":""}${e.angle}<span class="cpill-day">Email ${e.number} &middot; Day ${e.day}</span></div>`;
     }).join("")}</div>`:"";
 
-    const personaHtml=window._personaEmails?renderPersonaEmails(window._personaEmails):'';
+    const personaHtml=(!c.id||!c.id.startsWith('pa_'))&&window._personaEmails?renderPersonaEmails(window._personaEmails):'';
     const emails=(c.emails||[]).map(e=>`<div class="estep">
       <div class="estep-h" onclick="toggleEmail(this)">
         <span class="enum">Email ${e.number}</span>
