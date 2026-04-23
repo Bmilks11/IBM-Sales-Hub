@@ -1,83 +1,157 @@
 {
   "campaigns": [
     {
-      "id": "pa_tier2_q2_2026",
-      "name": "Planning Analytics \u2014 New Whitespace Florida",
-      "product": "IBM Planning Analytics with AI",
-      "tier": "Tier 2",
+      "id": "pa_cfo_director_of_finance",
+      "name": "PA Outreach \u2014 CFO / Director of Finance",
+      "persona": "CFO / Director of Finance",
       "status": "active",
-      "start_date": "2026-04-21",
-      "targets": 2368,
+      "targets": 10,
       "sent": 0,
       "opened": 0,
       "replied": 0,
-      "meetings": 0,
-      "tagline": "Move from reactive planning to proactive, insight-driven decision-making.",
+      "start_date": "2026-04-23",
       "emails": [
         {
-          "number": 1,
           "day": 1,
-          "angle": "AI Forecasting",
-          "subject": "Your forecast cycle \u2014 quick question",
-          "body": "Hi [First Name],\n\nMost finance teams I speak with are still manually rebuilding forecasts every time conditions shift.\n\nIBM Planning Analytics runs on an in-memory database \u2014 real-time what-if scenarios and instant model updates as inputs change. No waiting, no data science team required.\n\nWorth 20 minutes to see how it applies to [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "",
+          "angle": "Email 1",
+          "body": "**Subject: Cut your quarterly planning cycle in half**\n\nHi [First Name],\n\nI work with finance leaders in Florida who are spending weeks on quarterly forecasts that could take days instead. Most are still juggling spreadsheets, historical data, and manual adjustments\u2014leaving little room for what-if scenarios or strategy.\n\nWe just helped Idaho Forest Group cut their forecasting from 80+ hours down to 15 hours per quarter using AI-assisted planning. Their team went from firefighting data pulls to actually analyzing drivers and improving accuracy.\n\nWould a quick 15-minute call make sense? I can show you how this works for a finance operation like yours\u2014no pitch, just specifics on ROI and time savings.\n\nAvailable this week?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
         },
         {
-          "number": 2,
           "day": 5,
-          "angle": "Generative AI Planning",
-          "subject": "One model. Every source. Plain language.",
-          "body": "Hi [First Name],\n\nFollowing up from last week.\n\nPlanning Analytics integrates data from spreadsheets, Oracle, SAP, and other EPM systems into one model \u2014 then lets your team ask questions in plain language and get instant answers, reports, and narratives.\n\nNo analyst bottleneck. Finance, ops, and business teams all working from the same data.\n\nOpen to a quick look?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "",
+          "angle": "Email 2",
+          "body": "**Subject: Following up\u2014your team could cut forecasting time in half**\n\nHi [First Name],\n\nQuick follow-up on the note I sent last week about quarterly planning challenges. I wanted to share something relevant: one of our financial services clients recently cut their stress testing from 4 weeks down to 2 weeks using Planning Analytics. \n\nFor your team specifically, we're seeing CFOs reclaim about 25% of planning hours annually\u2014time your analysts could spend on actual strategy instead of spreadsheet wrestling. Given Florida's Q4 push, this might be worth a 20-minute conversation.\n\nHappy to walk through how this works for your forecasting cycle.\n\nBest,\n\n**Bradley Milks** | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
         },
         {
-          "number": 3,
           "day": 10,
-          "angle": "Agentic AI",
-          "subject": "AI that plans \u2014 without losing control",
-          "body": "Hi [First Name],\n\nOne more thought on Planning Analytics.\n\nAI agents now monitor your plan continuously and automate repetitive workflows \u2014 while granular security controls ensure only the right people see the right data.\n\nMove faster without sacrificing governance. Closed-loop planning built for enterprise environments.\n\n15 minutes to see it?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
-        },
-        {
-          "number": 4,
-          "day": 15,
-          "angle": "Final Close",
-          "subject": "Last note \u2014 IBM Planning Analytics",
-          "body": "Hi [First Name],\n\nLast touch on Planning Analytics.\n\nBuilt for large, complex enterprises: real-time in-memory speed, integrates Oracle, SAP, and spreadsheets, AI-augmented automation, and granular data security \u2014 all in one platform.\n\nIf modernizing your planning environment is on [Company]'s radar this year, I'd love to connect.\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "Cut your quarterly forecasting from weeks to days",
+          "angle": "Email 3",
+          "body": "Hi [Name],\n\nIdaho Forest Group cut their monthly forecasting from 80+ hours down to 15\u2014freeing their finance team for strategy work instead of spreadsheet updates. They're now forecasting in minutes with AI automation that catches patterns spreadsheets miss.\n\nWe're helping finance leaders like you compress quarterly planning cycles and improve forecast accuracy by pulling in real-time data alongside historical trends. Most teams see 25% time savings in the first quarter alone.\n\nWould you be open to a quick 20-minute demo? I can walk you through their full case study and show how this works for your planning process.\n\nBest,\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
         }
       ]
     },
     {
-      "id": "pa_tier3_q2_2026",
-      "name": "Planning Analytics \u2014 Expansion (Existing IBM)",
-      "product": "IBM Planning Analytics with AI",
-      "tier": "Tier 3",
+      "id": "pa_vp_of_it",
+      "name": "PA Outreach \u2014 VP of IT",
+      "persona": "VP of IT",
       "status": "active",
-      "start_date": "2026-04-21",
-      "targets": 2110,
+      "targets": 10,
       "sent": 0,
       "opened": 0,
       "replied": 0,
-      "meetings": 0,
-      "tagline": "Your team is already on Planning Analytics \u2014 here's what AI unlocks next.",
+      "start_date": "2026-04-23",
       "emails": [
         {
-          "number": 1,
           "day": 1,
-          "angle": "AI Upgrade",
-          "subject": "What's new in Planning Analytics",
-          "body": "Hi [First Name],\n\nSince [Company] is already on Planning Analytics, wanted to flag what's new.\n\nThe AI layer now handles forecasting, narrative generation, and workflow automation \u2014 all running on the same in-memory engine and within the governance and security controls your team already has in place.\n\nWorth a quick sync to walk through what's available?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "",
+          "angle": "Email 1",
+          "body": "**Subject: Cut your forecasting cycle in half\u2014like ICBC Argentina did**\n\nHi [VP Name],\n\nWe recently helped ICBC Argentina compress their bank stress tests from 4 weeks to 2 weeks by connecting real-time data feeds to AI-powered forecasting. Instead of manual spreadsheet updates, their team now runs schedule-based projections that surface patterns and seasonality automatically.\n\nMost finance and planning teams we work with see 25% time savings department-wide\u2014freeing analysts to focus on strategy, not data wrangling.\n\nIBM Planning Analytics handles your historical data, real-time feeds, and market signals in one place. The AI Assistant even generates forecast summaries with confidence ranges and key drivers.\n\nWorth 15 minutes to explore what this could look like for your operation?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
         },
         {
-          "number": 2,
           "day": 5,
-          "angle": "Generative AI Planning",
-          "subject": "Natural language planning \u2014 PA update",
-          "body": "Hi [First Name],\n\nFollowing up on Planning Analytics.\n\nNew generative AI capability lets your team query planning data in plain language \u2014 across all integrated sources including spreadsheets, Oracle, and SAP. Instant answers and auto-generated reports without adding headcount.\n\nBroader participation across finance, ops, and business teams.\n\nOpen to 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "Real-time forecasting cuts planning cycles in half",
+          "angle": "Email 2",
+          "body": "Hi [Name],\n\nFollowing up on the note I sent last week\u2014wanted to share something relevant to your planning infrastructure. We just helped a financial services client cut their stress testing from 4 weeks down to 2 weeks by integrating real-time market feeds into their forecasting engine.\n\nThe setup lets your team pull live data alongside historical patterns, so you're working with current signals instead of stale spreadsheets. One client saw 25% time savings across their entire department in the first quarter.\n\nGiven your IT roadmap, this might be worth a quick 20-minute call to explore the technical integration. Let me know if you're open to it.\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
         },
         {
-          "number": 3,
           "day": 10,
-          "angle": "Agentic AI",
-          "subject": "Autonomous planning \u2014 built into what you have",
-          "body": "Hi [First Name],\n\nLast note on Planning Analytics upgrades.\n\nAI agents now monitor your plan continuously, automate repetitive workflows, and recommend actions \u2014 with granular security ensuring the right people see the right data.\n\nClosed-loop, AI-augmented planning built into what [Company] already runs.\n\n15 minutes to explore?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+          "subject": "",
+          "angle": "Email 3",
+          "body": "**Subject: Cut Your Forecasting Time by 80%\u2014Idaho Forest Group Did**\n\nHi [VP Name],\n\nIdaho Forest Group reduced their monthly forecasting from 80+ hours to under 15 hours using IBM Planning Analytics with real-time data feeds and AI automation. They're now running forecasts in minutes instead of days, while improving accuracy by catching patterns their spreadsheets missed.\n\nWe're seeing similar results across industries\u2014ICBC Argentina cut their stress testing cycle in half. The key is connecting your historical data, real-time feeds, and market signals into one system where AI handles the heavy lifting, but you keep full control.\n\nI'd like to share the full Idaho Forest case study and show you how this works in your environment.\n\nCan we schedule a quick 20-minute demo?\n\nBest,\n**Bradley Milks** | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        }
+      ]
+    },
+    {
+      "id": "pa_cro_chief_revenue_officer",
+      "name": "PA Outreach \u2014 CRO / Chief Revenue Officer",
+      "persona": "CRO / Chief Revenue Officer",
+      "status": "active",
+      "targets": 10,
+      "sent": 0,
+      "opened": 0,
+      "replied": 0,
+      "start_date": "2026-04-23",
+      "emails": [
+        {
+          "day": 1,
+          "subject": "Cut your forecast cycle in half\u2014like ICBC Argentina did",
+          "angle": "Email 1",
+          "body": "Hi [Name],\n\nI work with CROs who are tired of revenue forecasts taking weeks to build and still missing the mark. We helped ICBC Argentina cut their planning cycle from 4 weeks to 2 weeks by automating pattern detection across historical data, real-time feeds, and market signals\u2014no more manual spreadsheet hunting.\n\nIBM Planning Analytics handles the heavy lifting: AI surfaces what's actually driving your numbers, flags confidence gaps, and generates forecast summaries your team can act on immediately. Your analysts stay in control\u2014just faster.\n\nWorth 15 minutes to see if this applies to your planning process?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        },
+        {
+          "day": 5,
+          "subject": "Your pipeline accuracy gap is costing you millions",
+          "angle": "Email 2",
+          "body": "Hi [Name],\n\nFollowed up on my note last week\u2014wanted to drop something that caught my attention. We just helped a financial services company cut their forecast cycle from 4 weeks to 2 weeks, which freed up their revenue ops team to actually analyze what's driving pipeline volatility instead of wrestling with spreadsheets.\n\nHere's what's different: Planning Analytics ingests real-time market signals alongside your historical data, so your team spots seasonality patterns they'd normally miss. Result? 97% forecast accuracy benchmark.\n\nWorth 20 minutes to see how this plays for Florida-based companies?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        },
+        {
+          "day": 10,
+          "subject": "",
+          "angle": "Email 3",
+          "body": "**Subject: Cut your forecasting time by 80% \u2014 Idaho Forest Group's approach**\n\nHi [First Name],\n\nIdaho Forest Group reduced their monthly revenue forecast from 80+ hours to under 15 hours using IBM Planning Analytics. They're now forecasting faster with AI automation while catching seasonal patterns their spreadsheets missed entirely.\n\nFor a CRO managing pipeline accuracy and quarterly projections, this means your team gets real-time visibility into revenue drivers\u2014not days-old forecasts. The platform processes historical data, market signals, and live feeds simultaneously.\n\nI'd love to walk you through their full case study and show how this works for your planning cycle. Can we schedule a 20-minute demo this week?\n\nBest,\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        }
+      ]
+    },
+    {
+      "id": "pa_director_of_marketing",
+      "name": "PA Outreach \u2014 Director of Marketing",
+      "persona": "Director of Marketing",
+      "status": "active",
+      "targets": 10,
+      "sent": 0,
+      "opened": 0,
+      "replied": 0,
+      "start_date": "2026-04-23",
+      "emails": [
+        {
+          "day": 1,
+          "subject": "",
+          "angle": "Email 1",
+          "body": "**Subject: Cut your campaign forecast time in half**\n\nHi [Director Name],\n\nMost marketing teams spend weeks manually piecing together demand forecasts from spreadsheets and market signals. We helped Idaho Forest Group cut their forecasting from 80+ hours down to 15\u2014freeing their team to focus on strategy instead of data wrangling.\n\nIBM Planning Analytics pulls real-time market data, historical trends, and your campaign variables into one place. You get accurate demand forecasts in minutes, not days, with AI-generated summaries showing what's driving results.\n\nFor marketing leaders juggling seasonal shifts and campaign timing, this usually means better forecast accuracy and significantly faster planning cycles.\n\nWorth a quick 15-minute conversation?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        },
+        {
+          "day": 5,
+          "subject": "",
+          "angle": "Email 2",
+          "body": "**Subject: Quick follow-up on campaign forecasting**\n\nHi [Name],\n\nFollowing up on the note I sent last week\u2014wanted to share something relevant: most marketing teams we work with are sitting on 3-4 months of untapped market signal data that could sharpen their campaign forecasts immediately.\n\nIBM Planning Analytics lets you pull real-time feeds alongside your historical campaign data to spot demand shifts faster. One client cut their forecast cycle from 80+ hours to under 15 hours, freeing their team to actually act on insights instead of building spreadsheets.\n\nWorth 15 minutes to explore how this could work for your planning cycle?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        },
+        {
+          "day": 10,
+          "subject": "",
+          "angle": "Email 3",
+          "body": "**Subject: Cut your campaign forecasting time in half**\n\nHi [Director Name],\n\nIdaho Forest Group cut their forecasting from 80+ hours down to 15\u2014by automating the pattern-finding that spreadsheets miss. They now pull in real-time market signals alongside historical data, giving their team a complete demand picture in minutes instead of days.\n\nI'm thinking similar gains could work for your marketing planning cycles. IBM Planning Analytics helps you forecast campaign performance and market demand with more accuracy and way less manual work.\n\nHappy to share the full Idaho Forest case study and show you how this works in a quick 20-minute demo.\n\nAvailable this week?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        }
+      ]
+    },
+    {
+      "id": "pa_chro_vp_of_hr",
+      "name": "PA Outreach \u2014 CHRO / VP of HR",
+      "persona": "CHRO / VP of HR",
+      "status": "active",
+      "targets": 10,
+      "sent": 0,
+      "opened": 0,
+      "replied": 0,
+      "start_date": "2026-04-23",
+      "emails": [
+        {
+          "day": 1,
+          "subject": "",
+          "angle": "Email 1",
+          "body": "**Subject: Cut your headcount forecasting from weeks to days**\n\nHi [First Name],\n\nMost HR teams spend weeks manually building headcount and labor cost forecasts in spreadsheets. We just helped Idaho Forest Group cut their forecasting process from 80+ hours down to 15 hours\u2014without sacrificing accuracy.\n\nIBM Planning Analytics automates the heavy lifting: pulls real-time payroll data, surfaces seasonality patterns you'd miss in Excel, and generates forecast summaries with confidence ranges in minutes. Your team gets more time to focus on strategy instead of formula updates.\n\nWould a quick 15-minute call make sense to explore how this applies to your planning cycle?\n\nBest,\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        },
+        {
+          "day": 5,
+          "subject": "",
+          "angle": "Email 2",
+          "body": "**Subject: Quick follow-up on headcount forecasting**\n\nHi [Name],\n\nFollowing up on the note I sent last week\u2014wanted to share something relevant: most CHROs we work with spend 80+ hours monthly on headcount and labor cost planning. One client cut that to under 15 hours using Planning Analytics.\n\nHere's what changes the game: real-time market data feeds into your forecasts alongside historical patterns. Catches seasonality and turnover trends your spreadsheets miss. The AI then summarizes everything\u2014drivers, confidence ranges, the works\u2014so your team actually has time to strategize instead of consolidate.\n\nOpen to a quick call this week?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
+        },
+        {
+          "day": 10,
+          "subject": "",
+          "angle": "Email 3",
+          "body": "**Subject: Cut your headcount forecasting from weeks to hours**\n\nHi [First Name],\n\nIdaho Forest Group cut their forecasting cycle from 80+ hours to under 15 hours using AI-powered planning. They went from manual spreadsheet updates to automated forecasts that incorporate real-time data\u2014giving leadership confidence in labor cost projections months ahead.\n\nWe're helping CHROs like you build workforce plans faster without sacrificing accuracy. IBM Planning Analytics surfaces patterns your spreadsheets miss and lets you model different scenarios in minutes, not days.\n\nI'd love to walk you through how this works and share the full Idaho Forest case study.\n\nCan we schedule a quick 20-minute demo?\n\nBradley Milks | IBM Account Executive, Data Trust & Planning\nbmilks11@gmail.com"
         }
       ]
     }
