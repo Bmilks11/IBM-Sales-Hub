@@ -139,7 +139,7 @@ function filterContacts(f, btn){
 function renderGrid(){
   const q = document.getElementById('search').value.toLowerCase();
   const grid = document.getElementById('contacts-grid');
-  const filtered = allContacts.filter((c,i)=>{
+  const filtered = allContacts.slice().sort((a,b)=>a.company.localeCompare(b.company)||(a.last||'').localeCompare(b.last||'')).filter((c,i)=>{
     const matchQ = !q || (c.first+' '+c.last+' '+c.company+' '+c.title).toLowerCase().includes(q);
     const matchF = activeFilter==='all' || getFilterStatus(c)===activeFilter;
     return matchQ && matchF;
