@@ -164,7 +164,7 @@ function renderGrid(){
       ? '<strong>Cadence Complete ✅</strong>'
       : `Step <strong>${step+1}/${CADENCE_STEPS.length}</strong>: ${CADENCE_STEPS[step].icon} ${CADENCE_STEPS[step].label}`;
 
-    const emailHref = c.email ? `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(c.email)}` : '#';
+    const emailHref = c.email ? `https://outlook.office365.com/mail/deeplink/compose?to=${encodeURIComponent(c.email)}` : '#';
     const liHref = c.linkedin || '#';
 
     return `<div class="contact-card">
@@ -179,7 +179,7 @@ function renderGrid(){
         <div class="step-status">${statusText}</div>
       </div>
       <div class="contact-actions">
-        ${c.email ? `<a href="${emailHref}" class="act-btn primary">📧 Email</a>` : ''}
+        ${c.email ? `<a href="${emailHref}" class="act-btn primary" target="_blank" rel="noopener">📧 Email</a>` : ''}
         ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedIn</a>` : ''}
         <button class="act-btn" onclick="advanceStep(${realIdx})">▶ Next Step</button>
       </div>
