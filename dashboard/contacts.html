@@ -164,7 +164,7 @@ function renderGrid(){
       ? '<strong>Cadence Complete ✅</strong>'
       : `Step <strong>${step+1}/${CADENCE_STEPS.length}</strong>: ${CADENCE_STEPS[step].icon} ${CADENCE_STEPS[step].label}`;
 
-    const emailHref = c.email ? `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(c.email)}` : '#';
+    const emailHref = c.email ? `ms-outlook://compose?to=${encodeURIComponent(c.email)}` : '#';
     const liHref = c.linkedin || '#';
 
     return `<div class="contact-card">
