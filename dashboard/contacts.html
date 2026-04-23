@@ -219,7 +219,7 @@ ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedI
 </div>
 </div>`;
     }).join('');
-    return `<div class="company-group">
+    return `<div class="company-group collapsed">
 <div class="company-header" onclick="this.parentElement.classList.toggle('collapsed')">
 <span class="company-header-name">${company}</span>
 <span class="company-header-count">${contacts.length} contact${contacts.length>1?'s':''}</span>
