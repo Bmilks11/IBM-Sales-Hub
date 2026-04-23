@@ -136,13 +136,17 @@ function filterContacts(f, btn){
   renderGrid();
 }
 
-function copyAndFind(email, btn){
-  navigator.clipboard.writeText(email).then(()=>{
+function copyAndFind(email, name, btn){
+  const searchQ = `from:"${name}"`;
+  navigator.clipboard.writeText(searchQ).then(()=>{
     const orig = btn.textContent;
-    btn.textContent = '✅ Copied!';
+    btn.textContent = '✅ Opening...';
     setTimeout(()=>{ btn.textContent = orig; }, 1500);
   });
-  window.open(`https://outlook.office365.com/mail/search?q=${encodeURIComponent(email)}`, '_blank');
+  window.open(`ms-outlook://search?q=${encodeURIComponent('from:' + name)}`, '_blank');
+  setTimeout(()=>{
+    window.open(`https://outlook.office365.com/mail/search?q=${encodeURIComponent(email)}`, '_blank');
+  }, 500);
 }
 function renderGrid(){
   const q = document.getElementById('search').value.toLowerCase();
