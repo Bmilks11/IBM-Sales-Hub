@@ -142,7 +142,7 @@ function copyAndFind(email, btn){
     btn.textContent = '✅ Copied!';
     setTimeout(()=>{ btn.textContent = orig; }, 1500);
   });
-  window.open('https://outlook.office365.com/mail/', '_blank');
+  window.open(`https://outlook.office365.com/mail/search?q=${encodeURIComponent(email)}`, '_blank');
 }
 function renderGrid(){
   const q = document.getElementById('search').value.toLowerCase();
