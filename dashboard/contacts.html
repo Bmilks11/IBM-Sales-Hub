@@ -152,7 +152,7 @@ function getOpened(c){ return localStorage.getItem('opened_'+contactKey(c)) === 
 function setOpened(c, v){ localStorage.setItem('opened_'+contactKey(c), v); }
 function getReplied(c){ return localStorage.getItem('replied_'+contactKey(c)) === 'true'; }
 function setReplied(c, v){ localStorage.setItem('replied_'+contactKey(c), v); }
-function getSentDate(c){ return localStorage.getItem('sent_date_'+contactKey(c)) || ''; }
+function getSentDate(c){ return localStorage.getItem('sent_date_'+contactKey(c)) || c.last_sent || ''; }
 function updateStats(){
   const today = new Date().toISOString().split('T')[0];
   let sentToday=0, totalSent=0, opened=0, replied=0;
@@ -259,6 +259,8 @@ ${c.email ? `<a href="${emailHref}" class="act-btn primary" target="_blank" rel=
 ${c.email ? `<button class="act-btn" style="background:linear-gradient(90deg,#1a4a1a,#2d7a2d);border-color:transparent;color:#fff" onclick="copyAndFind('${c.email}','${c.first} ${c.last}',this)">🔍 Find Thread</button>` : ''}
 ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedIn</a>` : ''}
 <button class="act-btn" onclick="advanceStep(${realIdx})">▶ Next Step</button>
+<button class="act-btn ${getOpened(c)?'opened-active':''}" onclick="toggleOpened(${realIdx})">👁 ${getOpened(c)?'Opened':'Mark Opened'}</button>
+<button class="act-btn ${getReplied(c)?'replied-active':''}" onclick="toggleReplied(${realIdx})">💬 ${getReplied(c)?'Replied':'Mark Replied'}</button>
 </div>
 </div>`;
     }).join('');
@@ -275,7 +277,7 @@ ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedI
 
 async function init(){
   try {
-    const r = await fetch('../data/contacts.json?v=1777040428');
+    const r = await fetch('../data/contacts.json?v=1777040860');
     allContacts = await r.json();
   } catch(e) {
     // fallback
