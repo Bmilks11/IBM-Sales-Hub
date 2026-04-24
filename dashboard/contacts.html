@@ -92,6 +92,12 @@ main{max-width:1400px;margin:0 auto;padding:32px 36px}
 .act-btns{display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;margin-top:16px;align-items:center}
 
 footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.2)}
+.stats-bar{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.stat-tile{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:16px 24px;flex:1;min-width:120px;text-align:center}
+.stat-num{font-size:1.8rem;font-weight:700;color:#1192E8}
+.stat-lbl{font-size:0.65rem;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.45);margin-top:4px}
+.act-btn.opened-active{background:rgba(17,146,232,0.25);border-color:#1192E8;color:#1192E8}
+.act-btn.replied-active{background:rgba(66,193,110,0.25);border-color:#42C16E;color:#42C16E}
 </style>
 </head>
 <body>
@@ -105,6 +111,12 @@ footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.
       <span class="stitle">Target Contacts</span>
       <span class="count-badge" id="count-badge">— contacts</span>
     </div>
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-tile"><div class="stat-num" id="stat-sent-today">0</div><div class="stat-lbl">Sent Today</div></div>
+  <div class="stat-tile"><div class="stat-num" id="stat-total-sent">0</div><div class="stat-lbl">Total Sent</div></div>
+  <div class="stat-tile"><div class="stat-num" id="stat-opened">0</div><div class="stat-lbl">Opened</div></div>
+  <div class="stat-tile"><div class="stat-num" id="stat-replied">0</div><div class="stat-lbl">Replied</div></div>
+</div>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
       <div class="filter-btns">
         <button class="fb active" onclick="filterContacts('all',this)">All</button>
@@ -136,6 +148,37 @@ let activeFilter = 'all';
 
 function contactKey(c){ return `cadence_${c.company}_${c.first}_${c.last}`.replace(/\s+/g,'_'); }
 function getStep(c){ const ls = localStorage.getItem(contactKey(c)); return ls !== null ? parseInt(ls) : (c.cadence_step || 0); }
+function getOpened(c){ return localStorage.getItem('opened_'+contactKey(c)) === 'true'; }
+function setOpened(c, v){ localStorage.setItem('opened_'+contactKey(c), v); }
+function getReplied(c){ return localStorage.getItem('replied_'+contactKey(c)) === 'true'; }
+function setReplied(c, v){ localStorage.setItem('replied_'+contactKey(c), v); }
+function getSentDate(c){ return localStorage.getItem('sent_date_'+contactKey(c)) || ''; }
+function updateStats(){
+  const today = new Date().toISOString().split('T')[0];
+  let sentToday=0, totalSent=0, opened=0, replied=0;
+  allContacts.forEach(c=>{
+    if(getStep(c)>0) totalSent++;
+    if(getSentDate(c)===today) sentToday++;
+    if(getOpened(c)) opened++;
+    if(getReplied(c)) replied++;
+  });
+  document.getElementById('stat-sent-today').textContent = sentToday;
+  document.getElementById('stat-total-sent').textContent = totalSent;
+  document.getElementById('stat-opened').textContent = opened;
+  document.getElementById('stat-replied').textContent = replied;
+}
+function toggleOpened(idx, btn){
+  const c = allContacts[idx];
+  const newVal = !getOpened(c);
+  setOpened(c, newVal);
+  renderGrid();
+}
+function toggleReplied(idx, btn){
+  const c = allContacts[idx];
+  const newVal = !getReplied(c);
+  setReplied(c, newVal);
+  renderGrid();
+}
 function setStep(c, step){ localStorage.setItem(contactKey(c), step); }
 
 function getFilterStatus(c){
@@ -232,7 +275,7 @@ ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedI
 
 async function init(){
   try {
-    const r = await fetch('../data/contacts.json?v=1776972785');
+    const r = await fetch('../data/contacts.json?v=1777039941');
     allContacts = await r.json();
   } catch(e) {
     // fallback
