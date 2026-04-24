@@ -273,11 +273,12 @@ ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedI
 <div class="group-cards">${cardsHtml}</div>
 </div>`;
   }).join('');
+  updateStats();
 }
 
 async function init(){
   try {
-    const r = await fetch('../data/contacts.json?v=1777040860');
+    const r = await fetch('../data/contacts.json?v=1777041216');
     allContacts = await r.json();
   } catch(e) {
     // fallback
