@@ -277,14 +277,8 @@ ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedI
 }
 
 async function init(){
-  try {
-    const r = await fetch('../data/contacts.json?v=' + Date.now(), {cache: 'no-store'});
-    allContacts = await r.json();
-  } catch(e) {
-    // fallback
     allContacts = [];
-  }
-  renderGrid();
+    renderGrid();
 }
 init();
 </script>
