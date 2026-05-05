@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM Sales Hub — Contacts</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:linear-gradient(135deg,#0A0F2C 0%,#0D1B4B 50%,#061233 100%);min-height:100vh;color:#fff}
+header{background:linear-gradient(90deg,#0530AD,#1192E8,#8A3FFC);padding:16px 36px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 24px rgba(5,48,173,0.5)}
+header h1{font-size:1.2rem;font-weight:700}
+.back-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:6px 18px;font-size:0.78rem;font-weight:600;cursor:pointer;color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px}
+.back-btn:hover{background:rgba(255,255,255,0.25)}
+main{max-width:1400px;margin:0 auto;padding:32px 36px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+.toolbar-left{display:flex;align-items:center;gap:12px}
+.stitle{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.5)}
+.count-badge{background:rgba(255,255,255,0.1);border-radius:20px;padding:4px 12px;font-size:0.72rem;font-weight:600}
+.filter-btns{display:flex;gap:8px}
+.fb{padding:6px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);cursor:pointer;font-size:0.72rem;color:rgba(255,255,255,0.6);font-family:inherit}
+.fb:hover,.fb.active{background:linear-gradient(90deg,#0530AD,#1192E8);color:#fff;border-color:transparent}
+.search-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:8px 14px;color:#fff;font-size:0.82rem;width:220px;font-family:inherit}
+.search-box::placeholder{color:rgba(255,255,255,0.3)}
+.search-box:focus{outline:none;border-color:#1192E8}
+
+/* GRID */
+.contacts-grid{display:block;gap:20px}
+.company-group{margin-bottom:14px}
+.company-header{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:14px 22px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:background 0.2s;user-select:none}
+.company-header:hover{background:rgba(255,255,255,0.13)}
+.company-header-name{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#fff}
+.company-header-count{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-left:auto}
+.group-arrow{font-size:0.7rem;color:rgba(255,255,255,0.4);transition:transform 0.2s}
+.company-group.collapsed .group-arrow{transform:rotate(-90deg)}
+.group-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:16px 4px 4px}
+.company-group.collapsed .group-cards{display:none}
+.company-group{margin-bottom:14px}
+.company-header{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:14px 22px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:background 0.2s;user-select:none}
+.company-header:hover{background:rgba(255,255,255,0.13)}
+.company-header-name{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#fff}
+.company-header-count{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-left:auto}
+.group-arrow{font-size:0.7rem;color:rgba(255,255,255,0.4);transition:transform 0.2s}
+.company-group.collapsed .group-arrow{transform:rotate(-90deg)}
+.group-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:16px 4px 4px}
+.company-group.collapsed .group-cards{display:none}
+.company-group{margin-bottom:14px}
+.company-header{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:14px 22px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:background 0.2s;user-select:none}
+.company-header:hover{background:rgba(255,255,255,0.13)}
+.company-header-name{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#fff}
+.company-header-count{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-left:auto}
+.group-arrow{font-size:0.7rem;color:rgba(255,255,255,0.4);transition:transform 0.2s}
+.company-group.collapsed .group-arrow{transform:rotate(-90deg)}
+.group-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding:16px 4px 4px}
+.company-group.collapsed .group-cards{display:none}
+
+/* CONTACT CARD */
+.contact-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:24px 20px;transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden}
+.contact-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.contact-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00C851,#82CFFF)}
+.company-name{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.contact-name-wrap{position:relative;display:flex;justify-content:center;margin:14px 0 10px}
+.contact-name{font-size:1.15rem;font-weight:700;color:#00FF85;text-align:center;
+  text-shadow:0 0 12px rgba(0,255,133,0.8),0 0 24px rgba(0,255,133,0.4),0 0 48px rgba(0,255,133,0.2);
+  animation:glowPulse 2.5s ease-in-out infinite;cursor:pointer;z-index:1;position:relative}
+@keyframes glowPulse{0%,100%{text-shadow:0 0 12px rgba(0,255,133,0.8),0 0 24px rgba(0,255,133,0.4),0 0 48px rgba(0,255,133,0.2)}
+  50%{text-shadow:0 0 20px rgba(0,255,133,1),0 0 40px rgba(0,255,133,0.6),0 0 70px rgba(0,255,133,0.3)}}
+.contact-title{font-size:0.72rem;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:18px}
+
+/* CADENCE TRACKER */
+.cadence-wrap{margin:16px 0 12px}
+.cadence-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.35);margin-bottom:8px;text-align:center}
+.cadence-steps{display:flex;align-items:center;justify-content:center;gap:0}
+.cstep{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;cursor:pointer;position:relative}
+.cstep-dot{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:0.75rem;transition:all 0.2s;z-index:1;position:relative}
+.cstep-dot:hover{border-color:rgba(0,255,133,0.5);background:rgba(0,255,133,0.1)}
+.cstep.done .cstep-dot{background:linear-gradient(135deg,#00C851,#00FF85);border-color:#00C851;box-shadow:0 0 8px rgba(0,200,81,0.5)}
+.cstep.current .cstep-dot{background:linear-gradient(135deg,#0530AD,#1192E8);border-color:#1192E8;box-shadow:0 0 10px rgba(17,146,232,0.6);animation:stepPulse 1.5s ease-in-out infinite}
+@keyframes stepPulse{0%,100%{box-shadow:0 0 10px rgba(17,146,232,0.6)}50%{box-shadow:0 0 20px rgba(17,146,232,0.9)}}
+.cstep-lbl{font-size:0.5rem;color:rgba(255,255,255,0.3);text-align:center;text-transform:uppercase;letter-spacing:0.5px}
+.cstep.done .cstep-lbl,.cstep.current .cstep-lbl{color:rgba(255,255,255,0.7)}
+.cline{flex:1;height:2px;background:rgba(255,255,255,0.1);max-width:24px}
+.cline.done{background:linear-gradient(90deg,#00C851,#00FF85)}
+.step-status{text-align:center;font-size:0.68rem;margin-top:10px;color:rgba(255,255,255,0.5)}
+.step-status strong{color:#82CFFF}
+
+/* ACTIONS */
+.contact-actions{display:flex;gap:8px;margin-top:14px;justify-content:center}
+.act-btn{padding:5px 10px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);cursor:pointer;font-size:0.7rem;color:rgba(255,255,255,0.7);font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:all 0.15s;width:auto;flex-shrink:0}
+.act-btn:hover{background:rgba(255,255,255,0.12);color:#fff}
+.act-btn.primary{background:linear-gradient(90deg,#0530AD,#1192E8);border-color:transparent;color:#fff}
+.act-btn.primary:hover{opacity:0.85}
+.act-btns{display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;margin-top:16px;align-items:center}
+
+footer{text-align:center;padding:24px;font-size:0.7rem;color:rgba(255,255,255,0.2)}
+.stats-bar{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.stat-tile{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:16px 24px;flex:1;min-width:120px;text-align:center}
+.stat-num{font-size:1.8rem;font-weight:700;color:#1192E8}
+.stat-lbl{font-size:0.65rem;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,0.45);margin-top:4px}
+.act-btn.opened-active{background:rgba(17,146,232,0.25);border-color:#1192E8;color:#1192E8}
+.act-btn.replied-active{background:rgba(66,193,110,0.25);border-color:#42C16E;color:#42C16E}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧑‍💼 IBM Sales Hub — Contact Tracker</h1>
+  <a href="index.html" class="back-btn">← Dashboard</a>
+</header>
+<main>
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <span class="stitle">Target Contacts</span>
+      <span class="count-badge" id="count-badge">— contacts</span>
+    </div>
+<div class="stats-bar" id="stats-bar">
+  <div class="stat-tile"><div class="stat-num" id="stat-sent-today">0</div><div class="stat-lbl">Sent Today</div></div>
+  <div class="stat-tile"><div class="stat-num" id="stat-total-sent">0</div><div class="stat-lbl">Total Sent</div></div>
+  <div class="stat-tile"><div class="stat-num" id="stat-opened">0</div><div class="stat-lbl">Opened</div></div>
+  <div class="stat-tile"><div class="stat-num" id="stat-replied">0</div><div class="stat-lbl">Replied</div></div>
+</div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <div class="filter-btns">
+        <button class="fb active" onclick="filterContacts('all',this)">All</button>
+        <button class="fb" onclick="filterContacts('not_started',this)">Not Started</button>
+        <button class="fb" onclick="filterContacts('in_progress',this)">In Progress</button>
+        <button class="fb" onclick="filterContacts('complete',this)">Complete</button>
+      </div>
+      <input class="search-box" id="search" placeholder="🔍 Search name or company..." oninput="renderGrid()">
+    </div>
+  </div>
+  <div class="contacts-grid" id="contacts-grid"></div>
+</main>
+<footer>IBM Sales Hub · Cadence Tracker · Data Trust & Planning</footer>
+
+<script>
+const CADENCE_STEPS = [
+      {icon:"📧", label:"Email 1"},
+      {icon:"📞", label:"Call 1"},
+      {icon:"📧", label:"Email 2"},
+      {icon:"📞", label:"Call 2"},
+      {icon:"💼", label:"LinkedIn 1"},
+      {icon:"📧", label:"Email 3"},
+      {icon:"📞", label:"Call 3"},
+      {icon:"📧", label:"Email 4"}
+    ];
+
+let allContacts = [];
+let activeFilter = 'all';
+
+function contactKey(c){ return `cadence_${c.company}_${c.first}_${c.last}`.replace(/\s+/g,'_'); }
+function getStep(c){ const ls = localStorage.getItem(contactKey(c)); return ls !== null ? parseInt(ls) : (c.cadence_step || 0); }
+function getOpened(c){ return localStorage.getItem('opened_'+contactKey(c)) === 'true'; }
+function setOpened(c, v){ localStorage.setItem('opened_'+contactKey(c), v); }
+function getReplied(c){ return localStorage.getItem('replied_'+contactKey(c)) === 'true'; }
+function setReplied(c, v){ localStorage.setItem('replied_'+contactKey(c), v); }
+function getSentDate(c){ return localStorage.getItem('sent_date_'+contactKey(c)) || c.last_sent || ''; }
+function updateStats(){
+  const today = new Date().toISOString().split('T')[0];
+  let sentToday=0, totalSent=0, opened=0, replied=0;
+  allContacts.forEach(c=>{
+    if(getStep(c)>0) totalSent++;
+    if(getSentDate(c)===today) sentToday++;
+    if(getOpened(c)) opened++;
+    if(getReplied(c)) replied++;
+  });
+  document.getElementById('stat-sent-today').textContent = sentToday;
+  document.getElementById('stat-total-sent').textContent = totalSent;
+  document.getElementById('stat-opened').textContent = opened;
+  document.getElementById('stat-replied').textContent = replied;
+}
+function toggleOpened(idx, btn){
+  const c = allContacts[idx];
+  const newVal = !getOpened(c);
+  setOpened(c, newVal);
+  renderGrid();
+}
+function toggleReplied(idx, btn){
+  const c = allContacts[idx];
+  const newVal = !getReplied(c);
+  setReplied(c, newVal);
+  renderGrid();
+}
+function setStep(c, step){ localStorage.setItem(contactKey(c), step); }
+
+function getFilterStatus(c){
+  const s = getStep(c);
+  if(s === 0) return 'not_started';
+  if(s >= CADENCE_STEPS.length) return 'complete';
+  return 'in_progress';
+}
+
+function advanceStep(idx){
+  const c = allContacts[idx];
+  const cur = getStep(c);
+  if(cur < CADENCE_STEPS.length){ setStep(c, cur+1); renderGrid(); }
+}
+
+function setStepTo(idx, step){
+  const c = allContacts[idx];
+  setStep(c, step);
+  renderGrid();
+}
+
+function filterContacts(f, btn){
+  activeFilter = f;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+}
+
+function copyAndFind(email, name, btn){
+  const domain = email.split('@')[1] || email;
+  const searchQ = 'from:' + name;
+  navigator.clipboard.writeText(searchQ);
+  const orig = btn.textContent;
+  btn.textContent = '✅ Opening...';
+  setTimeout(()=>{ btn.textContent = orig; }, 1500);
+  window.open('https://outlook.office365.com/mail/search?q=' + encodeURIComponent(searchQ), '_blank');
+}
+function renderGrid(){
+  const q = document.getElementById('search').value.toLowerCase();
+  const grid = document.getElementById('contacts-grid');
+  const sorted = allContacts.slice().sort((a,b)=>a.company.localeCompare(b.company)||(a.last||'').localeCompare(b.last||''));
+  const filtered = sorted.filter(c=>{
+    const matchQ = !q || (c.first+' '+c.last+' '+c.company+' '+c.title).toLowerCase().includes(q);
+    const matchF = activeFilter==='all' || getFilterStatus(c)===activeFilter;
+    return matchQ && matchF;
+  });
+  document.getElementById('count-badge').textContent = filtered.length + ' contacts';
+  const groups = {};
+  filtered.forEach(c=>{ if(!groups[c.company]) groups[c.company]=[]; groups[c.company].push(c); });
+  grid.innerHTML = Object.entries(groups).map(([company,contacts])=>{
+    const cardsHtml = contacts.map(c=>{
+      const realIdx = allContacts.indexOf(c);
+      const step = getStep(c);
+      const stepsHtml = CADENCE_STEPS.map((s,si)=>{
+        const isDone = si < step;
+        const isCur = si === step;
+        const cls = isDone?'done':(isCur?'current':'');
+        const lineHtml = si < CADENCE_STEPS.length-1 ? `<div class="cline${isDone?' done':''}"></div>` : '';
+        return `<div class="cstep ${cls}" onclick="setStepTo(${realIdx},${si})" title="Click to set step">
+<div class="cstep-dot">${s.icon}</div>
+<div class="cstep-lbl">${s.label}</div>
+</div>${lineHtml}`;
+      }).join('');
+      const statusText = step >= CADENCE_STEPS.length
+        ? '<strong>Cadence Complete ✅</strong>'
+        : `Step <strong>${step+1}/${CADENCE_STEPS.length}</strong>: ${CADENCE_STEPS[step].icon} ${CADENCE_STEPS[step].label}`;
+      const emailHref = c.email ? `https://outlook.office365.com/mail/search?q=${encodeURIComponent(c.email)}` : '#';
+      const liHref = c.linkedin || '#';
+      return `<div class="contact-card">
+<div class="contact-name-wrap">
+<div class="contact-name" onclick="advanceStep(${realIdx})" title="Click to advance cadence">${c.first} ${c.last}</div>
+</div>
+<div class="contact-title">${c.title||''}</div>
+<div class="cadence-track">${stepsHtml}</div>
+<div class="cadence-status">${statusText}</div>
+<div class="act-btns">
+${c.email ? `<a href="${emailHref}" class="act-btn primary" target="_blank" rel="noopener">📧 Email</a>` : ''}
+${c.email ? `<button class="act-btn" style="background:linear-gradient(90deg,#1a4a1a,#2d7a2d);border-color:transparent;color:#fff" onclick="copyAndFind('${c.email}','${c.first} ${c.last}',this)">🔍 Find Thread</button>` : ''}
+${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedIn</a>` : ''}
+<button class="act-btn" onclick="advanceStep(${realIdx})">▶ Next Step</button>
+<button class="act-btn ${getOpened(c)?'opened-active':''}" onclick="toggleOpened(${realIdx})">👁 ${getOpened(c)?'Opened':'Mark Opened'}</button>
+<button class="act-btn ${getReplied(c)?'replied-active':''}" onclick="toggleReplied(${realIdx})">💬 ${getReplied(c)?'Replied':'Mark Replied'}</button>
+</div>
+</div>`;
+    }).join('');
+    return `<div class="company-group collapsed">
+<div class="company-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<span class="company-header-name">${company}</span>
+<span class="company-header-count">${contacts.length} contact${contacts.length>1?'s':''}</span>
+<span class="group-arrow">▼</span>
+</div>
+<div class="group-cards">${cardsHtml}</div>
+</div>`;
+  }).join('');
+  updateStats();
+}
+
+async function init(){
+    allContacts = [];
+    renderGrid();
+}
+init();
+</script>
+</body>
+</html>
