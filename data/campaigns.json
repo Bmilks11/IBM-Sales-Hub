@@ -2,7 +2,7 @@
   "campaigns": [
     {
       "id": "pa_cfo",
-      "name": "PA Outreach — CFO / VP Finance / FP&A",
+      "name": "PA Outreach \u2014 CFO / VP Finance / FP&A",
       "persona": "CFO / VP Finance / FP&A",
       "status": "active",
       "targets": 10,
@@ -15,35 +15,35 @@
           "day": 1,
           "subject": "Quick Question About Your Close Cycle",
           "angle": "First Touch",
-          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most finance leaders I talk to in Florida are spending 3-4 weeks on quarterly forecasting. The data exists — it's just scattered across systems, and pulling it together manually is where the time goes.\n\nWe helped Idaho Forest Group get from 80+ hours of spreadsheet work down to under 15 per cycle. Same data, just connected.\n\nWorth a 15-minute call to see if that'd translate to your setup?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most finance leaders I talk to in Florida are spending 3-4 weeks on quarterly forecasting. The data exists \u2014 it's just scattered across systems, and pulling it together manually is where the time goes.\n\nWe helped Idaho Forest Group get from 80+ hours of spreadsheet work down to under 15 per cycle. Same data, just connected.\n\nWorth a 15-minute call to see if that'd translate to your setup?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 1
         },
         {
           "day": 5,
           "subject": "The Forecast Accuracy Piece",
           "angle": "Follow-Up",
-          "body": "[First Name],\n\nSent you a note last week — one more thing worth flagging.\n\nThe teams we work with usually find that forecast accuracy gets worse during peak planning, not better. More pressure, more manual touchpoints, more room for error.\n\nIdaho Forest hit 97% accuracy after moving off spreadsheets. Their team stopped fixing numbers and started actually analyzing them.\n\nAre you the right person to have this conversation, or should I reach out to someone else on your team?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nSent you a note last week \u2014 one more thing worth flagging.\n\nThe teams we work with usually find that forecast accuracy gets worse during peak planning, not better. More pressure, more manual touchpoints, more room for error.\n\nIdaho Forest hit 97% accuracy after moving off spreadsheets. Their team stopped fixing numbers and started actually analyzing them.\n\nAre you the right person to have this conversation, or should I reach out to someone else on your team?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 2
         },
         {
           "day": 10,
           "subject": "Idaho Forest: 80 Hours To 15",
           "angle": "Case Study",
-          "body": "[First Name],\n\nIdaho Forest Group was spending 80+ hours a month on forecasting — manual pulls, spreadsheet reconciliation, coordinating across departments. Reactive mode every quarter.\n\nAfter IBM Planning Analytics: under 15 hours. 97% accuracy. Quarters closed faster.\n\nHappy to walk you through what changed. 20 minutes next week?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nIdaho Forest Group was spending 80+ hours a month on forecasting \u2014 manual pulls, spreadsheet reconciliation, coordinating across departments. Reactive mode every quarter.\n\nAfter IBM Planning Analytics: under 15 hours. 97% accuracy. Quarters closed faster.\n\nHappy to walk you through what changed. 20 minutes next week?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 3
         },
         {
           "day": 15,
           "subject": "Closing The Loop",
           "angle": "Final Outreach",
-          "body": "[First Name],\n\nTried you a couple times — no worries if the timing's off.\n\nIf forecasting cycles aren't a priority right now, totally understand. If they are and I just caught you at a bad time, I'm easy to reach.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nTried you a couple times \u2014 no worries if the timing's off.\n\nIf forecasting cycles aren't a priority right now, totally understand. If they are and I just caught you at a bad time, I'm easy to reach.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 4
         }
       ]
     },
     {
       "id": "pa_vpit",
-      "name": "PA Outreach — VP of IT / CTO",
+      "name": "PA Outreach \u2014 VP of IT / CTO",
       "persona": "VP of IT / CTO",
       "status": "active",
       "targets": 10,
@@ -56,35 +56,35 @@
           "day": 1,
           "subject": "Finance's Spreadsheet Problem Landing On IT",
           "angle": "First Touch",
-          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most IT leaders I talk to are dealing with the same thing — finance is running planning off a mix of ERP exports, spreadsheets, and whatever FP&A built five years ago. IT ends up owning the mess.\n\nIBM Planning Analytics connects directly into your existing stack — SAP, Oracle, Workday — and gives finance a governed single source of truth. No more shadow systems.\n\nCan we grab 15 minutes to talk through what that looks like technically?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most IT leaders I talk to are dealing with the same thing \u2014 finance is running planning off a mix of ERP exports, spreadsheets, and whatever FP&A built five years ago. IT ends up owning the mess.\n\nIBM Planning Analytics connects directly into your existing stack \u2014 SAP, Oracle, Workday \u2014 and gives finance a governed single source of truth. No more shadow systems.\n\nCan we grab 15 minutes to talk through what that looks like technically?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 1
         },
         {
           "day": 5,
           "subject": "Re: The Data Governance Piece",
           "angle": "Follow-Up",
-          "body": "[First Name],\n\nFollowing up from last week.\n\nThe IT leaders I talk to care about two things: not adding another siloed tool, and not owning finance's data problems forever.\n\nPlanning Analytics sits in your governed environment — finance gets self-service, your team controls the data layer. Not another rogue SaaS subscription.\n\nWorth a quick call?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nFollowing up from last week.\n\nThe IT leaders I talk to care about two things: not adding another siloed tool, and not owning finance's data problems forever.\n\nPlanning Analytics sits in your governed environment \u2014 finance gets self-service, your team controls the data layer. Not another rogue SaaS subscription.\n\nWorth a quick call?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 2
         },
         {
           "day": 10,
           "subject": "How ICBC Handled It",
           "angle": "Case Study",
-          "body": "[First Name],\n\nICBC runs Planning Analytics across their planning function — consolidated data, one governed platform, finance self-sufficient without IT in the loop for every report.\n\nThey hit 97% forecast accuracy. More importantly, IT stopped getting pulled into spreadsheet firefighting every quarter.\n\nHappy to walk through the architecture. 20 minutes?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nICBC runs Planning Analytics across their planning function \u2014 consolidated data, one governed platform, finance self-sufficient without IT in the loop for every report.\n\nThey hit 97% forecast accuracy. More importantly, IT stopped getting pulled into spreadsheet firefighting every quarter.\n\nHappy to walk through the architecture. 20 minutes?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 3
         },
         {
           "day": 15,
           "subject": "Last Note",
           "angle": "Final Outreach",
-          "body": "[First Name],\n\nLast one from me.\n\nIf the timing or priority isn't there, no problem. If you're dealing with planning data sprawl and want to see how others solved it, I'm around.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nLast one from me.\n\nIf the timing or priority isn't there, no problem. If you're dealing with planning data sprawl and want to see how others solved it, I'm around.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 4
         }
       ]
     },
     {
       "id": "pa_cro",
-      "name": "PA Outreach — CRO / Chief Revenue Officer",
+      "name": "PA Outreach \u2014 CRO / Chief Revenue Officer",
       "persona": "CRO / Chief Revenue Officer",
       "status": "active",
       "targets": 10,
@@ -97,35 +97,35 @@
           "day": 1,
           "subject": "Pipeline Forecasting That Actually Holds",
           "angle": "First Touch",
-          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most revenue leaders I talk to have the same issue — forecast looks solid in the CRM but doesn't match what closes. The gap usually comes down to how pipeline data rolls up across teams.\n\nIBM Planning Analytics connects revenue data and lets you model scenarios in real time. Not just reporting — actually planning.\n\nWe helped a financial services firm hit 97% forecast accuracy. Open to a quick call?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most revenue leaders I talk to have the same issue \u2014 forecast looks solid in the CRM but doesn't match what closes. The gap usually comes down to how pipeline data rolls up across teams.\n\nIBM Planning Analytics connects revenue data and lets you model scenarios in real time. Not just reporting \u2014 actually planning.\n\nWe helped a financial services firm hit 97% forecast accuracy. Open to a quick call?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 1
         },
         {
           "day": 5,
           "subject": "The Quota-To-Close Gap",
           "angle": "Follow-Up",
-          "body": "[First Name],\n\nSent you a note last week. One thing worth adding —\n\nMost CROs find their biggest forecasting problem isn't data quality, it's the time it takes to reconcile and model. By the time a clean number surfaces, the window's gone.\n\nPlanning Analytics cuts that cycle significantly. Your team spends less time building the forecast and more time acting on it.\n\nDoes this hit close to home, or is your planning process already dialed in?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nSent you a note last week. One thing worth adding \u2014\n\nMost CROs find their biggest forecasting problem isn't data quality, it's the time it takes to reconcile and model. By the time a clean number surfaces, the window's gone.\n\nPlanning Analytics cuts that cycle significantly. Your team spends less time building the forecast and more time acting on it.\n\nDoes this hit close to home, or is your planning process already dialed in?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 2
         },
         {
           "day": 10,
-          "subject": "97% Forecast Accuracy — How They Got There",
+          "subject": "97% Forecast Accuracy \u2014 How They Got There",
           "angle": "Case Study",
-          "body": "[First Name],\n\nICBC was dealing with the same forecasting whiplash most revenue orgs face — numbers shifting late in the quarter, limited ability to model scenarios fast.\n\nAfter IBM Planning Analytics: 97% accuracy, planning cycles 25% shorter.\n\nHappy to walk through what that looked like. 20 minutes next week?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nICBC was dealing with the same forecasting whiplash most revenue orgs face \u2014 numbers shifting late in the quarter, limited ability to model scenarios fast.\n\nAfter IBM Planning Analytics: 97% accuracy, planning cycles 25% shorter.\n\nHappy to walk through what that looked like. 20 minutes next week?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 3
         },
         {
           "day": 15,
           "subject": "Wrapping Up",
           "angle": "Final Outreach",
-          "body": "[First Name],\n\nLast note — reached out a few times about tightening up revenue forecasting.\n\nIf it's not the right time or someone else owns this, happy to redirect. Otherwise, easy to reach whenever the timing works.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nLast note \u2014 reached out a few times about tightening up revenue forecasting.\n\nIf it's not the right time or someone else owns this, happy to redirect. Otherwise, easy to reach whenever the timing works.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 4
         }
       ]
     },
     {
       "id": "pa_marketing",
-      "name": "PA Outreach — Director of Marketing / CMO",
+      "name": "PA Outreach \u2014 Director of Marketing / CMO",
       "persona": "Director of Marketing / CMO",
       "status": "active",
       "targets": 10,
@@ -138,35 +138,35 @@
           "day": 1,
           "subject": "Marketing Budget Planning That Doesn't Take All Quarter",
           "angle": "First Touch",
-          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Marketing planning is one of the messiest processes to get right — budget allocation, campaign ROI modeling, coordinating with finance on approvals. Most teams are still doing it in spreadsheets.\n\nIBM Planning Analytics connects spend data, attribution models, and budget cycles in one place. Finance and marketing off the same numbers.\n\nWorth a quick conversation?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Marketing planning is one of the messiest processes to get right \u2014 budget allocation, campaign ROI modeling, coordinating with finance on approvals. Most teams are still doing it in spreadsheets.\n\nIBM Planning Analytics connects spend data, attribution models, and budget cycles in one place. Finance and marketing off the same numbers.\n\nWorth a quick conversation?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 1
         },
         {
           "day": 5,
           "subject": "The Spend Attribution Piece",
           "angle": "Follow-Up",
-          "body": "[First Name],\n\nSent you a note last week.\n\nThe marketing leaders I talk to usually have two problems: they can't see ROI fast enough to reallocate budget mid-quarter, and getting finance to approve changes takes too long because the data isn't in a format they trust.\n\nPlanning Analytics solves both — real-time visibility, shared model with finance.\n\nIs this something your team is actively working on, or still in the 'dealing with it' phase?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nSent you a note last week.\n\nThe marketing leaders I talk to usually have two problems: they can't see ROI fast enough to reallocate budget mid-quarter, and getting finance to approve changes takes too long because the data isn't in a format they trust.\n\nPlanning Analytics solves both \u2014 real-time visibility, shared model with finance.\n\nIs this something your team is actively working on, or still in the 'dealing with it' phase?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 2
         },
         {
           "day": 10,
-          "subject": "Cut Planning Time By 25% — How One Team Did It",
+          "subject": "Cut Planning Time By 25% \u2014 How One Team Did It",
           "angle": "Case Study",
-          "body": "[First Name],\n\nOne of the teams we work with cut their planning cycle by 25% after moving budget and campaign planning into IBM Planning Analytics.\n\nLess time in spreadsheets, more time on strategy. Finance trusted the numbers because they came from a shared system.\n\nHappy to walk you through it. 20 minutes this week?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nOne of the teams we work with cut their planning cycle by 25% after moving budget and campaign planning into IBM Planning Analytics.\n\nLess time in spreadsheets, more time on strategy. Finance trusted the numbers because they came from a shared system.\n\nHappy to walk you through it. 20 minutes this week?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 3
         },
         {
           "day": 15,
           "subject": "Last One",
           "angle": "Final Outreach",
-          "body": "[First Name],\n\nLast note on this.\n\nIf marketing planning and budget coordination are running smoothly, great — no need to fix what works. If there's still friction with finance or visibility gaps mid-quarter, I'm easy to reach.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nLast note on this.\n\nIf marketing planning and budget coordination are running smoothly, great \u2014 no need to fix what works. If there's still friction with finance or visibility gaps mid-quarter, I'm easy to reach.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 4
         }
       ]
     },
     {
       "id": "pa_hr",
-      "name": "PA Outreach — CHRO / VP of HR",
+      "name": "PA Outreach \u2014 CHRO / VP of HR",
       "persona": "CHRO / VP of HR",
       "status": "active",
       "targets": 10,
@@ -179,28 +179,28 @@
           "day": 1,
           "subject": "Headcount Planning Eating Your Team's Time?",
           "angle": "First Touch",
-          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Workforce planning is one of the harder processes to get right — headcount models, attrition scenarios, budget alignment with finance, all on different spreadsheets.\n\nIBM Planning Analytics brings it together. HR and finance on a single model, scenarios updated in real time instead of rebuilt from scratch every quarter.\n\nWe've helped companies run planning cycles 25% faster. Worth a quick call?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Workforce planning is one of the harder processes to get right \u2014 headcount models, attrition scenarios, budget alignment with finance, all on different spreadsheets.\n\nIBM Planning Analytics brings it together. HR and finance on a single model, scenarios updated in real time instead of rebuilt from scratch every quarter.\n\nWe've helped companies run planning cycles 25% faster. Worth a quick call?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 1
         },
         {
           "day": 5,
           "subject": "The Headcount-To-Budget Alignment Problem",
           "angle": "Follow-Up",
-          "body": "[First Name],\n\nReached out last week.\n\nThe HR leaders I talk to usually hit the same wall — they build a headcount plan, finance adjusts it, HR rebuilds, back and forth. Takes weeks and the final number satisfies nobody.\n\nPlanning Analytics gives HR and finance a shared model so those cycles collapse. You stop negotiating over spreadsheets.\n\nIs headcount planning a pain point for your team right now?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nReached out last week.\n\nThe HR leaders I talk to usually hit the same wall \u2014 they build a headcount plan, finance adjusts it, HR rebuilds, back and forth. Takes weeks and the final number satisfies nobody.\n\nPlanning Analytics gives HR and finance a shared model so those cycles collapse. You stop negotiating over spreadsheets.\n\nIs headcount planning a pain point for your team right now?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 2
         },
         {
           "day": 10,
-          "subject": "Faster Workforce Planning — How Others Got There",
+          "subject": "Faster Workforce Planning \u2014 How Others Got There",
           "angle": "Case Study",
-          "body": "[First Name],\n\nTeams on IBM Planning Analytics are seeing 25% faster planning cycles and a lot less back-and-forth with finance.\n\nThe difference is a shared data model — HR inputs headcount, finance sees it in real time, scenarios update automatically. No version control nightmares.\n\nHappy to walk through what that looks like. 20 minutes?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nTeams on IBM Planning Analytics are seeing 25% faster planning cycles and a lot less back-and-forth with finance.\n\nThe difference is a shared data model \u2014 HR inputs headcount, finance sees it in real time, scenarios update automatically. No version control nightmares.\n\nHappy to walk through what that looks like. 20 minutes?\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 3
         },
         {
           "day": 15,
           "subject": "Closing Out",
           "angle": "Final Outreach",
-          "body": "[First Name],\n\nLast note from me.\n\nIf workforce planning is running well, I'll leave you alone. If headcount cycles, budget alignment, or scenario planning are still painful, happy to reconnect whenever.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\nCell: (734) 536-6544",
+          "body": "[First Name],\n\nLast note from me.\n\nIf workforce planning is running well, I'll leave you alone. If headcount cycles, budget alignment, or scenario planning are still painful, happy to reconnect whenever.\n\nBradley Milks\nIBM Account Executive, Data Trust & Planning\nbradley.milks@ibm.com\n",
           "number": 4
         }
       ]
@@ -216,8 +216,8 @@
         "FP&A"
       ],
       "pain_point": "Disconnected planning, lack of agility",
-      "subject": "Finance planning — quick question",
-      "body": "Hi [First Name],\n\nMost CFOs I speak with are dealing with the same challenge — disconnected planning and forecast cycles that can't keep up with how fast conditions change.\n\nIBM Planning Analytics unifies financial planning on one real-time platform, integrating Oracle, SAP, and spreadsheets so your FP&A team moves faster with full confidence in the numbers.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+      "subject": "Finance planning \u2014 quick question",
+      "body": "Hi [First Name],\n\nMost CFOs I speak with are dealing with the same challenge \u2014 disconnected planning and forecast cycles that can't keep up with how fast conditions change.\n\nIBM Planning Analytics unifies financial planning on one real-time platform, integrating Oracle, SAP, and spreadsheets so your FP&A team moves faster with full confidence in the numbers.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
     },
     {
       "persona": "Controller",
@@ -227,8 +227,8 @@
         "Corporate Controller"
       ],
       "pain_point": "Lack of confidence in data, error-prone processes",
-      "subject": "Consolidation confidence — quick note",
-      "body": "Hi [First Name],\n\nControllers I speak with often cite the same issue: error-prone consolidation and a lack of confidence in the numbers at close.\n\nIBM Planning Analytics automates monthly, quarterly, and annual consolidation with granular data controls — reducing manual errors and giving your team a single source of truth.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+      "subject": "Consolidation confidence \u2014 quick note",
+      "body": "Hi [First Name],\n\nControllers I speak with often cite the same issue: error-prone consolidation and a lack of confidence in the numbers at close.\n\nIBM Planning Analytics automates monthly, quarterly, and annual consolidation with granular data controls \u2014 reducing manual errors and giving your team a single source of truth.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
     },
     {
       "persona": "COO / VP Operations / Supply Chain VP",
@@ -239,8 +239,8 @@
         "VP Supply Chain"
       ],
       "pain_point": "Data discrepancies across departments",
-      "subject": "Ops planning data — quick thought",
-      "body": "Hi [First Name],\n\nOperations leaders I speak with consistently flag the same challenge: data discrepancies across departments making supply chain and capacity planning unreliable.\n\nIBM Planning Analytics integrates every data source into one real-time model — supply chain, inventory, capacity, and asset planning all in sync.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+      "subject": "Ops planning data \u2014 quick thought",
+      "body": "Hi [First Name],\n\nOperations leaders I speak with consistently flag the same challenge: data discrepancies across departments making supply chain and capacity planning unreliable.\n\nIBM Planning Analytics integrates every data source into one real-time model \u2014 supply chain, inventory, capacity, and asset planning all in sync.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
     },
     {
       "persona": "VP / Director of Human Resources",
@@ -251,8 +251,8 @@
         "VP HR"
       ],
       "pain_point": "Lack of agility in workforce planning",
-      "subject": "Workforce planning — quick question",
-      "body": "Hi [First Name],\n\nHR leaders I speak with struggle with the same thing: headcount and compensation planning that can't keep pace with how fast the business moves.\n\nIBM Planning Analytics brings real agility to workforce planning — real-time scenario modeling for headcount, salary, and staffing decisions at scale.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+      "subject": "Workforce planning \u2014 quick question",
+      "body": "Hi [First Name],\n\nHR leaders I speak with struggle with the same thing: headcount and compensation planning that can't keep pace with how fast the business moves.\n\nIBM Planning Analytics brings real agility to workforce planning \u2014 real-time scenario modeling for headcount, salary, and staffing decisions at scale.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
     },
     {
       "persona": "VP of Sales",
@@ -264,7 +264,7 @@
       ],
       "pain_point": "Intuition drives 2/3 of planning decisions",
       "subject": "Sales planning on intuition?",
-      "body": "Hi [First Name],\n\nSales leaders I speak with tell me the same thing — intuition still drives 2 out of 3 planning decisions around territory, quota, and capacity.\n\nIBM Planning Analytics replaces gut feel with real-time data modeling, so your team forecasts, plans territories, and sets quotas with confidence.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+      "body": "Hi [First Name],\n\nSales leaders I speak with tell me the same thing \u2014 intuition still drives 2 out of 3 planning decisions around territory, quota, and capacity.\n\nIBM Planning Analytics replaces gut feel with real-time data modeling, so your team forecasts, plans territories, and sets quotas with confidence.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
     },
     {
       "persona": "VP of Marketing",
@@ -275,7 +275,7 @@
       ],
       "pain_point": "Disconnected planning, analytical siloes",
       "subject": "Marketing planning in siloes?",
-      "body": "Hi [First Name],\n\nMarketing leaders I speak with are dealing with disconnected planning — campaign and promotion data living in tools that don't talk to each other or the rest of the business.\n\nIBM Planning Analytics breaks down analytical siloes, connecting marketing planning to finance, sales, and ops in real time.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+      "body": "Hi [First Name],\n\nMarketing leaders I speak with are dealing with disconnected planning \u2014 campaign and promotion data living in tools that don't talk to each other or the rest of the business.\n\nIBM Planning Analytics breaks down analytical siloes, connecting marketing planning to finance, sales, and ops in real time.\n\nWorth 20 minutes?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
     },
     {
       "persona": "CIO",
@@ -286,8 +286,8 @@
         "VP of Technology"
       ],
       "pain_point": "Disconnected IT portfolio and budget planning",
-      "subject": "IT planning siloes — quick thought",
-      "body": "Hi [First Name],\n\nCIOs I speak with flag the same challenge: IT portfolio and budget planning stuck in disconnected systems with no unified view.\n\nIBM Planning Analytics unifies IT project planning, budgeting, and infrastructure planning on one platform — with the enterprise-grade security and scalability your team requires.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
+      "subject": "IT planning siloes \u2014 quick thought",
+      "body": "Hi [First Name],\n\nCIOs I speak with flag the same challenge: IT portfolio and budget planning stuck in disconnected systems with no unified view.\n\nIBM Planning Analytics unifies IT project planning, budgeting, and infrastructure planning on one platform \u2014 with the enterprise-grade security and scalability your team requires.\n\nWorth 20 minutes for [Company]?\n\nBradley Milks\nAccount Executive, Data Trust & Planning | IBM | Florida"
     }
   ]
 }
