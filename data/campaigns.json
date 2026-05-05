@@ -15,7 +15,7 @@
           "day": 1,
           "subject": "Quick Question About Your Close Cycle",
           "angle": "First Touch",
-          "body": "Bradley Milks here, your IBM point of contact for Data. Most finance leaders I talk to in Florida are spending 3-4 weeks on quarterly forecasting. The data exists \u2014 it's just scattered across systems, and pulling it together manually is where the time goes. We helped Idaho Forest Group get from 80+ hours of spreadsheet work down to under 15 per cycle. Same data, just connected.\n\nWorth a 15-minute call to see if that'd translate to your setup?",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most finance leaders I talk to in Florida are spending 3-4 weeks on quarterly forecasting. The data exists \u2014 it's just scattered across systems, and pulling it together manually is where the time goes. We helped Idaho Forest Group get from 80+ hours of spreadsheet work down to under 15 per cycle. Same data, just connected.\n\nWorth a 15-minute call to see if that'd translate to your setup?",
           "number": 1
         },
         {
@@ -56,7 +56,7 @@
           "day": 1,
           "subject": "Finance's Spreadsheet Problem Landing On IT",
           "angle": "First Touch",
-          "body": "Bradley Milks here, your IBM point of contact for Data. Most IT leaders I talk to are dealing with the same thing \u2014 finance is running planning off a mix of ERP exports, spreadsheets, and whatever FP&A built five years ago. IT ends up owning the mess. IBM Planning Analytics connects directly into your existing stack \u2014 SAP, Oracle, Workday \u2014 and gives finance a governed single source of truth. No more shadow systems.\n\nCan we grab 15 minutes to talk through what that looks like technically?",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most IT leaders I talk to are dealing with the same thing \u2014 finance is running planning off a mix of ERP exports, spreadsheets, and whatever FP&A built five years ago. IT ends up owning the mess. IBM Planning Analytics connects directly into your existing stack \u2014 SAP, Oracle, Workday \u2014 and gives finance a governed single source of truth. No more shadow systems.\n\nCan we grab 15 minutes to talk through what that looks like technically?",
           "number": 1
         },
         {
@@ -97,7 +97,7 @@
           "day": 1,
           "subject": "Pipeline Forecasting That Actually Holds",
           "angle": "First Touch",
-          "body": "Bradley Milks here, your IBM point of contact for Data. Most revenue leaders I talk to have the same issue \u2014 forecast looks solid in the CRM but doesn't match what closes. The gap usually comes down to how pipeline data rolls up across teams. IBM Planning Analytics connects revenue data and lets you model scenarios in real time. Not just reporting \u2014 actually planning. We helped a financial services firm hit 97% forecast accuracy.\n\nOpen to a quick call?",
+          "body": "[First Name],\n\nBradley Milks here, your IBM point of contact for Data. Most revenue leaders I talk to have the same issue \u2014 forecast looks solid in the CRM but doesn't match what closes. The gap usually comes down to how pipeline data rolls up across teams. IBM Planning Analytics connects revenue data and lets you model scenarios in real time. Not just reporting \u2014 actually planning. We helped a financial services firm hit 97% forecast accuracy.\n\nOpen to a quick call?",
           "number": 1
         },
         {
