@@ -1,1 +1,632 @@
-[]
+[
+  {
+    "first": "Mark",
+    "last": "Keathley",
+    "email": "mkeathley@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "Senior Inventory and Demand Planning Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Ana",
+    "last": "Santana",
+    "email": "asantana@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "Inventory Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Eric",
+    "last": "Sergeant",
+    "email": "ESergeant@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "Inventory Control Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Janette",
+    "last": "Luna",
+    "email": "JLuna@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "Senior Finance Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Gabriel",
+    "last": "Nunez",
+    "email": "gnunez@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "Senior Finance Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Edward",
+    "last": "Champagnie",
+    "email": "echampagnie@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "Sr. Logistics Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Arun",
+    "last": "Dabas",
+    "email": "adabas@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "Sr. Dir Data Engineering Analytics",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Chadwick",
+    "last": "Hamby",
+    "email": "chamby@petsupermarket.com",
+    "company": "Pet Supermarket",
+    "title": "VP of IT",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Kathleen",
+    "last": "Luna",
+    "email": "kathleenluna@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "HR Specialist",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Dusko",
+    "last": "Pesic",
+    "email": "dusko.pesic@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "VP of Operations",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Hector",
+    "last": "Velazco",
+    "email": "hector.velazco@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "Director of Cargo Planning",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Jorge",
+    "last": "Avila",
+    "email": "jorge.avila@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "Manager Business Intelligence",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Anna",
+    "last": "Koldys",
+    "email": "anna.koldys@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "Director of Revenue Analysis",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Gilma",
+    "last": "Lieber",
+    "email": "gilma_lieber@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "HR Director",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Joseph",
+    "last": "Veiguela",
+    "email": "joseph.veiguela@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "Senior IT Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Juan",
+    "last": "Benitez",
+    "email": "juan@seaboardmarine.com",
+    "company": "Seaboard Marine",
+    "title": "Director Terminal Operations",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Balasubramanian",
+    "last": "Iyer",
+    "email": "biyer@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "VP of Analytics",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Carlo",
+    "last": "Sierra",
+    "email": "csierra@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "FPA Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Grant",
+    "last": "Thomas",
+    "email": "gthomas@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "Director of Accounting",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Matt",
+    "last": "Zinser",
+    "email": "matt.zinser@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "Director of FPA",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Adam",
+    "last": "Gardner",
+    "email": "agardner@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "Senior Manager Financial Systems",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Sophia",
+    "last": "Cayson",
+    "email": "scayson@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "Senior Director Enterprise Solutions",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Josette",
+    "last": "Ruhnke",
+    "email": "jruhnke@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "Account Manager Finance",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Aimee",
+    "last": "Mundo",
+    "email": "amundo@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "VP",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Julie",
+    "last": "Dey",
+    "email": "Julie.Dey@intellify.com.au",
+    "company": "Cross Country Healthcare",
+    "title": "Group SVP General Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Danielle",
+    "last": "Fain",
+    "email": "dfain@crosscountry.com",
+    "company": "Cross Country Healthcare",
+    "title": "Group SVP Enterprise Ops",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Shawn",
+    "last": "Kruglewicz",
+    "email": "Shawn.Kruglewicz@avnet.com",
+    "company": "Avnet",
+    "title": "Director of Operations",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Clay",
+    "last": "Phillips",
+    "email": "clay.phillips@avnet.com",
+    "company": "Avnet",
+    "title": "Demand Planning Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Michael",
+    "last": "Chang",
+    "email": "Michael.Chang@avnet.com",
+    "company": "Avnet",
+    "title": "Finance Director",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Robert",
+    "last": "Roe",
+    "email": "bob.roe@avnet.com",
+    "company": "Avnet",
+    "title": "VP Finance",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Sue",
+    "last": "Lau",
+    "email": "sue.lau@avnet.com",
+    "company": "Avnet",
+    "title": "Director Global Supply Chain",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Chris",
+    "last": "Jackson",
+    "email": "cjackson@avnet.com",
+    "company": "Avnet",
+    "title": "VP Digital Strategy",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Bill",
+    "last": "Hall",
+    "email": "william.hall@avnet.com",
+    "company": "Avnet",
+    "title": "VP Global Finance Operations",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "David",
+    "last": "Hafferty",
+    "email": "david.hafferty@avnet.com",
+    "company": "Avnet",
+    "title": "SAP Production Planning Director",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Swamy",
+    "last": "Salunkhe",
+    "email": "Swamy.Salunkhe@avnet.com",
+    "company": "Avnet",
+    "title": "Supply Chain Planning Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Jed",
+    "last": "Dryer",
+    "email": "jdryer@bacardi.com",
+    "company": "Bacardi",
+    "title": "VP Global Performance Management",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Daniella",
+    "last": "Simone",
+    "email": "dsimone@bacardi.com",
+    "company": "Bacardi",
+    "title": "Senior Finance Director",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Lisa",
+    "last": "Smith",
+    "email": "lsmith@bacardi.com",
+    "company": "Bacardi",
+    "title": "VP Finance",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "David",
+    "last": "Flam",
+    "email": "dflam@bacardi.com",
+    "company": "Bacardi",
+    "title": "HR Director North America",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Carlos",
+    "last": "Diaz",
+    "email": "cdiaz@bacardilimited.com",
+    "company": "Bacardi",
+    "title": "VP National Retail Sales",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Chitrakshi",
+    "last": "Munjal",
+    "email": "chitrakshi.munjal@bacardilimited.com",
+    "company": "Bacardi",
+    "title": "VP Global Head Compensation",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Bibiana",
+    "last": "Garcia",
+    "email": "bgarcia@bacardi.com",
+    "company": "Bacardi",
+    "title": "HR Director",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Kelly",
+    "last": "Feintech",
+    "email": "kfeintech@bacardi.com",
+    "company": "Bacardi",
+    "title": "Chief of Staff Sr Director Strategy",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Tracy",
+    "last": "Underwood",
+    "email": "Tracey.Underwood@pery.com",
+    "company": "Perry Ellis",
+    "title": "Planning Specialist Wholesale",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Hieu",
+    "last": "Ta",
+    "email": "hieu.ta@pery.com",
+    "company": "Perry Ellis",
+    "title": "Senior Financial Analyst",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Gayle",
+    "last": "Catropa",
+    "email": "gayle.catropa@pery.com",
+    "company": "Perry Ellis",
+    "title": "Chief Human Resources Officer",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Zheng",
+    "last": "Fan",
+    "email": "zheng.fan@pery.com",
+    "company": "Perry Ellis",
+    "title": "VP of Information Systems",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Heather",
+    "last": "Drstvensek",
+    "email": "Heather.Drstvensek@pery.com",
+    "company": "Perry Ellis",
+    "title": "SVP Wholesale DTC Planning",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Sandeep",
+    "last": "Baghel",
+    "email": "sandeep.baghel@pery.com",
+    "company": "Perry Ellis",
+    "title": "SVP of Information Systems",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Rosemary",
+    "last": "Alvarez",
+    "email": "alvarez@pery.com",
+    "company": "Perry Ellis",
+    "title": "Demand Planning Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Lamarr",
+    "last": "Brown",
+    "email": "lamarr.brown@pery.com",
+    "company": "Perry Ellis",
+    "title": "Director of Planning",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Gregg",
+    "last": "Verbin",
+    "email": "gregg.verbin@pery.com",
+    "company": "Perry Ellis",
+    "title": "SVP of Planning",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "David",
+    "last": "Crockett",
+    "email": "david.crockett@pery.com",
+    "company": "Perry Ellis",
+    "title": "VP Supply Chain Planning",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Michael",
+    "last": "Paulus",
+    "email": "michael.paulus@pery.com",
+    "company": "Perry Ellis",
+    "title": "Director Ecommerce Sales",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Steven",
+    "last": "Kabak",
+    "email": "steven.kabak@pery.com",
+    "company": "Perry Ellis",
+    "title": "Senior Director Planning Systems",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Mina",
+    "last": "Kelada",
+    "email": "Mina.Kelada@pery.com",
+    "company": "Perry Ellis",
+    "title": "Finance Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Ramon",
+    "last": "Madera",
+    "email": "ramon.madera@pery.com",
+    "company": "Perry Ellis",
+    "title": "Financial Systems Director",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Joe",
+    "last": "Dallas",
+    "email": "joseph.dallas@pery.com",
+    "company": "Perry Ellis",
+    "title": "VP Financial Planning and Analysis",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Alejandro",
+    "last": "Barbosa",
+    "email": "alejandro.barbosa@pery.com",
+    "company": "Perry Ellis",
+    "title": "Finance Manager",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Daniel",
+    "last": "Garcia",
+    "email": "daniel.garcia@pery.com",
+    "company": "Perry Ellis",
+    "title": "VP Online Digital Strategy",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Gabriel",
+    "last": "Viveros",
+    "email": "gabr@pery.com",
+    "company": "Perry Ellis",
+    "title": "VP Financial Planning Fashion",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "John",
+    "last": "Griffin",
+    "email": "John.Griffin@pery.com",
+    "company": "Perry Ellis",
+    "title": "VP Finance Perry Ellis Menswear",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  },
+  {
+    "first": "Miguel",
+    "last": "Rivero",
+    "email": "miguel.rivero@pery.com",
+    "company": "Perry Ellis",
+    "title": "SVP Finance Operations",
+    "cadence_step": 1,
+    "last_sent": "2026-05-06",
+    "linkedin": ""
+  }
+]
