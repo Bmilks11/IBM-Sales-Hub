@@ -277,7 +277,12 @@ ${c.linkedin ? `<a href="${liHref}" target="_blank" class="act-btn">💼 LinkedI
 }
 
 async function init(){
-    allContacts = [];
+    try {
+        const r = await fetch('../data/contacts.json?v=1778075073', {cache: 'no-store'});
+        allContacts = await r.json();
+    } catch(e) {
+        allContacts = [];
+    }
     renderGrid();
 }
 init();
