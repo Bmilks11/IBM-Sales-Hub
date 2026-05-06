@@ -204,6 +204,26 @@
           "number": 4
         }
       ]
+    },
+    {
+      "id": "pa_cognos",
+      "name": "Cognos Outreach \u2014 IBM Cognos Analytics",
+      "persona": "BI / Analytics / Finance Leaders",
+      "status": "active",
+      "targets": 0,
+      "sent": 0,
+      "opened": 0,
+      "replied": 0,
+      "start_date": "2026-05-06",
+      "emails": [
+        {
+          "day": 1,
+          "subject": "",
+          "angle": "First Touch",
+          "body": "[First Name],\n\n",
+          "number": 1
+        }
+      ]
     }
   ],
   "persona_emails": [
