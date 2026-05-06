@@ -218,9 +218,9 @@
       "emails": [
         {
           "day": 1,
-          "subject": "",
+          "subject": "Extending Cognos into Planning Analytics",
           "angle": "First Touch",
-          "body": "[First Name],\n\n",
+          "body": "[First Name],\n\nHope you're doing well \u2014 it's been great working with you on the Cognos side.\n\nI wanted to reach out because a lot of the Cognos clients I work with have started extending into IBM Planning Analytics (TM1), and the early results have been interesting enough that I think it's worth a conversation. The short version: Cognos is doing the heavy lifting for reporting and analysis, but most teams are still running budgets, forecasts, and scenario plans out of Excel. Planning Analytics closes that gap on the same IBM stack \u2014 same security model, shared dimensions, and one source of truth between actuals and plans.\n\nA few things clients have told me made it worth the move:\n\n- Forecast cycles cut from weeks to days\n- Real what-if scenario modeling instead of static spreadsheets\n- Finance and ops finally working off the same numbers\n- AI-assisted forecasting baked in\n\nCould we grab 20\u201330 minutes in the next couple weeks to walk through how it might fit at your organization? Happy to send a few times that work, or just reply with what's easiest on your calendar.\n\nLooking forward to catching up.",
           "number": 1
         }
       ],
