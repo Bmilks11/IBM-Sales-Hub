@@ -223,7 +223,11 @@
           "body": "[First Name],\n\n",
           "number": 1
         }
-      ]
+      ],
+      "product": "IBM Cognos Analytics",
+      "tier": "Enterprise",
+      "tagline": "Self-service BI and analytics for enterprise teams",
+      "meetings": 0
     }
   ],
   "persona_emails": [
